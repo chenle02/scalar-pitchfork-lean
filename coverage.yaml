@@ -76,6 +76,66 @@ rows:
       - scalar-pitchfork-lean/global-selected-component-is-closed
     statement: |-
       Let $X$ be a topological space, $S\subseteq X$ closed, $b\in S$, and $K$ the connected component of $b$ in $S$. Let $A\subseteq X$ with $A\cap K$ open in the subspace $K$, and let $s\in K\setminus A$. Then the connected component of $s$ in $K\setminus A$ is closed in $X$.
+  - title: Pitchfork branches under the stronger remainder bound
+    claims:
+      - scalar-pitchfork-lean/strong-bounds-of-jet
+      - scalar-pitchfork-lean/branch-eventually-of-strong-bound
+      - scalar-pitchfork-lean/branch-curves-of-strong-bound
+      - scalar-pitchfork-lean/equilibrium-core-of-strong-bound
+      - scalar-pitchfork-lean/deriv-zero-of-sq-bound
+      - scalar-pitchfork-lean/axis-of-linearization
+    statement: |-
+      Under the hypotheses of the row "Remainder bounds from jets at the origin" together with the axis condition $\partial_zR(\tau,0)=0$ for $|\tau|\le r$ (where $\partial_zR(\tau,z)=DR(\tau,z)(0,1)$), there is $C\ge0$ with, for $|\tau|,|z|\le r$,
+      \[|R(\tau,z)|\le C\big(z^2\tau^2+|z|^3|\tau|+z^4\big),\qquad |\partial_zR(\tau,z)|\le C\big(|z|\tau^2+z^2|\tau|+|z|^3\big).\]
+      The axis condition holds for $R(\tau,z)=f(\tau,z)-\alpha\tau z+\beta z^3$ when $R$ satisfies those jet hypotheses and $\partial_zf(\tau,0)=\alpha\tau$ for $|\tau|\le r$; and if $\varphi'(0)=d$ and $|\varphi(z)|\le Kz^2$ for $|z|\le\delta$ with $\delta>0$, then $d=0$.
+      Let $\alpha>0$, $\beta\ne0$, $C\ge0$, $0<r\le1$, $f(\tau,z)=\alpha\tau z-\beta z^3+R(\tau,z)$, and assume for $|\tau|,|z|\le r$ the two stronger bounds above with $\partial_zR=R_z$. Then the conclusion of the row "Existence of both branches with explicit amplitude constant and stability sign" holds with the same constant $K$. If moreover $\tau\mapsto R(\tau,z)$ is continuous at every $|\tau|<r$, $|z|\le r$, there are $\rho>0$, an open neighbourhood $N$ of $0$ and, for $\sigma\in\{1,-1\}$, functions $b_\sigma$ continuous on $N$ with $b_\sigma(\tau)\to0$ as $\tau\to0$, such that for $\tau\in N$ with $\tau\beta>0$, $f(\tau,\cdot)$ has exactly one zero $z$ with $\sigma z>0$, $|z|\le\rho$, and $b_\sigma(\tau)$ is that zero.
+      At a single point: if $z\ne0$, $|z|,|\tau|\le1$, $2C|\tau|\le\alpha$, $\alpha\tau z-\beta z^3+R=0$, $d=\alpha\tau-3\beta z^2+R_s$, $|R|\le C(z^2\tau^2+|z|^3|\tau|+z^4)$, $|R_s|\le C(|z|\tau^2+z^2|\tau|+|z|^3)$ and $A(|\tau|+|z|)\le|\beta|/2$ with $A=C\big(\frac{2(|\beta|+2C)}{\alpha}+1\big)$, then $\tau\beta>0$, $d\beta<0$ and $\big||z|-\sqrt{\alpha\tau/\beta}\big|\le K|\tau|$.
+  - title: Pitchfork branches directly from jets at the origin
+    claims:
+      - scalar-pitchfork-lean/pitchfork-branch-curves-of-jet
+      - scalar-pitchfork-lean/exists-branch-eventually-of-jet
+    statement: |-
+      Let $\alpha>0$, $\beta\ne0$, and let $R$, $U$, $r$ satisfy the hypotheses of the row "Remainder bounds from jets at the origin" ($C^4$ on an open $U\supseteq\{|\tau|,|z|\le r\}$, $0<r\le1$, $R(\tau,0)=0$ for $|\tau|\le r$, and the five listed derivatives vanish at $(0,0)$); no remainder constant is assumed. Put $f(\tau,z)=\alpha\tau z-\beta z^3+R(\tau,z)$. Then the full conclusion of the row "The two pitchfork branches" holds for $f$ (with some $\rho>0$, open neighbourhood $N$ of $0$, $K$ and $b_{\pm1}$), and in addition $b_\sigma(\tau)\to0$ as $\tau\to0$. Moreover there is $C\ge0$ such that the conclusion of the row "Existence of both branches with explicit amplitude constant and stability sign" holds for $f$ with the explicit constant $K$ computed from this $C$.
+  - title: Estimates at a single nontrivial equilibrium
+    claims:
+      - scalar-pitchfork-lean/perturbed-equilibrium-core
+      - scalar-pitchfork-lean/equilibrium-core
+      - scalar-pitchfork-lean/exists-pos-equilibrium
+      - scalar-pitchfork-lean/nonzero-equilibrium-eq-branch
+    statement: |-
+      Let $\alpha>0$, $\beta\ne0$, $C\ge0$, $z\ne0$, $|z|\le1$, $\alpha\tau z-\beta z^3+R=0$ and $d=\alpha\tau-3\beta z^2+R_s$ (real numbers). If $|R|\le C(|\tau||z|^3+z^4)$, $|R_s|\le C(|\tau|z^2+|z|^3)$ and $C(|\tau|+|z|)\le|\beta|/2$, then
+      \[\tau\beta>0,\qquad d\beta<0,\qquad \Big||z|-\sqrt{\alpha\tau/\beta}\Big|\le\frac{2\alpha C\big(\frac{3|\beta|}{2\alpha}+1\big)}{|\beta|^2}|\tau|.\]
+      If instead $|\tau|\le1$, $2C|\tau|\le\alpha$, $|R|\le C(|z|\tau^2+|z|^3|\tau|+z^4)$, $|R_s|\le C(\tau^2+z^2|\tau|+|z|^3)$ and $A(|\tau|+|z|)\le|\beta|/2$ with $A=C\big(\frac{2(|\beta|+2C)}{\alpha}+1\big)$, the same holds with $C$ replaced by $A$ in the amplitude constant.
+      If $\alpha>0$, $\beta\ne0$, $A\ne0$ and $\alpha\tau A-\beta A^3=0$, then $A=\pm\sqrt{\alpha\tau/\beta}$. Finally, let $\alpha>0$, $\tau\beta>0$, $C\ge0$, let $R:\mathbb R\to\mathbb R$ be continuous on $\big[\sqrt{\alpha\tau/(2\beta)},\sqrt{2\alpha\tau/\beta}\big]$ with $|R(z)|\le C(|z|\tau^2+|z|^3|\tau|+z^4)$ for $0<z$, $z^2\le2\alpha\tau/\beta$, and $C\big(|\tau|+2\alpha\tau/\beta+2\alpha\sqrt{2\alpha\tau/\beta}/|\beta|\big)<\alpha/2$. Then there is $z>0$ with $\alpha\tau/(2\beta)\le z^2\le2\alpha\tau/\beta$ and $\alpha\tau z-\beta z^3+R(z)=0$.
+  - title: Global alternatives under monotone profiles
+    claims:
+      - scalar-pitchfork-lean/global-global-unbounded-of-monotone
+      - scalar-pitchfork-lean/global-not-alt-complement
+      - scalar-pitchfork-lean/global-not-alt-other-trivial
+      - scalar-pitchfork-lean/global-not-is-compact-of-alternatives
+      - scalar-pitchfork-lean/global-is-compact-slice
+      - scalar-pitchfork-lean/global-subset-of-rel-clopen
+      - scalar-pitchfork-lean/global-strict-anti-on-of-rel-clopen
+    statement: |-
+      Let $E$ be a topological additive group, $P:E\to(\mathbb R\to\mathbb R)$ an additive map (the profile), $L>0$, $(\lambda^*,u^*)\in\mathbb R\times E$, $W\subseteq E$ and $C,S,V\subseteq\mathbb R\times E$. Assume the global alternatives: $C$ is not compact, or $(\lambda,u^*)\in C$ for some $\lambda\ne\lambda^*$, or $(\lambda,u^*+w)\in C$ for some $w\in W\setminus\{0\}$. Assume $P(u^*)$ is constant, every $P(e)$ is continuous on $[0,L]$, every $(\lambda,u)\in C\setminus\{(\lambda^*,u^*)\}$ has $P(u)$ strictly monotone on $[0,L]$, and the weight $\varphi$ satisfies
+      \[\int_0^Lg\,\varphi\,dx>0\ \text{ for every continuous strictly decreasing }g\text{ on }[0,L],\qquad \int_0^LP(w)\,\varphi\,dx=0\ \ (w\in W).\]
+      Then the second and third alternatives fail; if in addition $C$ satisfies the hypotheses of the row "A non-compact component has unbounded parameter" except non-compactness ($C\subseteq V$ relatively closed in $V$, $C\subseteq\overline S\subseteq V$, $\overline{S\cap\{\lambda\le X\}}$ compact for all $X$), then $C$ is not compact, has parameters $\lambda>M$ for every $M$, and $\sup\{\lambda:(\lambda,u)\in C\}=+\infty$.
+      Supporting facts: the alternatives with the last two excluded give non-compactness; if $C$ is closed, $C\subseteq\overline S$ and all $\overline{S\cap\{\lambda\le X\}}$ are compact, every slice $C\cap\{\lambda\le X\}$ is compact; if $C$ is preconnected, $p^*\in C\cap M$ and $C\cap M$ is clopen in $C$, then $C\subseteq M$; in particular, if $\{p\in C: p=p^*\text{ or }P(p_2)\text{ is strictly decreasing on }[0,L]\}$ is clopen in a preconnected $C\ni p^*$, every $p\in C\setminus\{p^*\}$ has strictly decreasing profile.
+  - title: Closedness and containment of one-sided components
+    claims:
+      - scalar-pitchfork-lean/global-is-closed-connected-component-in-of-is-closed
+      - scalar-pitchfork-lean/global-is-closed-sdiff-of-is-open-preimage
+      - scalar-pitchfork-lean/global-parent-component-is-closed
+      - scalar-pitchfork-lean/global-unilateral-remainder-is-closed
+      - scalar-pitchfork-lean/global-retained-with-base-subset-parent-component
+      - scalar-pitchfork-lean/global-retained-with-base-subset-unilateral-remainder
+      - scalar-pitchfork-lean/global-retained-with-base-subset-selected-component
+      - scalar-pitchfork-lean/global-base-mem-selected-component
+      - scalar-pitchfork-lean/global-selected-component-subset-solution-closure
+    statement: |-
+      Let $X$ be a topological space. A connected component of a closed set $F$ (of a point of $F$) is closed, and if $P$ is closed and $A\cap P$ is open in the subspace $P$, then $P\setminus A$ is closed. Let $S\subseteq X$ be closed, $b\in S$ and $K$ the connected component of $b$ in $S$; then $K$ is closed, and $K\setminus A$ is closed whenever $A\cap K$ is open in the subspace $K$.
+      For any $A,A'\subseteq X$ and $s\in X$, the component $K_s$ of $s$ in $K\setminus A$ satisfies $K_s\subseteq S$. If $\{b\}\cup A'$ is connected and contained in $S$, then $\{b\}\cup A'\subseteq K$; if moreover $\{b\}\cup A'$ is disjoint from $A$, then $\{b\}\cup A'\subseteq K\setminus A$, and for every $s\in A'$,
+      \[\{b\}\cup A'\subseteq K_s,\qquad\text{in particular } b\in K_s.\]
 compute:
 - cluster: easley
   jobs:
