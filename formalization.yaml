@@ -41,6 +41,15 @@ status:
     Crandall-Rabinowitz, Lyapunov-Schmidt and center-manifold reductions (the scalar normal form is the
     starting point), degree theory (the global alternatives are hypotheses), certified root tools, and
     PDE theory.'
+  sorry_count: 0
+  axioms:
+  - Classical.choice
+  - Quot.sound
+  - propext
+  evidence:
+    commit: a460cf60cfe88aa90019be59d45a1d0f14ece7e7
+    gate_receipt: .lean-receipts/a460cf60cfe8-slurm-5587784.json
+    comparator_receipt: .lean-receipts/a460cf60cfe8-comparator.json
   main_results:
   - comparator_config: comparator.headline.json
     declaration: ScalarPitchforkHeadline.ScalarPitchfork.pitchfork_branch_curves
@@ -90,166 +99,6 @@ status:
     declaration: ScalarPitchforkHeadline.ScalarPitchfork.Global.selectedComponent_isClosed
     file: ScalarPitchfork/HeadlineSolution.lean
     challenge_file: ScalarPitchfork/HeadlineChallenge.lean
-  - comparator_config: comparator.json
-    declaration: ScalarPitchforkAudit.ScalarPitchfork.pitchfork_branch_curves
-    file: ScalarPitchfork/Solution.lean
-    challenge_file: ScalarPitchfork/Challenge.lean
-  - comparator_config: comparator.json
-    declaration: ScalarPitchforkAudit.ScalarPitchfork.existsUnique_branchRoot_eventually
-    file: ScalarPitchfork/Solution.lean
-    challenge_file: ScalarPitchfork/Challenge.lean
-  - comparator_config: comparator.json
-    declaration: ScalarPitchforkAudit.ScalarPitchfork.exists_branch_eventually
-    file: ScalarPitchfork/Solution.lean
-    challenge_file: ScalarPitchfork/Challenge.lean
-  - comparator_config: comparator.json
-    declaration: ScalarPitchforkAudit.ScalarPitchfork.branch_side_eventually
-    file: ScalarPitchfork/Solution.lean
-    challenge_file: ScalarPitchfork/Challenge.lean
-  - comparator_config: comparator.json
-    declaration: ScalarPitchforkAudit.ScalarPitchfork.small_zero_eq_branch
-    file: ScalarPitchfork/Solution.lean
-    challenge_file: ScalarPitchfork/Challenge.lean
-  - comparator_config: comparator.json
-    declaration: ScalarPitchforkAudit.ScalarPitchfork.deriv_cubicField_at_branch
-    file: ScalarPitchfork/Solution.lean
-    challenge_file: ScalarPitchfork/Challenge.lean
-  - comparator_config: comparator.json
-    declaration: ScalarPitchforkAudit.ScalarPitchfork.abs_sub_sqrt_le_of_cubic_remainder
-    file: ScalarPitchfork/Solution.lean
-    challenge_file: ScalarPitchfork/Challenge.lean
-  - comparator_config: comparator.json
-    declaration: ScalarPitchforkAudit.ScalarPitchfork.remainderBounds_of_jet
-    file: ScalarPitchfork/Solution.lean
-    challenge_file: ScalarPitchfork/Challenge.lean
-  - comparator_config: comparator.json
-    declaration: ScalarPitchforkAudit.ScalarPitchfork.strongBound_iff_axis
-    file: ScalarPitchfork/Solution.lean
-    challenge_file: ScalarPitchfork/Challenge.lean
-  - comparator_config: comparator.json
-    declaration: ScalarPitchforkAudit.ScalarPitchfork.jet_not_sufficient_for_strongBound
-    file: ScalarPitchfork/Solution.lean
-    challenge_file: ScalarPitchfork/Challenge.lean
-  - comparator_config: comparator.json
-    declaration: ScalarPitchforkAudit.ScalarPitchfork.Global.sSup_param_eq_top
-    file: ScalarPitchfork/Solution.lean
-    challenge_file: ScalarPitchfork/Challenge.lean
-  - comparator_config: comparator.json
-    declaration: ScalarPitchforkAudit.ScalarPitchfork.Global.selectedComponent_isClosed
-    file: ScalarPitchfork/Solution.lean
-    challenge_file: ScalarPitchfork/Challenge.lean
-  - comparator_config: comparator.json
-    declaration: ScalarPitchforkAudit.ScalarPitchfork.strongBounds_of_jet
-    file: ScalarPitchfork/Solution.lean
-    challenge_file: ScalarPitchfork/Challenge.lean
-  - comparator_config: comparator.json
-    declaration: ScalarPitchforkAudit.ScalarPitchfork.branch_eventually_of_strongBound
-    file: ScalarPitchfork/Solution.lean
-    challenge_file: ScalarPitchfork/Challenge.lean
-  - comparator_config: comparator.json
-    declaration: ScalarPitchforkAudit.ScalarPitchfork.branch_curves_of_strongBound
-    file: ScalarPitchfork/Solution.lean
-    challenge_file: ScalarPitchfork/Challenge.lean
-  - comparator_config: comparator.json
-    declaration: ScalarPitchforkAudit.ScalarPitchfork.equilibrium_core_of_strongBound
-    file: ScalarPitchfork/Solution.lean
-    challenge_file: ScalarPitchfork/Challenge.lean
-  - comparator_config: comparator.json
-    declaration: ScalarPitchforkAudit.ScalarPitchfork.axis_of_linearization
-    file: ScalarPitchfork/Solution.lean
-    challenge_file: ScalarPitchfork/Challenge.lean
-  - comparator_config: comparator.json
-    declaration: ScalarPitchforkAudit.ScalarPitchfork.perturbed_equilibrium_core
-    file: ScalarPitchfork/Solution.lean
-    challenge_file: ScalarPitchfork/Challenge.lean
-  - comparator_config: comparator.json
-    declaration: ScalarPitchforkAudit.ScalarPitchfork.equilibrium_core
-    file: ScalarPitchfork/Solution.lean
-    challenge_file: ScalarPitchfork/Challenge.lean
-  - comparator_config: comparator.json
-    declaration: ScalarPitchforkAudit.ScalarPitchfork.pitchfork_branch_curves_of_jet
-    file: ScalarPitchfork/Solution.lean
-    challenge_file: ScalarPitchfork/Challenge.lean
-  - comparator_config: comparator.json
-    declaration: ScalarPitchforkAudit.ScalarPitchfork.exists_branch_eventually_of_jet
-    file: ScalarPitchfork/Solution.lean
-    challenge_file: ScalarPitchfork/Challenge.lean
-  - comparator_config: comparator.json
-    declaration: ScalarPitchforkAudit.ScalarPitchfork.deriv_zero_of_sq_bound
-    file: ScalarPitchfork/Solution.lean
-    challenge_file: ScalarPitchfork/Challenge.lean
-  - comparator_config: comparator.json
-    declaration: ScalarPitchforkAudit.ScalarPitchfork.nonzero_equilibrium_eq_branch
-    file: ScalarPitchfork/Solution.lean
-    challenge_file: ScalarPitchfork/Challenge.lean
-  - comparator_config: comparator.json
-    declaration: ScalarPitchforkAudit.ScalarPitchfork.exists_pos_equilibrium
-    file: ScalarPitchfork/Solution.lean
-    challenge_file: ScalarPitchfork/Challenge.lean
-  - comparator_config: comparator.json
-    declaration: ScalarPitchforkAudit.ScalarPitchfork.Global.global_unbounded_of_monotone
-    file: ScalarPitchfork/Solution.lean
-    challenge_file: ScalarPitchfork/Challenge.lean
-  - comparator_config: comparator.json
-    declaration: ScalarPitchforkAudit.ScalarPitchfork.Global.not_altComplement
-    file: ScalarPitchfork/Solution.lean
-    challenge_file: ScalarPitchfork/Challenge.lean
-  - comparator_config: comparator.json
-    declaration: ScalarPitchforkAudit.ScalarPitchfork.Global.not_altOtherTrivial
-    file: ScalarPitchfork/Solution.lean
-    challenge_file: ScalarPitchfork/Challenge.lean
-  - comparator_config: comparator.json
-    declaration: ScalarPitchforkAudit.ScalarPitchfork.Global.not_isCompact_of_alternatives
-    file: ScalarPitchfork/Solution.lean
-    challenge_file: ScalarPitchfork/Challenge.lean
-  - comparator_config: comparator.json
-    declaration: ScalarPitchforkAudit.ScalarPitchfork.Global.isCompact_slice
-    file: ScalarPitchfork/Solution.lean
-    challenge_file: ScalarPitchfork/Challenge.lean
-  - comparator_config: comparator.json
-    declaration: ScalarPitchforkAudit.ScalarPitchfork.Global.subset_of_relClopen
-    file: ScalarPitchfork/Solution.lean
-    challenge_file: ScalarPitchfork/Challenge.lean
-  - comparator_config: comparator.json
-    declaration: ScalarPitchforkAudit.ScalarPitchfork.Global.strictAntiOn_of_relClopen
-    file: ScalarPitchfork/Solution.lean
-    challenge_file: ScalarPitchfork/Challenge.lean
-  - comparator_config: comparator.json
-    declaration: ScalarPitchforkAudit.ScalarPitchfork.Global.isClosed_connectedComponentIn_of_isClosed
-    file: ScalarPitchfork/Solution.lean
-    challenge_file: ScalarPitchfork/Challenge.lean
-  - comparator_config: comparator.json
-    declaration: ScalarPitchforkAudit.ScalarPitchfork.Global.isClosed_sdiff_of_isOpen_preimage
-    file: ScalarPitchfork/Solution.lean
-    challenge_file: ScalarPitchfork/Challenge.lean
-  - comparator_config: comparator.json
-    declaration: ScalarPitchforkAudit.ScalarPitchfork.Global.parentComponent_isClosed
-    file: ScalarPitchfork/Solution.lean
-    challenge_file: ScalarPitchfork/Challenge.lean
-  - comparator_config: comparator.json
-    declaration: ScalarPitchforkAudit.ScalarPitchfork.Global.unilateralRemainder_isClosed
-    file: ScalarPitchfork/Solution.lean
-    challenge_file: ScalarPitchfork/Challenge.lean
-  - comparator_config: comparator.json
-    declaration: ScalarPitchforkAudit.ScalarPitchfork.Global.retainedWithBase_subset_parentComponent
-    file: ScalarPitchfork/Solution.lean
-    challenge_file: ScalarPitchfork/Challenge.lean
-  - comparator_config: comparator.json
-    declaration: ScalarPitchforkAudit.ScalarPitchfork.Global.retainedWithBase_subset_unilateralRemainder
-    file: ScalarPitchfork/Solution.lean
-    challenge_file: ScalarPitchfork/Challenge.lean
-  - comparator_config: comparator.json
-    declaration: ScalarPitchforkAudit.ScalarPitchfork.Global.retainedWithBase_subset_selectedComponent
-    file: ScalarPitchfork/Solution.lean
-    challenge_file: ScalarPitchfork/Challenge.lean
-  - comparator_config: comparator.json
-    declaration: ScalarPitchforkAudit.ScalarPitchfork.Global.base_mem_selectedComponent
-    file: ScalarPitchfork/Solution.lean
-    challenge_file: ScalarPitchfork/Challenge.lean
-  - comparator_config: comparator.json
-    declaration: ScalarPitchforkAudit.ScalarPitchfork.Global.selectedComponent_subset_solutionClosure
-    file: ScalarPitchfork/Solution.lean
-    challenge_file: ScalarPitchfork/Challenge.lean
 automation:
   methods:
   - method: agent

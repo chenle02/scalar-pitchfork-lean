@@ -76,3 +76,8 @@ rows:
       - scalar-pitchfork-lean/global-selected-component-is-closed
     statement: |-
       Let $X$ be a topological space, $S\subseteq X$ closed, $b\in S$, and $K$ the connected component of $b$ in $S$. Let $A\subseteq X$ with $A\cap K$ open in the subspace $K$, and let $s\in K\setminus A$. Then the connected component of $s$ in $K\setminus A$ is closed in $X$.
+compute:
+- cluster: easley
+  jobs:
+  - slurm-5587784
+  - slurm-5587785
