@@ -7,6 +7,7 @@ The scalar pitchfork $`f(\tau,z)=\alpha\tau z-\beta z^3+R(\tau,z)`$ with a remai
 [![Lean](https://img.shields.io/badge/Lean-v4.35.0-153e63)](lean-toolchain)
 [![Mathlib](https://img.shields.io/badge/Mathlib-v4.35.0-153e63)](https://github.com/leanprover-community/mathlib4/tree/56a005855ea17e0b0958f73ec801ae140b0a1679)
 [![Version](https://img.shields.io/badge/version-0.1.0-153e63)](CITATION.cff)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23498687.svg)](https://doi.org/10.5281/zenodo.23498687)
 [![License](https://img.shields.io/badge/license-Apache--2.0-153e63)](LICENSE)
 
 [What is proved](#what-is-proved) · [Verification page](docs/verification.md) · [Build](#build-and-verify) · [Cite](CITATION.cff)
@@ -1132,7 +1133,7 @@ Expected: `#print axioms` on any declaration above reports a subset of {`Classic
 
 ## Citation
 
-Le Chen. *ScalarPitchfork: scalar pitchfork bifurcation with a jet-bounded remainder and the topology of global branches in Lean 4*. Version 0.1.0.
+Le Chen. *ScalarPitchfork: scalar pitchfork bifurcation with a jet-bounded remainder and the topology of global branches in Lean 4*. Version 0.1.0. [doi:10.5281/zenodo.23498687](https://doi.org/10.5281/zenodo.23498687).
 
 See [CITATION.cff](CITATION.cff).
 

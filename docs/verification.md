@@ -882,7 +882,7 @@ Expected: `#print axioms` on any declaration above reports a subset of {`Classic
 
 ## Citation
 
-Le Chen. *ScalarPitchfork: scalar pitchfork bifurcation with a jet-bounded remainder and the topology of global branches in Lean 4*. Version 0.1.0.
+Le Chen. *ScalarPitchfork: scalar pitchfork bifurcation with a jet-bounded remainder and the topology of global branches in Lean 4*. Version 0.1.0. [doi:10.5281/zenodo.23498687](https://doi.org/10.5281/zenodo.23498687).
 
 See [CITATION.cff](https://github.com/chenle02/scalar-pitchfork-lean/blob/HEAD/CITATION.cff).
 

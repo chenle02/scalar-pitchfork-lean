@@ -8,6 +8,15 @@ authors:
   affiliation: Auburn University
 license: Apache-2.0
 version: 0.1.0
+date-released: '2026-10-20'
+doi: 10.5281/zenodo.23498687
+identifiers:
+- type: doi
+  value: 10.5281/zenodo.23498687
+  description: Concept DOI (all versions; resolves to the latest release)
+- type: doi
+  value: 10.5281/zenodo.23498688
+  description: Version DOI for v0.1.0
 repository-code: https://github.com/chenle02/scalar-pitchfork-lean
 abstract: >-
   Lean 4 library on the scalar pitchfork normal form f(tau, z) = alpha tau z - beta z^3 + R(tau, z)
