@@ -1,0 +1,17 @@
+import ScalarPitchfork
+
+/-! Negative control `NegSupWithoutNonCompact`: mutation of `ScalarPitchfork.Global.sSup_param_eq_top`.
+The non-compactness hypothesis `¬ IsCompact C` is replaced by `C.Nonempty`. A single
+point `C = {(0, x)}` (with `S = V = C`) satisfies every hypothesis, yet its parameter
+supremum is `0`, not `⊤`: the statement is false.
+Must not compile. -/
+
+theorem ScalarPitchforkTest.negSupWithoutNonCompact {E : Type*} [TopologicalSpace E] {C S V : Set (ℝ × E)}
+    (hRelClosed : IsClosed (((↑) : V → ℝ × E) ⁻¹' C)) (hCV : C ⊆ V)
+    (hCS : C ⊆ closure S) (hAdmissible : closure S ⊆ V)
+    (hPrecompact : ∀ Xbar : ℝ, IsCompact (closure (S ∩ {p | p.1 ≤ Xbar})))
+    (hNC : C.Nonempty) :
+    (∀ M : ℝ, ∃ p ∈ C, M < p.1) ∧
+      sSup ((fun p : ℝ × E => (p.1 : EReal)) '' C) = ⊤ := by
+  exact ScalarPitchfork.Global.sSup_param_eq_top hRelClosed hCV hCS hAdmissible
+    hPrecompact hNC

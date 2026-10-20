@@ -1,0 +1,24 @@
+ScalarPitchfork (scalar-pitchfork-lean)
+Copyright 2026 Le Chen
+
+Licensed under the Apache License, Version 2.0. See LICENSE.
+
+Provenance. This library was first developed for the Lean companion of
+L. Chen, I. Ruau and W. Shen, "Chemotaxis models with signal-dependent
+sensitivity and a logistic-type source, III: Bifurcation and spike-like
+solutions", arXiv:2610.20976. Only the general mathematics is kept here;
+nothing in the library depends on the paper.
+
+Dependencies. This library depends on Lean 4 (https://github.com/leanprover/lean4)
+and Mathlib (https://github.com/leanprover-community/mathlib4), and through
+Mathlib on Batteries, Aesop, Qq (quote4), Plausible, ProofWidgets4,
+LeanSearchClient, import-graph and lean4-cli. They are distributed separately
+under their own licenses. No upstream source is copied into this repository,
+and no authorship of upstream material is claimed.
+
+Related work. The README lists related formalizations by others. No code from
+them is used here.
+
+AI assistance. The Lean code was developed with AI assistance under the
+author's direction. Every proof is checked by the Lean kernel. The README names
+the additional verification tools and the statements they cover.

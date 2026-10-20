@@ -1,0 +1,29 @@
+import ScalarPitchfork
+
+/-! Negative control `NegAmplitudeQuadraticRate`: mutation of `ScalarPitchfork.exists_branch_eventually`.
+The amplitude error bound `K * |tau|` is sharpened to `K * tau ^ 2`. The true error is of
+order `|tau|` (the `z ^ 4` term of `R` shifts `z ^ 2` by order `|z| ^ 3 ~ |tau| ^ (3/2)`, so
+`|z| - sqrt(alpha tau / beta)` is of order `|tau|`); a quadratic rate is false. (Dropping the
+`|tau|` factor altogether only weakens the bound, so the falsifying mutation is a faster rate.)
+Must not compile. -/
+
+open Filter
+open scoped Topology
+
+theorem ScalarPitchforkTest.negAmplitudeQuadraticRate (alpha beta C r : ℝ) (R Rs : ℝ → ℝ → ℝ)
+    (halpha : 0 < alpha) (hbeta : beta ≠ 0) (hC : 0 ≤ C)
+    (hr : 0 < r) (hr1 : r ≤ 1)
+    (hRval : ∀ e z, |e| ≤ r → |z| ≤ r →
+      |R e z| ≤ C * (|z| * e ^ 2 + |z| ^ 3 * |e| + z ^ 4))
+    (hRder : ∀ e z, |e| ≤ r → |z| ≤ r → HasDerivAt (R e) (Rs e z) z)
+    (hRs : ∀ e z, |e| ≤ r → |z| ≤ r →
+      |Rs e z| ≤ C * (e ^ 2 + z ^ 2 * |e| + |z| ^ 3)) :
+    ∀ᶠ tau in 𝓝 (0 : ℝ), 0 < tau * beta →
+      ∀ sgn : ℝ, (sgn = 1 ∨ sgn = -1) → ∃ z, 0 < sgn * z ∧
+        alpha * tau * z - beta * z ^ 3 + R tau z = 0 ∧
+        |(|z| - Real.sqrt (alpha * tau / beta))| ≤
+          (2 * alpha * (C * (2 * (|beta| + 2 * C) / alpha + 1)) *
+              (3 * |beta| / (2 * alpha) + 1) / |beta| ^ 2) * tau ^ 2 ∧
+        deriv (fun z => alpha * tau * z - beta * z ^ 3 + R tau z) z * beta < 0 := by
+  exact ScalarPitchfork.exists_branch_eventually alpha beta C r R Rs halpha hbeta hC hr
+    hr1 hRval hRder hRs

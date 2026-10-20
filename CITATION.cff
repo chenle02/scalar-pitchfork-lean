@@ -1,0 +1,54 @@
+cff-version: 1.2.0
+message: If you use this software, please cite it as below, and record the exact commit you used.
+title: 'ScalarPitchfork: scalar pitchfork bifurcation with a jet-bounded remainder and the topology of global branches in Lean 4'
+type: software
+authors:
+- family-names: Chen
+  given-names: Le
+  affiliation: Auburn University
+license: Apache-2.0
+version: 0.1.0
+repository-code: https://github.com/chenle02/scalar-pitchfork-lean
+abstract: >-
+  Lean 4 library on the scalar pitchfork normal form f(tau, z) = alpha tau z - beta z^3 + R(tau, z)
+  with a remainder bounded by explicit weights. It proves that for small parameters on the side
+  tau beta > 0 there are exactly two small nontrivial zeros, one of each sign, given by branch
+  functions continuous in the parameter, with amplitude sqrt(alpha tau / beta) up to an explicit
+  O(|tau|) error and with the stability sign of beta, and that there are none on the other side. The
+  remainder bounds follow from C^4 smoothness, vanishing on the axis and five vanishing jets at the
+  origin; a stronger bound holds if and only if an axis condition holds, and the jets alone do not
+  imply it. The global part proves the topological skeleton of global bifurcation alternatives, with
+  the alternatives as hypotheses: a non-compact component has unbounded parameter, and the one-sided
+  component is closed.
+keywords:
+- Lean 4
+- Mathlib
+- formalization
+- bifurcation theory
+- pitchfork bifurcation
+- normal form
+- global bifurcation
+- connected components
+references:
+- type: conference-paper
+  title: The Lean Mathematical Library
+  authors:
+  - name: The mathlib Community
+  collection-title: 'Proceedings of the 9th ACM SIGPLAN International Conference on Certified Programs and Proofs (CPP 2020)'
+  year: 2020
+  doi: 10.1145/3372885.3373824
+  repository-code: https://github.com/leanprover-community/mathlib4
+- type: article
+  title: 'Chemotaxis models with signal-dependent sensitivity and a logistic-type source, III: Bifurcation and spike-like solutions'
+  authors:
+  - family-names: Chen
+    given-names: Le
+  - family-names: Ruau
+    given-names: Ian
+  - family-names: Shen
+    given-names: Wenxian
+  year: 2026
+  identifiers:
+  - type: other
+    value: arXiv:2610.20976
+  url: https://arxiv.org/abs/2610.20976

@@ -1,0 +1,11 @@
+name = "scalar-pitchfork-lean"
+defaultTargets = ["ScalarPitchfork"]
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.35.0"
+
+[[lean_lib]]
+name = "ScalarPitchfork"
+globs = ["ScalarPitchfork", "ScalarPitchfork.+"]

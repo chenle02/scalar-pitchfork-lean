@@ -1,0 +1,41 @@
+import ScalarPitchfork
+
+/-! Negative control `NegOppositeSignZeros`: mutation of `ScalarPitchfork.small_zero_eq_branch`.
+Uniqueness is claimed for zeros of OPPOSITE sign (`z₁ * z₂ < 0`) instead of the same sign.
+When `tau * beta > 0` both branch values `b(1, tau) > 0 > b(-1, tau)` are small zeros and are
+distinct, so the statement is false. The headline proof skeleton is reused verbatim; it
+breaks at the mixed-branch cases (`nlinarith`).
+Must not compile. -/
+
+open Filter
+open scoped Topology
+
+theorem ScalarPitchforkTest.negOppositeSignZeros (alpha beta C r : ℝ) (R Rs : ℝ → ℝ → ℝ)
+    (halpha : 0 < alpha) (hbeta : beta ≠ 0) (hC : 0 ≤ C)
+    (hr : 0 < r) (hr1 : r ≤ 1)
+    (hRval : ∀ e z, |e| ≤ r → |z| ≤ r →
+      |R e z| ≤ C * (|z| * e ^ 2 + |z| ^ 3 * |e| + z ^ 4))
+    (hRder : ∀ e z, |e| ≤ r → |z| ≤ r → HasDerivAt (R e) (Rs e z) z)
+    (hRs : ∀ e z, |e| ≤ r → |z| ≤ r →
+      |Rs e z| ≤ C * (e ^ 2 + z ^ 2 * |e| + |z| ^ 3)) :
+    ∃ ρ > 0, ∀ᶠ tau in 𝓝 (0 : ℝ), ∀ z₁ z₂ : ℝ, z₁ * z₂ < 0 → |z₁| ≤ ρ → |z₂| ≤ ρ →
+      alpha * tau * z₁ - beta * z₁ ^ 3 + R tau z₁ = 0 →
+      alpha * tau * z₂ - beta * z₂ ^ 3 + R tau z₂ = 0 → z₁ = z₂ := by
+  refine ⟨ScalarPitchfork.branchRadius alpha beta C r,
+    ScalarPitchfork.branchRadius_pos alpha beta C r halpha hbeta hC hr, ?_⟩
+  filter_upwards [ScalarPitchfork.branchNhd_mem_nhds alpha beta C r halpha hbeta hC hr]
+    with tau hsmall
+  intro z₁ z₂ hprod h₁ h₂ hr₁ hr₂
+  have hz₁ : z₁ ≠ 0 := by rintro rfl; simp at hprod
+  have hz₂ : z₂ ≠ 0 := by rintro rfl; simp at hprod
+  obtain ⟨hside, hb₁⟩ := ScalarPitchfork.small_zero_eq_branch alpha beta C r tau z₁ R Rs
+    halpha hbeta hC hr hr1 hRval hRder hRs hsmall hz₁ h₁ hr₁
+  obtain ⟨-, hb₂⟩ := ScalarPitchfork.small_zero_eq_branch alpha beta C r tau z₂ R Rs
+    halpha hbeta hC hr hr1 hRval hRder hRs hsmall hz₂ h₂ hr₂
+  have hp := (ScalarPitchfork.branch_spec alpha beta C r tau R Rs halpha hbeta hC hr hr1
+    hRval hRder hRs hsmall hside 1 (Or.inl rfl)).1.1
+  have hn := (ScalarPitchfork.branch_spec alpha beta C r tau R Rs halpha hbeta hC hr hr1
+    hRval hRder hRs hsmall hside (-1) (Or.inr rfl)).1.1
+  rcases hb₁ with e₁ | e₁ <;> rcases hb₂ with e₂ | e₂ <;> rw [e₁, e₂] at hprod ⊢
+  · nlinarith
+  · nlinarith

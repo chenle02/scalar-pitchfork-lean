@@ -1,0 +1,78 @@
+schema: coverage/1
+package: scalar-pitchfork-lean
+kind: library
+summary: "The scalar pitchfork f(tau, z) = alpha tau z - beta z^3 + R(tau, z) with a jet-bounded remainder: two continuous branches with square-root amplitude, O(|tau|) amplitude error and the stability sign, classification of small zeros, remainder bounds from jets and their limits, and the topology of global branches."
+rows:
+  - title: The two pitchfork branches
+    claims:
+      - scalar-pitchfork-lean/pitchfork-branch-curves
+    statement: |-
+      Let $\alpha>0$, $\beta\ne0$, $C\ge0$, $0<r\le1$ and $f(\tau,z)=\alpha\tau z-\beta z^3+R(\tau,z)$. Assume that for $|\tau|,|z|\le r$,
+      \[|R(\tau,z)|\le C\big(|z|\tau^2+|z|^3|\tau|+z^4\big),\qquad \partial_zR(\tau,z)=R_z(\tau,z),\qquad |R_z(\tau,z)|\le C\big(\tau^2+z^2|\tau|+|z|^3\big),\]
+      and that $\tau\mapsto R(\tau,z)$ is continuous at every $|\tau|<r$, $|z|\le r$. Then there are $\rho>0$, an open neighbourhood $N$ of $0$, $K\in\mathbb R$ and, for $\sigma\in\{1,-1\}$, functions $b_\sigma$ continuous on $N$ with $b_\sigma(0)=0$ and $b_\sigma(\tau)=0$ for $\tau\in N$ with $\tau\beta\le0$, such that for every $\tau\in N$ with $\tau\beta>0$: $f(\tau,\cdot)$ has exactly one zero $z$ with $\sigma z>0$ and $|z|\le\rho$; $z=b_\sigma(\tau)$ is that zero; $\big||b_\sigma(\tau)|-\sqrt{\alpha\tau/\beta}\big|\le K|\tau|$; and $\partial_zf(\tau,b_\sigma(\tau))\,\beta<0$. Moreover every $\tau\in N$ and $z\ne0$ with $|z|\le\rho$ and $f(\tau,z)=0$ satisfy $\tau\beta>0$ and $z\in\{b_1(\tau),b_{-1}(\tau)\}$.
+  - title: One signed zero at a fixed radius
+    claims:
+      - scalar-pitchfork-lean/exists-unique-branch-root-eventually
+    statement: |-
+      Let $\alpha>0$, $\beta\ne0$, $C\ge0$, $0<r\le1$, $f(\tau,z)=\alpha\tau z-\beta z^3+R(\tau,z)$, and let $R$ satisfy, for $|\tau|,|z|\le r$, $|R(\tau,z)|\le C(|z|\tau^2+|z|^3|\tau|+z^4)$, $\partial_zR(\tau,z)=R_z(\tau,z)$ and $|R_z(\tau,z)|\le C(\tau^2+z^2|\tau|+|z|^3)$. Then there is $\rho>0$ such that for all $\tau$ in a neighbourhood of $0$ with $\tau\beta>0$ and each $\sigma\in\{1,-1\}$,
+      \[\exists!\,z:\quad \sigma z>0,\quad |z|\le\rho,\quad f(\tau,z)=0.\]
+  - title: Existence of both branches with explicit amplitude constant and stability sign
+    claims:
+      - scalar-pitchfork-lean/exists-branch-eventually
+    statement: |-
+      Under the hypotheses of the previous row, for all $\tau$ in a neighbourhood of $0$ with $\tau\beta>0$ and each $\sigma\in\{1,-1\}$ there is $z$ with $\sigma z>0$, $f(\tau,z)=0$, $\partial_zf(\tau,z)\,\beta<0$ and
+      \[\Big||z|-\sqrt{\alpha\tau/\beta}\Big|\le K|\tau|,\qquad K=\frac{2\alpha A\big(\frac{3|\beta|}{2\alpha}+1\big)}{|\beta|^2},\quad A=C\Big(\frac{2(|\beta|+2C)}{\alpha}+1\Big).\]
+  - title: Side and stability of every small nontrivial zero
+    claims:
+      - scalar-pitchfork-lean/branch-side-eventually
+    statement: |-
+      Under the hypotheses of the second row, for all $(\tau,z)$ in a neighbourhood of $(0,0)$,
+      \[z\ne0,\ f(\tau,z)=0\ \Longrightarrow\ \tau\beta>0\ \text{ and }\ \partial_zf(\tau,z)\,\beta<0.\]
+  - title: At most one small zero of each sign
+    claims:
+      - scalar-pitchfork-lean/small-zero-eq-branch
+    statement: |-
+      Under the hypotheses of the second row there is $\rho>0$ such that for all $\tau$ in a neighbourhood of $0$ and all $z_1,z_2\in\mathbb R$,
+      \[z_1z_2>0,\ |z_1|\le\rho,\ |z_2|\le\rho,\ f(\tau,z_1)=f(\tau,z_2)=0\ \Longrightarrow\ z_1=z_2.\]
+  - title: Exchange of stability on the exact cubic
+    claims:
+      - scalar-pitchfork-lean/deriv-cubic-field-at-branch
+    statement: |-
+      Let $\alpha,\beta,\tau,A\in\mathbb R$ with $\beta\ne0$, $A\ne0$ and $\alpha\tau A-\beta A^3=0$. Then
+      \[\frac{d}{dA'}\Big(\alpha\tau A'-\beta A'^3\Big)\Big|_{A'=A}=-2\alpha\tau.\]
+  - title: Square-root amplitude error
+    claims:
+      - scalar-pitchfork-lean/abs-sub-sqrt-le-of-cubic-remainder
+    statement: |-
+      Let $\alpha,\beta,\tau,z,e,C\in\mathbb R$ with $\beta\ne0$, $z\ne0$, $\alpha\tau-\beta z^2+e=0$, $\alpha\tau/\beta\ge0$ and $|e|\le C|z|^3$. Then
+      \[\Big||z|-\sqrt{\alpha\tau/\beta}\Big|\le\frac{Cz^2}{|\beta|}.\]
+  - title: Remainder bounds from jets at the origin
+    claims:
+      - scalar-pitchfork-lean/remainder-bounds-of-jet
+    statement: |-
+      Let $0<r\le1$ and let $R:\mathbb R^2\to\mathbb R$ be $C^4$ on an open set $U$ containing the box $\{|\tau|,|z|\le r\}$. Assume $R(\tau,0)=0$ for $|\tau|\le r$ and
+      \[\partial_zR=\partial_\tau\partial_zR=\partial_z^2R=\partial_\tau\partial_z^2R=\partial_z^3R=0\quad\text{at }(0,0).\]
+      Then there is $C\ge0$ such that for $|\tau|,|z|\le r$: $|R(\tau,z)|\le C(|z|\tau^2+|z|^3|\tau|+z^4)$, $R(\tau,\cdot)$ has derivative $\partial_zR(\tau,z)$ at $z$, and $|\partial_zR(\tau,z)|\le C(\tau^2+z^2|\tau|+|z|^3)$; and $\tau\mapsto R(\tau,z)$ is continuous at every $|\tau|<r$, $|z|\le r$.
+  - title: The stronger remainder bound holds iff the axis condition holds
+    claims:
+      - scalar-pitchfork-lean/strong-bound-iff-axis
+    statement: |-
+      Under the hypotheses of the previous row,
+      \[\Big(\exists C\ \forall\,|\tau|,|z|\le r:\ |R(\tau,z)|\le C\big(z^2\tau^2+|z|^3|\tau|+z^4\big)\Big)\iff \partial_zR(\tau,0)=0\ \text{ for all }|\tau|\le r.\]
+  - title: The jets at the origin do not give the stronger bound
+    claims:
+      - scalar-pitchfork-lean/jet-not-sufficient-for-strong-bound
+    statement: |-
+      It is not true that every $R$, $U$, $r$ satisfying the hypotheses of the row "Remainder bounds from jets at the origin" admit a constant $C$ with
+      \[|R(\tau,z)|\le C\big(z^2\tau^2+|z|^3|\tau|+z^4\big)\quad\text{for all }|\tau|,|z|\le r.\]
+  - title: A non-compact component has unbounded parameter
+    claims:
+      - scalar-pitchfork-lean/global-s-sup-param-eq-top
+    statement: |-
+      Let $E$ be a topological space and $C,S,V\subseteq\mathbb R\times E$ with $C\subseteq V$, $C$ closed in the subspace $V$, $C\subseteq\overline S\subseteq V$, and $\overline{S\cap\{(\lambda,u):\lambda\le X\}}$ compact for every $X\in\mathbb R$. If $C$ is not compact, then
+      \[\forall M\in\mathbb R\ \exists(\lambda,u)\in C:\ \lambda>M,\qquad \sup\{\lambda:(\lambda,u)\in C\}=+\infty\ \text{ in }\overline{\mathbb R}.\]
+  - title: The one-sided component is closed
+    claims:
+      - scalar-pitchfork-lean/global-selected-component-is-closed
+    statement: |-
+      Let $X$ be a topological space, $S\subseteq X$ closed, $b\in S$, and $K$ the connected component of $b$ in $S$. Let $A\subseteq X$ with $A\cap K$ open in the subspace $K$, and let $s\in K\setminus A$. Then the connected component of $s$ in $K\setminus A$ is closed in $X$.

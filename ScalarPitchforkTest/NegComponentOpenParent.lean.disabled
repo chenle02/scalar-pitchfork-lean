@@ -1,0 +1,19 @@
+import ScalarPitchfork
+
+/-! Negative control `NegComponentOpenParent`: mutation of `ScalarPitchfork.Global.selectedComponent_isClosed`.
+Closedness of `solutionClosure` is replaced by openness. For `solutionClosure = (0, 1)` in
+`ℝ` and `removedArc = ∅`, the selected component is `(0, 1)`, which is not closed in `ℝ`:
+the statement is false.
+Must not compile. -/
+
+theorem ScalarPitchforkTest.negComponentOpenParent {X : Type*} [TopologicalSpace X]
+    {solutionClosure removedArc : Set X} {base selector : X}
+    (hSolutionClosed : IsOpen solutionClosure) (hBase : base ∈ solutionClosure)
+    (hRemovedRelOpen :
+      IsOpen (((↑) : connectedComponentIn solutionClosure base → X) ⁻¹' removedArc))
+    (hSelectorInRemainder :
+      selector ∈ connectedComponentIn solutionClosure base \ removedArc) :
+    IsClosed (connectedComponentIn
+      (connectedComponentIn solutionClosure base \ removedArc) selector) := by
+  exact ScalarPitchfork.Global.selectedComponent_isClosed hSolutionClosed hBase
+    hRemovedRelOpen hSelectorInRemainder

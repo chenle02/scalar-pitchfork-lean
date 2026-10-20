@@ -1,0 +1,29 @@
+import ScalarPitchfork
+
+/-! Negative control `NegBranchWrongSide`: mutation of `ScalarPitchfork.exists_branch_eventually`.
+The side condition is flipped: `tau * beta < 0` instead of `0 < tau * beta`. On the wrong
+side of the bifurcation every small zero is trivial (`branch_side_eventually`: a zero
+`z ≠ 0` forces `0 < tau * beta`), so for `R = 0` no `z` with `0 < sgn * z` exists and the
+statement is false.
+Must not compile. -/
+
+open Filter
+open scoped Topology
+
+theorem ScalarPitchforkTest.negBranchWrongSide (alpha beta C r : ℝ) (R Rs : ℝ → ℝ → ℝ)
+    (halpha : 0 < alpha) (hbeta : beta ≠ 0) (hC : 0 ≤ C)
+    (hr : 0 < r) (hr1 : r ≤ 1)
+    (hRval : ∀ e z, |e| ≤ r → |z| ≤ r →
+      |R e z| ≤ C * (|z| * e ^ 2 + |z| ^ 3 * |e| + z ^ 4))
+    (hRder : ∀ e z, |e| ≤ r → |z| ≤ r → HasDerivAt (R e) (Rs e z) z)
+    (hRs : ∀ e z, |e| ≤ r → |z| ≤ r →
+      |Rs e z| ≤ C * (e ^ 2 + z ^ 2 * |e| + |z| ^ 3)) :
+    ∀ᶠ tau in 𝓝 (0 : ℝ), tau * beta < 0 →
+      ∀ sgn : ℝ, (sgn = 1 ∨ sgn = -1) → ∃ z, 0 < sgn * z ∧
+        alpha * tau * z - beta * z ^ 3 + R tau z = 0 ∧
+        |(|z| - Real.sqrt (alpha * tau / beta))| ≤
+          (2 * alpha * (C * (2 * (|beta| + 2 * C) / alpha + 1)) *
+              (3 * |beta| / (2 * alpha) + 1) / |beta| ^ 2) * |tau| ∧
+        deriv (fun z => alpha * tau * z - beta * z ^ 3 + R tau z) z * beta < 0 := by
+  exact ScalarPitchfork.exists_branch_eventually alpha beta C r R Rs halpha hbeta hC hr
+    hr1 hRval hRder hRs

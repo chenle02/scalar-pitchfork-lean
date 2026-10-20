@@ -1,0 +1,41 @@
+# ScalarPitchfork (scalar-pitchfork-lean) — version 0.1.0
+
+Scalar pitchfork bifurcation with a jet-bounded remainder and the topology of global branches, in Lean 4 with Mathlib.
+Lean v4.35.0, Mathlib v4.35.0. Namespace ScalarPitchfork. Apache-2.0. Author Le Chen.
+Repository: https://github.com/chenle02/scalar-pitchfork-lean
+
+The Lean declaration decides every hypothesis. Prose is not checked by Lean.
+A receipt under .lean-receipts/ covers only the commit it names.
+
+Setting: f(τ, z) = α τ z - β z³ + R(τ, z), α > 0, β ≠ 0, C ≥ 0, 0 < r ≤ 1. Remainder bounds on |τ|, |z| ≤ r:
+|R| ≤ C(|z|τ² + |z|³|τ| + z⁴), ∂_z R = R_z exists, |R_z| ≤ C(τ² + z²|τ| + |z|³).
+
+Headline declarations:
+- ScalarPitchfork.pitchfork_branch_curves: two branches b_±, continuous near τ = 0, unique signed small zeros for τβ > 0, amplitude √(ατ/β) + O(|τ|), β ∂_z f < 0, and no other small nonzero zeros (needs R continuous in τ).
+- ScalarPitchfork.existsUnique_branchRoot_eventually: exactly one zero of each sign with |z| ≤ ρ, for small τ with τβ > 0.
+- ScalarPitchfork.exists_branch_eventually: existence of both signed zeros with an explicit amplitude constant and β ∂_z f < 0.
+- ScalarPitchfork.branch_side_eventually: every small zero with z ≠ 0 has τβ > 0 and β ∂_z f < 0.
+- ScalarPitchfork.small_zero_eq_branch: two small zeros of the same sign are equal, for small τ.
+- ScalarPitchfork.deriv_cubicField_at_branch: d/dA(ατA - βA³) = -2ατ at a nonzero zero (β ≠ 0).
+- ScalarPitchfork.abs_sub_sqrt_le_of_cubic_remainder: ||z| - √(ατ/β)| ≤ C z²/|β| when ατ - βz² + e = 0 and |e| ≤ C|z|³.
+- ScalarPitchfork.remainderBounds_of_jet: C⁴, R(τ, 0) = 0 and five vanishing jets at the origin give the remainder bounds.
+- ScalarPitchfork.strongBound_iff_axis: the stronger bound C(z²τ² + |z|³|τ| + z⁴) holds iff ∂_z R(τ, 0) = 0 on the box.
+- ScalarPitchfork.jet_not_sufficient_for_strongBound: the jets alone do not give the stronger bound (R = τ² z).
+- ScalarPitchfork.Global.sSup_param_eq_top: a non-compact, relatively closed C ⊆ closure S ⊆ V with precompact bounded-parameter slices has sup of parameters = ⊤.
+- ScalarPitchfork.Global.selectedComponent_isClosed: the component of the one-sided remainder of a closed solution set is closed.
+
+Not proved:
+- No Crandall–Rabinowitz theorem, no center-manifold reduction; the scalar normal form is the starting point.
+- No Lyapunov–Schmidt reduction.
+- No degree theory (no Leray–Schauder degree, no Rabinowitz global alternative); the global alternatives are hypotheses.
+- No certified-root tools; no PDE.
+
+Required context:
+- [README](README.md)
+- [Agent contract](AGENTS.md)
+- [Verification page: each Lean statement and its receipts](docs/verification.md) (generated)
+- [Trust and axioms](README.md#trust-and-axioms)
+- [Claims](claims.yaml)
+- [Contributing](CONTRIBUTING.md)
+
+Build: lake exe cache get && lake build. Keep lean-toolchain and lake-manifest.json unchanged; never run lake update in a verification run.

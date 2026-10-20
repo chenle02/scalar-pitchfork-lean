@@ -1,0 +1,21 @@
+{
+  "challenge_module": "ScalarPitchfork.HeadlineChallenge",
+  "solution_module": "ScalarPitchfork.HeadlineSolution",
+  "theorem_names": [
+    "ScalarPitchforkHeadline.ScalarPitchfork.pitchfork_branch_curves",
+    "ScalarPitchforkHeadline.ScalarPitchfork.existsUnique_branchRoot_eventually",
+    "ScalarPitchforkHeadline.ScalarPitchfork.exists_branch_eventually",
+    "ScalarPitchforkHeadline.ScalarPitchfork.branch_side_eventually",
+    "ScalarPitchforkHeadline.ScalarPitchfork.small_zero_eq_branch",
+    "ScalarPitchforkHeadline.ScalarPitchfork.deriv_cubicField_at_branch",
+    "ScalarPitchforkHeadline.ScalarPitchfork.abs_sub_sqrt_le_of_cubic_remainder",
+    "ScalarPitchforkHeadline.ScalarPitchfork.remainderBounds_of_jet",
+    "ScalarPitchforkHeadline.ScalarPitchfork.strongBound_iff_axis",
+    "ScalarPitchforkHeadline.ScalarPitchfork.jet_not_sufficient_for_strongBound",
+    "ScalarPitchforkHeadline.ScalarPitchfork.Global.sSup_param_eq_top",
+    "ScalarPitchforkHeadline.ScalarPitchfork.Global.selectedComponent_isClosed"
+  ],
+  "definition_names": [],
+  "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"],
+  "enable_nanoda": true
+}

@@ -1,0 +1,13 @@
+import ScalarPitchfork
+
+/-! Negative control `NegDerivWrongSign`: mutation of `ScalarPitchfork.deriv_cubicField_at_branch`.
+Exchange of stability with the wrong sign: `2 * alpha * tau` instead of `-2 * alpha * tau`.
+At `A ≠ 0` with `alpha tau = beta A ^ 2` the derivative is `alpha tau - 3 beta A ^ 2 =
+-2 alpha tau`, which differs from `2 alpha tau` whenever `alpha tau ≠ 0`.
+Must not compile. -/
+
+theorem ScalarPitchforkTest.negDerivWrongSign (alpha beta tau A : ℝ)
+    (hbeta : beta ≠ 0) (hA : A ≠ 0)
+    (hroot : alpha * tau * A - beta * A ^ 3 = 0) :
+    deriv (fun A => alpha * tau * A - beta * A ^ 3) A = 2 * alpha * tau := by
+  exact ScalarPitchfork.deriv_cubicField_at_branch alpha beta tau A hbeta hA hroot

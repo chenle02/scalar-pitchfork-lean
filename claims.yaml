@@ -1,0 +1,944 @@
+# Claims of scalar-pitchfork-lean (schema claims/1): every public theorem and lemma of the library.
+# status: reusable = judged by a comparator configuration (comparator.json, comparator.headline.json);
+# experimental = proved in the library and axiom-checked, but not stated in a Challenge.
+schema: claims/1
+package: scalar-pitchfork-lean
+claims:
+- id: scalar-pitchfork-lean/deriv-bound-b3
+  decl: ScalarPitchfork.DerivBound.b3
+  kind: theorem
+  summary: 'Under `DerivBound F r M`, the third iterated derivative on the box, evaluated on directions with `∏ ‖m i‖ = 1`, is bounded by `M`.'
+  keywords: [pitchfork, taylor-jet, remainder-estimate, iterated-derivative]
+  file: ScalarPitchfork/Jet.lean
+  status: experimental
+- id: scalar-pitchfork-lean/deriv-bound-b4
+  decl: ScalarPitchfork.DerivBound.b4
+  kind: theorem
+  summary: 'Under `DerivBound F r M`, the fourth iterated derivative on the box, evaluated on directions with `∏ ‖m i‖ = 1`, is bounded by `M`.'
+  keywords: [pitchfork, taylor-jet, remainder-estimate, iterated-derivative]
+  file: ScalarPitchfork/Jet.lean
+  status: experimental
+- id: scalar-pitchfork-lean/global-base-mem-selected-component
+  decl: ScalarPitchfork.Global.base_mem_selectedComponent
+  kind: theorem
+  summary: 'In particular, the bifurcation point belongs to the unilateral component selected by any point of the retained half-branch.'
+  keywords: [global-bifurcation, connected-component, closedness]
+  file: ScalarPitchfork/Global/ComponentClosure.lean
+  status: reusable
+- id: scalar-pitchfork-lean/global-global-unbounded-of-monotone
+  decl: ScalarPitchfork.Global.global_unbounded_of_monotone
+  kind: theorem
+  summary: 'Global unboundedness of a monotone branch: under the global alternatives, strict monotonicity of the profiles away from the bifurcation point, an orthogonality weight for the complement, and admissibility and precompactness hypotheses, the component is not compact and its parameter supremum is `⊤`.'
+  keywords: [global-bifurcation, rabinowitz-alternative, compactness, monotone-profile]
+  file: ScalarPitchfork/Global/Alternatives.lean
+  status: reusable
+- id: scalar-pitchfork-lean/global-is-closed-connected-component-in-of-is-closed
+  decl: ScalarPitchfork.Global.isClosed_connectedComponentIn_of_isClosed
+  kind: theorem
+  summary: 'A connected component inside a closed subset is closed in the ambient space. This is obtained from the closed component in the subtype and the closed subtype inclusion.'
+  keywords: [global-bifurcation, connected-component, closedness]
+  file: ScalarPitchfork/Global/ComponentClosure.lean
+  status: reusable
+- id: scalar-pitchfork-lean/global-is-closed-of-rel-closed
+  decl: ScalarPitchfork.Global.isClosed_of_relClosed
+  kind: theorem
+  summary: 'A set relatively closed in `V` is closed in the ambient space once its ambient closure stays inside `V`.'
+  keywords: [global-bifurcation, rabinowitz-alternative, compactness, monotone-profile]
+  file: ScalarPitchfork/Global/Alternatives.lean
+  status: experimental
+- id: scalar-pitchfork-lean/global-is-closed-sdiff-of-is-open-preimage
+  decl: ScalarPitchfork.Global.isClosed_sdiff_of_isOpen_preimage
+  kind: theorem
+  summary: 'Removing a set open in the relative topology of a closed parent leaves a set closed in the ambient space.'
+  keywords: [global-bifurcation, connected-component, closedness]
+  file: ScalarPitchfork/Global/ComponentClosure.lean
+  status: reusable
+- id: scalar-pitchfork-lean/global-is-compact-slice
+  decl: ScalarPitchfork.Global.isCompact_slice
+  kind: theorem
+  summary: 'Bounded-parameter slices are compact. If a closed set `C` lies in the closure of a solution set `S` whose bounded-parameter pieces are relatively compact (the usual a priori bounds plus a compact embedding), then each slice `C ∩ {λ ≤ X}` is compact.'
+  keywords: [global-bifurcation, rabinowitz-alternative, compactness, monotone-profile]
+  file: ScalarPitchfork/Global/Alternatives.lean
+  status: reusable
+- id: scalar-pitchfork-lean/global-not-alt-complement
+  decl: ScalarPitchfork.Global.not_altComplement
+  kind: theorem
+  summary: 'Alternative (3) fails for a strictly monotone branch: if a weight `φ` pairs positively with every continuous strictly decreasing profile on `[0, L]` and is orthogonal to `W`, no point `(λ, u* + w)` with `w ∈ W \ {0}` lies in the component.'
+  keywords: [global-bifurcation, rabinowitz-alternative, compactness, monotone-profile]
+  file: ScalarPitchfork/Global/Alternatives.lean
+  status: reusable
+- id: scalar-pitchfork-lean/global-not-alt-other-trivial
+  decl: ScalarPitchfork.Global.not_altOtherTrivial
+  kind: theorem
+  summary: 'Alternative (2) fails for a strictly monotone branch: the constant profile `u*` is not strictly monotone.'
+  keywords: [global-bifurcation, rabinowitz-alternative, compactness, monotone-profile]
+  file: ScalarPitchfork/Global/Alternatives.lean
+  status: reusable
+- id: scalar-pitchfork-lean/global-not-is-compact-of-alternatives
+  decl: ScalarPitchfork.Global.not_isCompact_of_alternatives
+  kind: theorem
+  summary: 'Alternative elimination: if alternatives (2) and (3) fail, the component is not compact.'
+  keywords: [global-bifurcation, rabinowitz-alternative, compactness, monotone-profile]
+  file: ScalarPitchfork/Global/Alternatives.lean
+  status: reusable
+- id: scalar-pitchfork-lean/global-parent-component-is-closed
+  decl: ScalarPitchfork.Global.parentComponent_isClosed
+  kind: theorem
+  summary: 'The parent component is closed once the set of nontrivial solutions is closed.'
+  keywords: [global-bifurcation, connected-component, closedness]
+  file: ScalarPitchfork/Global/ComponentClosure.lean
+  status: reusable
+- id: scalar-pitchfork-lean/global-retained-with-base-subset-parent-component
+  decl: ScalarPitchfork.Global.retainedWithBase_subset_parentComponent
+  kind: theorem
+  summary: 'A connected retained half-branch together with the bifurcation point lies in the parent component when it lies in the solution set.'
+  keywords: [global-bifurcation, connected-component, closedness]
+  file: ScalarPitchfork/Global/ComponentClosure.lean
+  status: reusable
+- id: scalar-pitchfork-lean/global-retained-with-base-subset-selected-component
+  decl: ScalarPitchfork.Global.retainedWithBase_subset_selectedComponent
+  kind: theorem
+  summary: 'The connected retained local half-branch selects a single component of the remainder: both the punctured half-branch and its limiting base point belong to the selected component.'
+  keywords: [global-bifurcation, connected-component, closedness]
+  file: ScalarPitchfork/Global/ComponentClosure.lean
+  status: reusable
+- id: scalar-pitchfork-lean/global-retained-with-base-subset-unilateral-remainder
+  decl: ScalarPitchfork.Global.retainedWithBase_subset_unilateralRemainder
+  kind: theorem
+  summary: 'If the retained local half-branch and the base point avoid the removed opposite half-branch, they lie in the unilateral remainder.'
+  keywords: [global-bifurcation, connected-component, closedness]
+  file: ScalarPitchfork/Global/ComponentClosure.lean
+  status: reusable
+- id: scalar-pitchfork-lean/global-s-sup-eq-top-of-unbounded
+  decl: ScalarPitchfork.Global.sSup_eq_top_of_unbounded
+  kind: theorem
+  summary: 'Unbounded parameter written as `sup {λ : (λ, u) ∈ C} = +∞`, with the supremum taken in the extended reals.'
+  keywords: [global-bifurcation, rabinowitz-alternative, compactness, monotone-profile]
+  file: ScalarPitchfork/Global/Alternatives.lean
+  status: experimental
+- id: scalar-pitchfork-lean/global-s-sup-param-eq-top
+  decl: ScalarPitchfork.Global.sSup_param_eq_top
+  kind: theorem
+  summary: 'A non-compact component, relatively closed in an admissible set `V` with `closure S ⊆ V` and with relatively compact bounded-parameter pieces of the solution set `S`, has unbounded parameter: `sup λ = +∞` in `EReal`.'
+  keywords: [global-bifurcation, rabinowitz-alternative, compactness, monotone-profile]
+  file: ScalarPitchfork/Global/Alternatives.lean
+  status: reusable
+- id: scalar-pitchfork-lean/global-selected-component-is-closed
+  decl: ScalarPitchfork.Global.selectedComponent_isClosed
+  kind: theorem
+  summary: 'The unilateral component is closed. Beyond closedness of the solution set, the only input is relative openness of the removed opposite half-branch in the parent component.'
+  keywords: [global-bifurcation, connected-component, closedness]
+  file: ScalarPitchfork/Global/ComponentClosure.lean
+  status: reusable
+- id: scalar-pitchfork-lean/global-selected-component-subset-solution-closure
+  decl: ScalarPitchfork.Global.selectedComponent_subset_solutionClosure
+  kind: theorem
+  summary: 'The unilateral component lies inside the solution set.'
+  keywords: [global-bifurcation, connected-component, closedness]
+  file: ScalarPitchfork/Global/ComponentClosure.lean
+  status: reusable
+- id: scalar-pitchfork-lean/global-selected-image-properties
+  decl: ScalarPitchfork.Global.selectedImage_properties
+  kind: theorem
+  summary: 'The unilateral component built inside the admissible subtype `V` is, after inclusion into `ℝ × E`, relatively closed in `V`, contained in `V`, contained in the ambient closure of `S`, and preconnected.'
+  keywords: [global-bifurcation, rabinowitz-alternative, compactness, monotone-profile]
+  file: ScalarPitchfork/Global/Alternatives.lean
+  status: experimental
+- id: scalar-pitchfork-lean/global-strict-anti-on-of-rel-clopen
+  decl: ScalarPitchfork.Global.strictAntiOn_of_relClopen
+  kind: theorem
+  summary: 'Strict decrease propagates along a component: if the decreasing locus is relatively clopen in a preconnected component through the bifurcation point, every other point of the component has a strictly decreasing profile.'
+  keywords: [global-bifurcation, rabinowitz-alternative, compactness, monotone-profile]
+  file: ScalarPitchfork/Global/Alternatives.lean
+  status: reusable
+- id: scalar-pitchfork-lean/global-strict-mono-on-of-rel-clopen
+  decl: ScalarPitchfork.Global.strictMonoOn_of_relClopen
+  kind: theorem
+  summary: 'Strict increase propagates along a component: the increasing analogue of `strictAntiOn_of_relClopen`.'
+  keywords: [global-bifurcation, rabinowitz-alternative, compactness, monotone-profile]
+  file: ScalarPitchfork/Global/Alternatives.lean
+  status: experimental
+- id: scalar-pitchfork-lean/global-subset-of-rel-clopen
+  decl: ScalarPitchfork.Global.subset_of_relClopen
+  kind: theorem
+  summary: 'Connectedness propagation: a property holding at the bifurcation point whose locus is relatively open and closed in a preconnected component holds on the whole component.'
+  keywords: [global-bifurcation, rabinowitz-alternative, compactness, monotone-profile]
+  file: ScalarPitchfork/Global/Alternatives.lean
+  status: reusable
+- id: scalar-pitchfork-lean/global-unbounded-of-not-is-compact
+  decl: ScalarPitchfork.Global.unbounded_of_not_isCompact
+  kind: theorem
+  summary: 'Unbounded parameter from non-compactness: if every bounded-parameter slice is compact, a non-compact set has unbounded parameter.'
+  keywords: [global-bifurcation, rabinowitz-alternative, compactness, monotone-profile]
+  file: ScalarPitchfork/Global/Alternatives.lean
+  status: experimental
+- id: scalar-pitchfork-lean/global-unilateral-remainder-is-closed
+  decl: ScalarPitchfork.Global.unilateralRemainder_isClosed
+  kind: theorem
+  summary: 'If the opposite half-branch is open in the relative topology of the parent component (an input from the local bifurcation analysis), the unilateral remainder is closed.'
+  keywords: [global-bifurcation, connected-component, closedness]
+  file: ScalarPitchfork/Global/ComponentClosure.lean
+  status: reusable
+- id: scalar-pitchfork-lean/pitchfork-jet-exists-bound
+  decl: ScalarPitchfork.PitchforkJet.exists_bound
+  kind: theorem
+  summary: 'Uniform bounds on the third and fourth derivatives on the closed box.'
+  keywords: [pitchfork, taylor-jet, remainder-estimate, iterated-derivative]
+  file: ScalarPitchfork/Jet.lean
+  status: experimental
+- id: scalar-pitchfork-lean/pitchfork-jet-has-deriv-at-s
+  decl: ScalarPitchfork.PitchforkJet.hasDerivAt_s
+  kind: theorem
+  summary: 'Derivative in `z` of a directional iterated derivative at `(e, t)`.'
+  keywords: [pitchfork, taylor-jet, remainder-estimate, iterated-derivative]
+  file: ScalarPitchfork/Jet.lean
+  status: experimental
+- id: scalar-pitchfork-lean/pitchfork-jet-has-deriv-at-tau
+  decl: ScalarPitchfork.PitchforkJet.hasDerivAt_tau
+  kind: theorem
+  summary: 'Derivative in the parameter of a directional iterated derivative at `(t, 0)`.'
+  keywords: [pitchfork, taylor-jet, remainder-estimate, iterated-derivative]
+  file: ScalarPitchfork/Jet.lean
+  status: experimental
+- id: scalar-pitchfork-lean/pitchfork-jet-mem-u
+  decl: ScalarPitchfork.PitchforkJet.mem_U
+  kind: theorem
+  summary: 'Under `PitchforkJet F U r`, every point `(e, z)` with `|e|, |z| ≤ r` lies in `U`.'
+  keywords: [pitchfork, taylor-jet, remainder-estimate, iterated-derivative]
+  file: ScalarPitchfork/Jet.lean
+  status: experimental
+- id: scalar-pitchfork-lean/pitchfork-jet-zero-le-r
+  decl: ScalarPitchfork.PitchforkJet.zero_le_r
+  kind: theorem
+  summary: 'Under `PitchforkJet F U r`, `|0| ≤ r`.'
+  keywords: [pitchfork, taylor-jet, remainder-estimate, iterated-derivative]
+  file: ScalarPitchfork/Jet.lean
+  status: experimental
+- id: scalar-pitchfork-lean/abs-eq-sgn-mul
+  decl: ScalarPitchfork.abs_eq_sgn_mul
+  kind: theorem
+  summary: 'For a sign `sgn = ±1` with `0 < sgn * u`, `|u| = sgn * u`.'
+  keywords: [pitchfork, branch-curve, local-uniqueness, continuity]
+  file: ScalarPitchfork/Branch.lean
+  status: experimental
+- id: scalar-pitchfork-lean/abs-sub-le-of-deriv-bound
+  decl: ScalarPitchfork.abs_sub_le_of_deriv_bound
+  kind: theorem
+  summary: 'One mean value step on the segment `[-|x|, |x|]`.'
+  keywords: [pitchfork, taylor-jet, remainder-estimate, iterated-derivative]
+  file: ScalarPitchfork/Jet.lean
+  status: experimental
+- id: scalar-pitchfork-lean/abs-sub-sqrt-le-of-cubic-remainder
+  decl: ScalarPitchfork.abs_sub_sqrt_le_of_cubic_remainder
+  kind: theorem
+  summary: 'A cubic bound `|e| ≤ C |z| ^ 3` on the divided remainder gives a quadratic error for the square-root amplitude: `| |z| - √(alpha * tau / beta) | ≤ C z ^ 2 / |beta|`.'
+  keywords: [pitchfork, perturbed-cubic, remainder-estimate, amplitude]
+  file: ScalarPitchfork/Perturbed.lean
+  status: reusable
+- id: scalar-pitchfork-lean/absorbed-const-nonneg
+  decl: ScalarPitchfork.absorbedConst_nonneg
+  kind: theorem
+  summary: 'For `alpha > 0` and `C ≥ 0`, the absorbed constant `absorbedConst alpha beta C = C (ampConst alpha beta C + 1)` is nonnegative.'
+  keywords: [pitchfork, existence, intermediate-value, remainder-estimate]
+  file: ScalarPitchfork/Existence.lean
+  status: experimental
+- id: scalar-pitchfork-lean/absorbed-mul-radius
+  decl: ScalarPitchfork.absorbed_mul_radius
+  kind: theorem
+  summary: '`absorbedConst alpha beta C * branchRadius alpha beta C r ≤ |beta| / 4` for `alpha > 0`, `C ≥ 0`.'
+  keywords: [pitchfork, branch-curve, local-uniqueness, continuity]
+  file: ScalarPitchfork/Branch.lean
+  status: experimental
+- id: scalar-pitchfork-lean/amp-const-nonneg
+  decl: ScalarPitchfork.ampConst_nonneg
+  kind: theorem
+  summary: 'For `alpha > 0` and `C ≥ 0`, the constant `ampConst alpha beta C = 2 (|beta| + 2C) / alpha` is nonnegative.'
+  keywords: [pitchfork, existence, intermediate-value, remainder-estimate]
+  file: ScalarPitchfork/Existence.lean
+  status: experimental
+- id: scalar-pitchfork-lean/amp-err-nonneg
+  decl: ScalarPitchfork.ampErr_nonneg
+  kind: theorem
+  summary: 'For `alpha > 0` and `C ≥ 0`, the amplitude error constant `ampErr alpha beta C` is nonnegative.'
+  keywords: [pitchfork, branch-curve, local-uniqueness, continuity]
+  file: ScalarPitchfork/Branch.lean
+  status: experimental
+- id: scalar-pitchfork-lean/amp-err-le-sqrt
+  decl: ScalarPitchfork.amp_err_le_sqrt
+  kind: theorem
+  summary: 'On the side `tau * beta > 0`, smallness gives `8 * ampErr * |tau| ≤ √(alpha tau / beta)`.'
+  keywords: [pitchfork, branch-curve, local-uniqueness, continuity]
+  file: ScalarPitchfork/Branch.lean
+  status: experimental
+- id: scalar-pitchfork-lean/amp-sq-eq-abs
+  decl: ScalarPitchfork.amp_sq_eq_abs
+  kind: theorem
+  summary: 'On the side `tau * beta > 0`, the squared amplitude `alpha * tau / beta` equals `alpha * |tau| / |beta|`.'
+  keywords: [pitchfork, existence, intermediate-value, remainder-estimate]
+  file: ScalarPitchfork/Existence.lean
+  status: experimental
+- id: scalar-pitchfork-lean/amplitude-sq-pos
+  decl: ScalarPitchfork.amplitude_sq_pos
+  kind: theorem
+  summary: 'The squared amplitude `alpha * tau / beta` is positive on the side `tau * beta > 0`.'
+  keywords: [pitchfork, normal-form, cubic, equilibrium]
+  file: ScalarPitchfork/Cubic.lean
+  status: experimental
+- id: scalar-pitchfork-lean/axis-of-linearization
+  decl: ScalarPitchfork.axis_of_linearization
+  kind: theorem
+  summary: 'The axis condition from the linearization along the axis. If the remainder of `f` satisfies `PitchforkJet` and `∂_z f(tau, 0) = alpha * tau` on the box, then `∂_z R(tau, 0) = 0` on the box; by `strongBounds_of_jet` the stronger bounds follow.'
+  keywords: [pitchfork, taylor-jet, counterexample, iterated-derivative]
+  file: ScalarPitchfork/JetCounterexample.lean
+  status: reusable
+- id: scalar-pitchfork-lean/branch-nhd-branch-small
+  decl: ScalarPitchfork.branchNhd_branchSmall
+  kind: theorem
+  summary: 'The strict smallness conditions `BranchNhd` imply the non-strict conditions `BranchSmall` at the same parameter.'
+  keywords: [pitchfork, branch-curve, local-uniqueness, continuity]
+  file: ScalarPitchfork/Branch.lean
+  status: experimental
+- id: scalar-pitchfork-lean/branch-nhd-mem-nhds
+  decl: ScalarPitchfork.branchNhd_mem_nhds
+  kind: theorem
+  summary: 'For `alpha > 0`, `beta ≠ 0`, `C ≥ 0` and `r > 0`, `{tau | BranchNhd alpha beta C r tau}` is a neighbourhood of `0`.'
+  keywords: [pitchfork, branch-curve, local-uniqueness, continuity]
+  file: ScalarPitchfork/Branch.lean
+  status: experimental
+- id: scalar-pitchfork-lean/branch-nhd-zero
+  decl: ScalarPitchfork.branchNhd_zero
+  kind: theorem
+  summary: 'For `alpha > 0`, `beta ≠ 0`, `C ≥ 0` and `r > 0`, the parameter `tau = 0` satisfies `BranchNhd`.'
+  keywords: [pitchfork, branch-curve, local-uniqueness, continuity]
+  file: ScalarPitchfork/Branch.lean
+  status: experimental
+- id: scalar-pitchfork-lean/branch-radius-le
+  decl: ScalarPitchfork.branchRadius_le
+  kind: theorem
+  summary: 'The window radius `branchRadius alpha beta C r` is at most `r`.'
+  keywords: [pitchfork, branch-curve, local-uniqueness, continuity]
+  file: ScalarPitchfork/Branch.lean
+  status: experimental
+- id: scalar-pitchfork-lean/branch-radius-pos
+  decl: ScalarPitchfork.branchRadius_pos
+  kind: theorem
+  summary: 'For `alpha > 0`, `beta ≠ 0`, `C ≥ 0` and `r > 0`, the window radius `branchRadius alpha beta C r` is positive.'
+  keywords: [pitchfork, branch-curve, local-uniqueness, continuity]
+  file: ScalarPitchfork/Branch.lean
+  status: experimental
+- id: scalar-pitchfork-lean/branch-root-exists-unique
+  decl: ScalarPitchfork.branchRoot_existsUnique
+  kind: theorem
+  summary: 'Uniqueness. On the side `tau * beta > 0` there is exactly one zero of each sign in the fixed window `|z| ≤ ρ`.'
+  keywords: [pitchfork, branch-curve, local-uniqueness, continuity]
+  file: ScalarPitchfork/Branch.lean
+  status: experimental
+- id: scalar-pitchfork-lean/branch-root-unique
+  decl: ScalarPitchfork.branchRoot_unique
+  kind: theorem
+  summary: 'Uniqueness of the zero of sign `sgn` in the window `0 < sgn * z`, `|z| ≤ ρ`.'
+  keywords: [pitchfork, branch-curve, local-uniqueness, continuity]
+  file: ScalarPitchfork/Branch.lean
+  status: experimental
+- id: scalar-pitchfork-lean/branch-small-eventually
+  decl: ScalarPitchfork.branchSmall_eventually
+  kind: theorem
+  summary: 'All smallness conditions hold for every `tau` near `0`; the hypotheses of the branch theorem are therefore not vacuous.'
+  keywords: [pitchfork, existence, intermediate-value, remainder-estimate]
+  file: ScalarPitchfork/Existence.lean
+  status: experimental
+- id: scalar-pitchfork-lean/branch-abs-le
+  decl: ScalarPitchfork.branch_abs_le
+  kind: theorem
+  summary: 'The branch functions are bounded by `9/8 * √(alpha tau / beta)` on the whole neighbourhood (and vanish off the side).'
+  keywords: [pitchfork, branch-curve, local-uniqueness, continuity]
+  file: ScalarPitchfork/Branch.lean
+  status: experimental
+- id: scalar-pitchfork-lean/branch-amplitudes
+  decl: ScalarPitchfork.branch_amplitudes
+  kind: theorem
+  summary: '`± √(alpha * tau / beta)` are zeros of the cubic field on the side `tau * beta > 0`.'
+  keywords: [pitchfork, normal-form, cubic, equilibrium]
+  file: ScalarPitchfork/Cubic.lean
+  status: experimental
+- id: scalar-pitchfork-lean/branch-continuous-at-side
+  decl: ScalarPitchfork.branch_continuousAt_side
+  kind: theorem
+  summary: 'Continuity of the branch function at a point on the side `tau * beta > 0`. The only input beyond the value and derivative bounds is `hRcont`: continuity of `tau ↦ R tau z` for each fixed small `z`.'
+  keywords: [pitchfork, branch-curve, local-uniqueness, continuity]
+  file: ScalarPitchfork/Branch.lean
+  status: experimental
+- id: scalar-pitchfork-lean/branch-continuous-on
+  decl: ScalarPitchfork.branch_continuousOn
+  kind: theorem
+  summary: 'Continuity: each branch function is continuous on the open neighbourhood `{tau | BranchNhd tau}` of `0`.'
+  keywords: [pitchfork, branch-curve, local-uniqueness, continuity]
+  file: ScalarPitchfork/Branch.lean
+  status: experimental
+- id: scalar-pitchfork-lean/branch-curves-of-strong-bound
+  decl: ScalarPitchfork.branch_curves_of_strongBound
+  kind: theorem
+  summary: 'Continuity, the limit at `0` and local uniqueness of the branches from the stronger bounds (`z ^ 2 tau ^ 2` in the value bound, `|z| tau ^ 2` in the derivative bound), through the weak bounds.'
+  keywords: [pitchfork, remainder-estimate, strong-bound]
+  file: ScalarPitchfork/StrongRemainder.lean
+  status: reusable
+- id: scalar-pitchfork-lean/branch-eq-of-root
+  decl: ScalarPitchfork.branch_eq_of_root
+  kind: theorem
+  summary: 'A zero of sign `sgn` in the window is the branch value.'
+  keywords: [pitchfork, branch-curve, local-uniqueness, continuity]
+  file: ScalarPitchfork/Branch.lean
+  status: experimental
+- id: scalar-pitchfork-lean/branch-eq-zero-of-not-side
+  decl: ScalarPitchfork.branch_eq_zero_of_not_side
+  kind: theorem
+  summary: 'Off the side `tau * beta > 0` there is no nontrivial small zero, so the branch function is `0` there (in particular at `tau = 0`).'
+  keywords: [pitchfork, branch-curve, local-uniqueness, continuity]
+  file: ScalarPitchfork/Branch.lean
+  status: experimental
+- id: scalar-pitchfork-lean/branch-eventually-of-strong-bound
+  decl: ScalarPitchfork.branch_eventually_of_strongBound
+  kind: theorem
+  summary: 'The conclusions of `exists_branch_eventually` from the stronger bounds.'
+  keywords: [pitchfork, remainder-estimate, strong-bound]
+  file: ScalarPitchfork/StrongRemainder.lean
+  status: reusable
+- id: scalar-pitchfork-lean/branch-root-exists
+  decl: ScalarPitchfork.branch_root_exists
+  kind: theorem
+  summary: 'Existence of the zero of sign `sgn` in the window, with amplitude and derivative sign (from `exists_branch_at`).'
+  keywords: [pitchfork, branch-curve, local-uniqueness, continuity]
+  file: ScalarPitchfork/Branch.lean
+  status: experimental
+- id: scalar-pitchfork-lean/branch-side-eventually
+  decl: ScalarPitchfork.branch_side_eventually
+  kind: theorem
+  summary: 'Side condition. Near `(tau, z) = (0, 0)` every nontrivial zero of the pitchfork field lies on the side `tau * beta > 0`, and the derivative there has sign opposite to `beta`.'
+  keywords: [pitchfork, existence, intermediate-value, remainder-estimate]
+  file: ScalarPitchfork/Existence.lean
+  status: reusable
+- id: scalar-pitchfork-lean/branch-spec
+  decl: ScalarPitchfork.branch_spec
+  kind: theorem
+  summary: 'The branch value is the zero of sign `sgn`, with the amplitude estimate and the derivative sign.'
+  keywords: [pitchfork, branch-curve, local-uniqueness, continuity]
+  file: ScalarPitchfork/Branch.lean
+  status: experimental
+- id: scalar-pitchfork-lean/branch-tendsto-zero
+  decl: ScalarPitchfork.branch_tendsto_zero
+  kind: theorem
+  summary: 'Through the origin: `z^±(tau) → 0` as `tau → 0`.'
+  keywords: [pitchfork, branch-curve, local-uniqueness, continuity]
+  file: ScalarPitchfork/Branch.lean
+  status: experimental
+- id: scalar-pitchfork-lean/branch-zero
+  decl: ScalarPitchfork.branch_zero
+  kind: theorem
+  summary: 'The branch functions vanish at `tau = 0`.'
+  keywords: [pitchfork, branch-curve, local-uniqueness, continuity]
+  file: ScalarPitchfork/Branch.lean
+  status: experimental
+- id: scalar-pitchfork-lean/cex-d3
+  decl: ScalarPitchfork.cex_d3
+  kind: theorem
+  summary: '`∂_v ∂_z² R(tau, z) = 0` for `R = tau ^ 2 * z` and any direction `v`.'
+  keywords: [pitchfork, taylor-jet, counterexample, iterated-derivative]
+  file: ScalarPitchfork/JetCounterexample.lean
+  status: experimental
+- id: scalar-pitchfork-lean/cex-d-eta-s
+  decl: ScalarPitchfork.cex_d_eta_s
+  kind: theorem
+  summary: '`∂_tau ∂_z R(tau, z) = 2 tau` for `R = tau ^ 2 * z`.'
+  keywords: [pitchfork, taylor-jet, counterexample, iterated-derivative]
+  file: ScalarPitchfork/JetCounterexample.lean
+  status: experimental
+- id: scalar-pitchfork-lean/cex-d-s
+  decl: ScalarPitchfork.cex_d_s
+  kind: theorem
+  summary: '`∂_z R(tau, z) = tau ^ 2` for `R = tau ^ 2 * z`.'
+  keywords: [pitchfork, taylor-jet, counterexample, iterated-derivative]
+  file: ScalarPitchfork/JetCounterexample.lean
+  status: experimental
+- id: scalar-pitchfork-lean/cex-d-ss
+  decl: ScalarPitchfork.cex_d_ss
+  kind: theorem
+  summary: '`∂_z² R(tau, z) = 0` for `R = tau ^ 2 * z`.'
+  keywords: [pitchfork, taylor-jet, counterexample, iterated-derivative]
+  file: ScalarPitchfork/JetCounterexample.lean
+  status: experimental
+- id: scalar-pitchfork-lean/cex-not-strong-bound
+  decl: ScalarPitchfork.cex_not_strongBound
+  kind: theorem
+  summary: 'The counterexample violates the stronger bound on every box. For `R(tau, z) = tau ^ 2 * z` and any `r > 0` there is no `C` with `|R(tau, z)| ≤ C (z ^ 2 tau ^ 2 + |z| ^ 3 |tau| + z ^ 4)` for `|tau|, |z| ≤ r`.'
+  keywords: [pitchfork, taylor-jet, counterexample, iterated-derivative]
+  file: ScalarPitchfork/JetCounterexample.lean
+  status: experimental
+- id: scalar-pitchfork-lean/cont-diff-cex-r
+  decl: ScalarPitchfork.contDiff_cexR
+  kind: theorem
+  summary: 'The counterexample remainder `R(tau, z) = tau ^ 2 * z` is `C⁴` on `ℝ × ℝ`.'
+  keywords: [pitchfork, taylor-jet, counterexample, iterated-derivative]
+  file: ScalarPitchfork/JetCounterexample.lean
+  status: experimental
+- id: scalar-pitchfork-lean/deriv-bound-absorbed
+  decl: ScalarPitchfork.deriv_bound_absorbed
+  kind: theorem
+  summary: 'Along a zero (`|tau| ≤ D z ^ 2`) the weak derivative bound implies the derivative bound assumed by `perturbed_equilibrium_core`.'
+  keywords: [pitchfork, existence, intermediate-value, remainder-estimate]
+  file: ScalarPitchfork/Existence.lean
+  status: experimental
+- id: scalar-pitchfork-lean/deriv-bound-weak-of-strong-bound
+  decl: ScalarPitchfork.deriv_bound_weak_of_strongBound
+  kind: theorem
+  summary: 'The stronger derivative bound `C (|z| tau ^ 2 + z ^ 2 |tau| + |z| ^ 3)` implies the weak derivative bound when `|z| ≤ 1`.'
+  keywords: [pitchfork, remainder-estimate, strong-bound]
+  file: ScalarPitchfork/StrongRemainder.lean
+  status: experimental
+- id: scalar-pitchfork-lean/deriv-cubic-field
+  decl: ScalarPitchfork.deriv_cubicField
+  kind: theorem
+  summary: 'The derivative of the cubic field in `A`.'
+  keywords: [pitchfork, normal-form, cubic, equilibrium]
+  file: ScalarPitchfork/Cubic.lean
+  status: experimental
+- id: scalar-pitchfork-lean/deriv-cubic-field-at-branch
+  decl: ScalarPitchfork.deriv_cubicField_at_branch
+  kind: theorem
+  summary: 'At a nonzero zero, the derivative of the cubic field in `A` is `-2 * alpha * tau`.'
+  keywords: [pitchfork, normal-form, cubic, equilibrium]
+  file: ScalarPitchfork/Cubic.lean
+  status: reusable
+- id: scalar-pitchfork-lean/deriv-zero-of-sq-bound
+  decl: ScalarPitchfork.deriv_zero_of_sq_bound
+  kind: theorem
+  summary: 'A differentiable `φ` with `|φ z| ≤ K z ^ 2` near `0` has derivative `0` at `0`; this is the converse direction of `strongBound_iff_axis`.'
+  keywords: [pitchfork, taylor-jet, remainder-estimate, iterated-derivative]
+  file: ScalarPitchfork/Jet.lean
+  status: reusable
+- id: scalar-pitchfork-lean/divided-absorb
+  decl: ScalarPitchfork.divided_absorb
+  kind: theorem
+  summary: 'Pure absorption step: once `|tau| ≤ D z ^ 2`, the weak divided remainder form is bounded by `(D + 1) (|tau| + |z|) z ^ 2`.'
+  keywords: [pitchfork, existence, intermediate-value, remainder-estimate]
+  file: ScalarPitchfork/Existence.lean
+  status: experimental
+- id: scalar-pitchfork-lean/divided-remainder-cubic-bound
+  decl: ScalarPitchfork.divided_remainder_cubic_bound
+  kind: theorem
+  summary: 'If `|tau| ≤ D z ^ 2` and `|z| ≤ 1`, the mixed bound `|e| ≤ C (|tau| + |z|) z ^ 2` implies a cubic bound `|e| ≤ C (D + 1) |z| ^ 3`.'
+  keywords: [pitchfork, perturbed-cubic, remainder-estimate, amplitude]
+  file: ScalarPitchfork/Perturbed.lean
+  status: experimental
+- id: scalar-pitchfork-lean/equilibrium-core
+  decl: ScalarPitchfork.equilibrium_core
+  kind: theorem
+  summary: 'Zero-level conclusions under the weak remainder bounds: a small nonzero zero `z` of the perturbed cubic lies on the side `tau * beta > 0`, the derivative there has sign opposite to `beta`, and `|z| = √(alpha * tau / beta) + O(|tau|)` with an explicit constant.'
+  keywords: [pitchfork, existence, intermediate-value, remainder-estimate]
+  file: ScalarPitchfork/Existence.lean
+  status: reusable
+- id: scalar-pitchfork-lean/equilibrium-core-of-strong-bound
+  decl: ScalarPitchfork.equilibrium_core_of_strongBound
+  kind: theorem
+  summary: 'The conclusions of `equilibrium_core` from the stronger bounds.'
+  keywords: [pitchfork, remainder-estimate, strong-bound]
+  file: ScalarPitchfork/StrongRemainder.lean
+  status: reusable
+- id: scalar-pitchfork-lean/exists-unique-branch-root-eventually
+  decl: ScalarPitchfork.existsUnique_branchRoot_eventually
+  kind: theorem
+  summary: 'Local uniqueness of the two branches: there is a fixed radius `ρ > 0` such that for all small `tau` with `tau * beta > 0` the field `alpha * tau * z - beta * z ^ 3 + R tau z` has exactly one zero of each sign in `|z| ≤ ρ`.'
+  keywords: [pitchfork, branch-curve, local-uniqueness, continuity]
+  file: ScalarPitchfork/Branch.lean
+  status: reusable
+- id: scalar-pitchfork-lean/exists-branch-at
+  decl: ScalarPitchfork.exists_branch_at
+  kind: theorem
+  summary: 'At one admissible `tau` on the side `tau * beta > 0`: a positive and a negative nontrivial zero, each with the square-root amplitude up to `O(|tau|)` and with `(∂_z field) * beta < 0`.'
+  keywords: [pitchfork, existence, intermediate-value, remainder-estimate]
+  file: ScalarPitchfork/Existence.lean
+  status: experimental
+- id: scalar-pitchfork-lean/exists-branch-eventually
+  decl: ScalarPitchfork.exists_branch_eventually
+  kind: theorem
+  summary: 'Existence of the pitchfork branches. Under the weak remainder bounds, for all small `tau` on the side `tau * beta > 0` there are nontrivial zeros of both signs with amplitude `√(alpha * tau / beta) + O(|tau|)` and `(∂_z field) * beta < 0`.'
+  keywords: [pitchfork, existence, intermediate-value, remainder-estimate]
+  file: ScalarPitchfork/Existence.lean
+  status: reusable
+- id: scalar-pitchfork-lean/exists-branch-eventually-of-jet
+  decl: ScalarPitchfork.exists_branch_eventually_of_jet
+  kind: theorem
+  summary: 'From `C⁴` smoothness and the jet conditions alone, for all small `tau` with `tau * beta > 0` there are zeros of both signs with amplitude `√(alpha tau / beta) + O(|tau|)` and `(∂_z field) * beta < 0`.'
+  keywords: [pitchfork, taylor-jet, remainder-estimate, iterated-derivative]
+  file: ScalarPitchfork/Jet.lean
+  status: reusable
+- id: scalar-pitchfork-lean/exists-pos-equilibrium
+  decl: ScalarPitchfork.exists_pos_equilibrium
+  kind: theorem
+  summary: 'Existence of a positive nontrivial zero on the side `tau * beta > 0`, with `z ^ 2 ∈ [alpha tau / (2 beta), 2 alpha tau / beta]`. Only continuity of the remainder in `z` and the weak value bound on the amplitude window are used.'
+  keywords: [pitchfork, existence, intermediate-value, remainder-estimate]
+  file: ScalarPitchfork/Existence.lean
+  status: reusable
+- id: scalar-pitchfork-lean/field-deriv-neg-on-window
+  decl: ScalarPitchfork.field_deriv_neg_on_window
+  kind: theorem
+  summary: 'On the amplitude window the derivative of the field has the sign of `-beta`.'
+  keywords: [pitchfork, branch-curve, local-uniqueness, continuity]
+  file: ScalarPitchfork/Branch.lean
+  status: experimental
+- id: scalar-pitchfork-lean/has-deriv-at-f
+  decl: ScalarPitchfork.hasDerivAt_F
+  kind: theorem
+  summary: '`R(tau, ·)` has derivative `∂_z R(tau, t)` at `t`.'
+  keywords: [pitchfork, taylor-jet, remainder-estimate, iterated-derivative]
+  file: ScalarPitchfork/Jet.lean
+  status: experimental
+- id: scalar-pitchfork-lean/has-deriv-at-iterated-f-deriv-line
+  decl: ScalarPitchfork.hasDerivAt_iteratedFDeriv_line
+  kind: theorem
+  summary: 'Derivative of a directional iterated derivative along a line.'
+  keywords: [pitchfork, taylor-jet, remainder-estimate, iterated-derivative]
+  file: ScalarPitchfork/Jet.lean
+  status: experimental
+- id: scalar-pitchfork-lean/is-open-branch-nhd
+  decl: ScalarPitchfork.isOpen_branchNhd
+  kind: theorem
+  summary: 'The parameter set `{tau | BranchNhd alpha beta C r tau}` is open.'
+  keywords: [pitchfork, branch-curve, local-uniqueness, continuity]
+  file: ScalarPitchfork/Branch.lean
+  status: experimental
+- id: scalar-pitchfork-lean/iterated-f-deriv-succ-eq-of-line
+  decl: ScalarPitchfork.iteratedFDeriv_succ_eq_of_line
+  kind: theorem
+  summary: 'Line-derivative characterization of a directional iterated derivative: `D^{k+1}F(p)[v, m] = d/dτ D^kF(p + τ v)[m]` at `τ = 0`.'
+  keywords: [pitchfork, taylor-jet, counterexample, iterated-derivative]
+  file: ScalarPitchfork/JetCounterexample.lean
+  status: experimental
+- id: scalar-pitchfork-lean/jet-rs-cex
+  decl: ScalarPitchfork.jetRs_cex
+  kind: theorem
+  summary: 'The `z`-derivative of the counterexample: `∂_z R(tau, z) = tau ^ 2`.'
+  keywords: [pitchfork, taylor-jet, counterexample, iterated-derivative]
+  file: ScalarPitchfork/JetCounterexample.lean
+  status: experimental
+- id: scalar-pitchfork-lean/jet-not-sufficient-for-strong-bound
+  decl: ScalarPitchfork.jet_not_sufficient_for_strongBound
+  kind: theorem
+  summary: 'The jets alone do not give the stronger bound. It is false that every remainder satisfying `PitchforkJet` admits the stronger value bound; the axis condition of `strongBound_iff_axis` is genuinely needed.'
+  keywords: [pitchfork, taylor-jet, counterexample, iterated-derivative]
+  file: ScalarPitchfork/JetCounterexample.lean
+  status: reusable
+- id: scalar-pitchfork-lean/magnitude-error-of-mixed-bound
+  decl: ScalarPitchfork.magnitude_error_of_mixed_bound
+  kind: theorem
+  summary: 'The mixed bound `|e| ≤ C (|tau| + |z|) z ^ 2` on the divided remainder yields an explicit `O(|tau|)` error for the square-root amplitude, after absorption on a small rectangle.'
+  keywords: [pitchfork, perturbed-cubic, remainder-estimate, amplitude]
+  file: ScalarPitchfork/Perturbed.lean
+  status: experimental
+- id: scalar-pitchfork-lean/magnitude-sqrt-error
+  decl: ScalarPitchfork.magnitude_sqrt_error
+  kind: theorem
+  summary: 'Factoring a difference of squares bounds the error of a square root.'
+  keywords: [pitchfork, perturbed-cubic, remainder-estimate, amplitude]
+  file: ScalarPitchfork/Perturbed.lean
+  status: experimental
+- id: scalar-pitchfork-lean/mem-box
+  decl: ScalarPitchfork.mem_box
+  kind: theorem
+  summary: '`(e, z)` lies in the closed ball of radius `r` about `0` in `ℝ × ℝ` (sup norm) iff `|e| ≤ r` and `|z| ≤ r`.'
+  keywords: [pitchfork, taylor-jet, remainder-estimate, iterated-derivative]
+  file: ScalarPitchfork/Jet.lean
+  status: experimental
+- id: scalar-pitchfork-lean/mem-window
+  decl: ScalarPitchfork.mem_window
+  kind: theorem
+  summary: 'Points with `x ∈ [13/16, 19/16] * √t` lie in the amplitude window.'
+  keywords: [pitchfork, branch-curve, local-uniqueness, continuity]
+  file: ScalarPitchfork/Branch.lean
+  status: experimental
+- id: scalar-pitchfork-lean/nonzero-equilibrium-branch-side
+  decl: ScalarPitchfork.nonzero_equilibrium_branch_side
+  kind: theorem
+  summary: 'With `alpha > 0`, a nonzero zero exists only on the side where `tau * beta > 0`.'
+  keywords: [pitchfork, normal-form, cubic, equilibrium]
+  file: ScalarPitchfork/Cubic.lean
+  status: experimental
+- id: scalar-pitchfork-lean/nonzero-equilibrium-eq-branch
+  decl: ScalarPitchfork.nonzero_equilibrium_eq_branch
+  kind: theorem
+  summary: 'The only nonzero zeros of the cubic field are `± √(alpha * tau / beta)`.'
+  keywords: [pitchfork, normal-form, cubic, equilibrium]
+  file: ScalarPitchfork/Cubic.lean
+  status: reusable
+- id: scalar-pitchfork-lean/nonzero-equilibrium-sq
+  decl: ScalarPitchfork.nonzero_equilibrium_sq
+  kind: theorem
+  summary: 'Every nonzero zero of the cubic field satisfies `A ^ 2 = alpha * tau / beta`.'
+  keywords: [pitchfork, normal-form, cubic, equilibrium]
+  file: ScalarPitchfork/Cubic.lean
+  status: experimental
+- id: scalar-pitchfork-lean/norm-e-tau
+  decl: ScalarPitchfork.norm_eTau
+  kind: theorem
+  summary: 'The parameter direction `eTau = (1, 0)` has norm `1`.'
+  keywords: [pitchfork, taylor-jet, remainder-estimate, iterated-derivative]
+  file: ScalarPitchfork/Jet.lean
+  status: experimental
+- id: scalar-pitchfork-lean/norm-e-z
+  decl: ScalarPitchfork.norm_eZ
+  kind: theorem
+  summary: 'The amplitude direction `eZ = (0, 1)` has norm `1`.'
+  keywords: [pitchfork, taylor-jet, remainder-estimate, iterated-derivative]
+  file: ScalarPitchfork/Jet.lean
+  status: experimental
+- id: scalar-pitchfork-lean/parameter-amplitude-bounds
+  decl: ScalarPitchfork.parameter_amplitude_bounds
+  kind: theorem
+  summary: 'A small divided remainder makes `alpha * |tau|` comparable to `|beta| * z ^ 2`.'
+  keywords: [pitchfork, perturbed-cubic, remainder-estimate, amplitude]
+  file: ScalarPitchfork/Perturbed.lean
+  status: experimental
+- id: scalar-pitchfork-lean/parameter-le-amp-sq
+  decl: ScalarPitchfork.parameter_le_amp_sq
+  kind: theorem
+  summary: 'Along a small nonzero zero of the divided equation with the weak divided remainder bound, the parameter is controlled by the squared amplitude: `|tau| ≤ ampConst alpha beta C * z ^ 2`.'
+  keywords: [pitchfork, existence, intermediate-value, remainder-estimate]
+  file: ScalarPitchfork/Existence.lean
+  status: experimental
+- id: scalar-pitchfork-lean/perturbed-equilibrium-core
+  decl: ScalarPitchfork.perturbed_equilibrium_core
+  kind: theorem
+  summary: 'Zero-level conclusions for the perturbed cubic `alpha * tau * z - beta * z ^ 3 + R = 0` under `|R| ≤ C (|tau| |z| ^ 3 + z ^ 4)` and a matching derivative bound: the side condition, the derivative sign, and the square-root amplitude with an `O(|tau|)` error.'
+  keywords: [pitchfork, perturbed-cubic, remainder-estimate, amplitude]
+  file: ScalarPitchfork/Perturbed.lean
+  status: reusable
+- id: scalar-pitchfork-lean/pitchfork-field-has-deriv-at
+  decl: ScalarPitchfork.pitchforkField_hasDerivAt
+  kind: theorem
+  summary: 'The derivative of the perturbed pitchfork field in `z`.'
+  keywords: [pitchfork, existence, intermediate-value, remainder-estimate]
+  file: ScalarPitchfork/Existence.lean
+  status: experimental
+- id: scalar-pitchfork-lean/pitchfork-jet-cex
+  decl: ScalarPitchfork.pitchforkJet_cex
+  kind: theorem
+  summary: 'The counterexample satisfies all smoothness and jet hypotheses of `PitchforkJet` (on `U = univ`, any `0 < r ≤ 1`).'
+  keywords: [pitchfork, taylor-jet, counterexample, iterated-derivative]
+  file: ScalarPitchfork/JetCounterexample.lean
+  status: experimental
+- id: scalar-pitchfork-lean/pitchfork-jet-zero
+  decl: ScalarPitchfork.pitchforkJet_zero
+  kind: theorem
+  summary: 'Non-vacuity: the zero remainder satisfies all smoothness and jet hypotheses (on `U = univ`, any `0 < r ≤ 1`).'
+  keywords: [pitchfork, taylor-jet, remainder-estimate, iterated-derivative]
+  file: ScalarPitchfork/Jet.lean
+  status: experimental
+- id: scalar-pitchfork-lean/pitchfork-branch-curves
+  decl: ScalarPitchfork.pitchfork_branch_curves
+  kind: theorem
+  summary: 'The pitchfork branch curves: under the weak remainder bounds and continuity in `tau`, the two branch functions are continuous through the origin, are the unique signed zeros in a fixed window with amplitude `√(alpha tau / beta) + O(|tau|)`, and exhaust the small nonzero zeros.'
+  keywords: [pitchfork, branch-curve, local-uniqueness, continuity]
+  file: ScalarPitchfork/Branch.lean
+  status: reusable
+- id: scalar-pitchfork-lean/pitchfork-branch-curves-of-jet
+  decl: ScalarPitchfork.pitchfork_branch_curves_of_jet
+  kind: theorem
+  summary: '`pitchfork_branch_curves` from `C⁴` smoothness and the jet conditions alone: the continuous branch curves, their local uniqueness, amplitude and derivative sign, with no derivative bound taken as input.'
+  keywords: [pitchfork, taylor-jet, remainder-estimate, iterated-derivative]
+  file: ScalarPitchfork/Jet.lean
+  status: reusable
+- id: scalar-pitchfork-lean/remainder-bounds-of-jet
+  decl: ScalarPitchfork.remainderBounds_of_jet
+  kind: theorem
+  summary: 'If the remainder `R(tau, z)` is `C⁴` near the box `|tau|, |z| ≤ r ≤ 1`, vanishes on the axis `z = 0` and has the five vanishing jets at the origin, then it satisfies the weak value and derivative bounds and is continuous in `tau`.'
+  keywords: [pitchfork, taylor-jet, remainder-estimate, iterated-derivative]
+  file: ScalarPitchfork/Jet.lean
+  status: reusable
+- id: scalar-pitchfork-lean/remainder-equilibrium-derivative-sign
+  decl: ScalarPitchfork.remainder_equilibrium_derivative_sign
+  kind: theorem
+  summary: 'Separate bounds on the divided remainder `e` and on the derivative remainder `es` give the sign of the derivative `ds = alpha * tau - 3 * beta * z ^ 2 + es`: `ds * beta < 0`. No derivative estimate is inferred from a size bound.'
+  keywords: [pitchfork, perturbed-cubic, remainder-estimate, amplitude]
+  file: ScalarPitchfork/Perturbed.lean
+  status: experimental
+- id: scalar-pitchfork-lean/remainder-equilibrium-side
+  decl: ScalarPitchfork.remainder_equilibrium_side
+  kind: theorem
+  summary: 'A nonzero zero of the divided equation `alpha * tau - beta * z ^ 2 + e = 0` lies on the side `tau * beta > 0` whenever `|e| < |beta| * z ^ 2`. The premise is a quantitative remainder bound, not an existence assertion.'
+  keywords: [pitchfork, perturbed-cubic, remainder-estimate, amplitude]
+  file: ScalarPitchfork/Perturbed.lean
+  status: experimental
+- id: scalar-pitchfork-lean/remainder-squared-amplitude-error
+  decl: ScalarPitchfork.remainder_squared_amplitude_error
+  kind: theorem
+  summary: 'Exact squared-amplitude error at a zero of the divided equation.'
+  keywords: [pitchfork, perturbed-cubic, remainder-estimate, amplitude]
+  file: ScalarPitchfork/Perturbed.lean
+  status: experimental
+- id: scalar-pitchfork-lean/root-localize
+  decl: ScalarPitchfork.root_localize
+  kind: theorem
+  summary: 'Every nontrivial zero in the window `|z| ≤ ρ` lies on the side `tau * beta > 0` and has `|z| ∈ [7/8, 9/8] * √(alpha tau / beta)`.'
+  keywords: [pitchfork, branch-curve, local-uniqueness, continuity]
+  file: ScalarPitchfork/Branch.lean
+  status: experimental
+- id: scalar-pitchfork-lean/s-bound
+  decl: ScalarPitchfork.s_bound
+  kind: theorem
+  summary: 'The derivative bound `|∂_z R(tau, z)| ≤ 2M (tau ^ 2 + z ^ 2 |tau| + |z| ^ 3)` (`|z| ≤ 1`).'
+  keywords: [pitchfork, taylor-jet, remainder-estimate, iterated-derivative]
+  file: ScalarPitchfork/Jet.lean
+  status: experimental
+- id: scalar-pitchfork-lean/s-bound-strong
+  decl: ScalarPitchfork.s_bound_strong
+  kind: theorem
+  summary: 'Under the axis condition `∂_z R(tau, 0) = 0`, the stronger derivative bound `|∂_z R(tau, z)| ≤ M (|z| tau ^ 2 + z ^ 2 |tau| + |z| ^ 3)`.'
+  keywords: [pitchfork, taylor-jet, remainder-estimate, iterated-derivative]
+  file: ScalarPitchfork/Jet.lean
+  status: experimental
+- id: scalar-pitchfork-lean/scaled-field-continuous-at-eta
+  decl: ScalarPitchfork.scaledField_continuousAt_eta
+  kind: theorem
+  summary: 'Continuity of the scaled field in the parameter, from continuity of the remainder.'
+  keywords: [pitchfork, branch-curve, local-uniqueness, continuity]
+  file: ScalarPitchfork/Branch.lean
+  status: experimental
+- id: scalar-pitchfork-lean/scaled-field-has-deriv-at
+  decl: ScalarPitchfork.scaled_field_hasDerivAt
+  kind: theorem
+  summary: 'The derivative of the field in the coordinate `x = sgn * z`, multiplied by `sgn * beta`.'
+  keywords: [pitchfork, branch-curve, local-uniqueness, continuity]
+  file: ScalarPitchfork/Branch.lean
+  status: experimental
+- id: scalar-pitchfork-lean/scaled-field-strict-anti-on
+  decl: ScalarPitchfork.scaled_field_strictAntiOn
+  kind: theorem
+  summary: 'Strict monotonicity of the scaled field on the amplitude window.'
+  keywords: [pitchfork, branch-curve, local-uniqueness, continuity]
+  file: ScalarPitchfork/Branch.lean
+  status: experimental
+- id: scalar-pitchfork-lean/small-zero-eq-branch
+  decl: ScalarPitchfork.small_zero_eq_branch
+  kind: theorem
+  summary: 'Classification. Every small nontrivial zero lies on the side `tau * beta > 0` and is one of the two branch values.'
+  keywords: [pitchfork, branch-curve, local-uniqueness, continuity]
+  file: ScalarPitchfork/Branch.lean
+  status: reusable
+- id: scalar-pitchfork-lean/ss-bound
+  decl: ScalarPitchfork.ss_bound
+  kind: theorem
+  summary: '`|∂_z² R(tau, z)| ≤ M (tau ^ 2 + |z| (|tau| + |z|))`.'
+  keywords: [pitchfork, taylor-jet, remainder-estimate, iterated-derivative]
+  file: ScalarPitchfork/Jet.lean
+  status: experimental
+- id: scalar-pitchfork-lean/sss-bound
+  decl: ScalarPitchfork.sss_bound
+  kind: theorem
+  summary: '`|∂_z³ R(tau, z)| ≤ M (|tau| + |z|)`.'
+  keywords: [pitchfork, taylor-jet, remainder-estimate, iterated-derivative]
+  file: ScalarPitchfork/Jet.lean
+  status: experimental
+- id: scalar-pitchfork-lean/strong-bound-iff-axis
+  decl: ScalarPitchfork.strongBound_iff_axis
+  kind: theorem
+  summary: 'Under the jet hypotheses, the stronger value bound holds on the box if and only if the axis condition `∂_z R(tau, 0) = 0` holds on the box.'
+  keywords: [pitchfork, taylor-jet, remainder-estimate, iterated-derivative]
+  file: ScalarPitchfork/Jet.lean
+  status: reusable
+- id: scalar-pitchfork-lean/strong-bounds-of-jet
+  decl: ScalarPitchfork.strongBounds_of_jet
+  kind: theorem
+  summary: 'Both stronger bounds follow when in addition the axis condition `∂_z R(tau, 0) = 0` holds on the box.'
+  keywords: [pitchfork, taylor-jet, remainder-estimate, iterated-derivative]
+  file: ScalarPitchfork/Jet.lean
+  status: reusable
+- id: scalar-pitchfork-lean/subcritical-deriv-pos
+  decl: ScalarPitchfork.subcritical_deriv_pos
+  kind: theorem
+  summary: 'On a subcritical branch (`beta < 0`) the derivative at a nonzero zero is positive.'
+  keywords: [pitchfork, normal-form, cubic, equilibrium]
+  file: ScalarPitchfork/Cubic.lean
+  status: experimental
+- id: scalar-pitchfork-lean/supercritical-deriv-neg
+  decl: ScalarPitchfork.supercritical_deriv_neg
+  kind: theorem
+  summary: 'On a supercritical branch (`beta > 0`) the derivative at a nonzero zero is negative.'
+  keywords: [pitchfork, normal-form, cubic, equilibrium]
+  file: ScalarPitchfork/Cubic.lean
+  status: experimental
+- id: scalar-pitchfork-lean/tauz-axis
+  decl: ScalarPitchfork.tauz_axis
+  kind: theorem
+  summary: '`|∂_tau ∂_z R(tau, 0)| ≤ M |tau|`.'
+  keywords: [pitchfork, taylor-jet, remainder-estimate, iterated-derivative]
+  file: ScalarPitchfork/Jet.lean
+  status: experimental
+- id: scalar-pitchfork-lean/tauzz-axis
+  decl: ScalarPitchfork.tauzz_axis
+  kind: theorem
+  summary: '`|∂_tau ∂_z² R(tau, 0)| ≤ M |tau|`.'
+  keywords: [pitchfork, taylor-jet, remainder-estimate, iterated-derivative]
+  file: ScalarPitchfork/Jet.lean
+  status: experimental
+- id: scalar-pitchfork-lean/uncurry-cex-r
+  decl: ScalarPitchfork.uncurry_cexR
+  kind: theorem
+  summary: 'The uncurried counterexample remainder is `(tau, z) ↦ tau ^ 2 * z`.'
+  keywords: [pitchfork, taylor-jet, counterexample, iterated-derivative]
+  file: ScalarPitchfork/JetCounterexample.lean
+  status: experimental
+- id: scalar-pitchfork-lean/value-bound
+  decl: ScalarPitchfork.value_bound
+  kind: theorem
+  summary: 'The weak value bound `|R(tau, z)| ≤ 2M (|z| tau ^ 2 + |z| ^ 3 |tau| + z ^ 4)`.'
+  keywords: [pitchfork, taylor-jet, remainder-estimate, iterated-derivative]
+  file: ScalarPitchfork/Jet.lean
+  status: experimental
+- id: scalar-pitchfork-lean/value-bound-absorbed
+  decl: ScalarPitchfork.value_bound_absorbed
+  kind: theorem
+  summary: 'Along a zero (`|tau| ≤ D z ^ 2`) the weak value bound implies the value bound assumed by `perturbed_equilibrium_core`.'
+  keywords: [pitchfork, existence, intermediate-value, remainder-estimate]
+  file: ScalarPitchfork/Existence.lean
+  status: experimental
+- id: scalar-pitchfork-lean/value-bound-strong
+  decl: ScalarPitchfork.value_bound_strong
+  kind: theorem
+  summary: 'Under the axis condition `∂_z R(tau, 0) = 0`, the stronger value bound `|R(tau, z)| ≤ M (z ^ 2 tau ^ 2 + |z| ^ 3 |tau| + z ^ 4)`.'
+  keywords: [pitchfork, taylor-jet, remainder-estimate, iterated-derivative]
+  file: ScalarPitchfork/Jet.lean
+  status: experimental
+- id: scalar-pitchfork-lean/value-bound-weak-of-strong-bound
+  decl: ScalarPitchfork.value_bound_weak_of_strongBound
+  kind: theorem
+  summary: 'The stronger value bound implies the weak value bound when `|z| ≤ 1`.'
+  keywords: [pitchfork, remainder-estimate, strong-bound]
+  file: ScalarPitchfork/StrongRemainder.lean
+  status: experimental
+- id: scalar-pitchfork-lean/weak-value-lt-on-window
+  decl: ScalarPitchfork.weak_value_lt_on_window
+  kind: theorem
+  summary: 'Size of the weak value remainder below the amplitude scale `z ^ 2 ≤ 2 * alpha * tau / beta`.'
+  keywords: [pitchfork, existence, intermediate-value, remainder-estimate]
+  file: ScalarPitchfork/Existence.lean
+  status: experimental
+- id: scalar-pitchfork-lean/z-axis
+  decl: ScalarPitchfork.z_axis
+  kind: theorem
+  summary: '`|∂_z R(tau, 0)| ≤ M tau ^ 2`.'
+  keywords: [pitchfork, taylor-jet, remainder-estimate, iterated-derivative]
+  file: ScalarPitchfork/Jet.lean
+  status: experimental
+- id: scalar-pitchfork-lean/zz-axis
+  decl: ScalarPitchfork.zz_axis
+  kind: theorem
+  summary: '`|∂_z² R(tau, 0)| ≤ M tau ^ 2`.'
+  keywords: [pitchfork, taylor-jet, remainder-estimate, iterated-derivative]
+  file: ScalarPitchfork/Jet.lean
+  status: experimental
+- id: scalar-pitchfork-lean/zzz-axis
+  decl: ScalarPitchfork.zzz_axis
+  kind: theorem
+  summary: '`|∂_z³ R(tau, 0)| ≤ M |tau|`.'
+  keywords: [pitchfork, taylor-jet, remainder-estimate, iterated-derivative]
+  file: ScalarPitchfork/Jet.lean
+  status: experimental

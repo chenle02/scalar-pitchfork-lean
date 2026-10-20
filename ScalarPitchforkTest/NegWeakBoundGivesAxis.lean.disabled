@@ -1,0 +1,22 @@
+import ScalarPitchfork
+
+/-! Negative control `NegWeakBoundGivesAxis`: mutation of `ScalarPitchfork.strongBound_iff_axis`.
+The forward direction of `strongBound_iff_axis` is applied to the WEAK bound (`|z| * e ^ 2`
+in place of `z ^ 2 * e ^ 2`, the `z ^ 4`/`z ^ 3` shape otherwise kept). Every jet-admissible
+`R` satisfies the weak bound (`remainderBounds_of_jet`), but `R = tau ^ 2 z` has
+`d_z R(tau, 0) = tau ^ 2 ≠ 0`, so the weak bound does not imply the axis condition.
+Must not compile. -/
+
+theorem ScalarPitchforkTest.negWeakBoundGivesAxis (R : ℝ → ℝ → ℝ) (U : Set (ℝ × ℝ)) (r : ℝ)
+    (hU : IsOpen U) (hsmooth : ContDiffOn ℝ 4 (Function.uncurry R) U)
+    (hr : 0 < r) (hr1 : r ≤ 1) (hbox : Metric.closedBall (0 : ℝ × ℝ) r ⊆ U)
+    (haxis : ∀ e, |e| ≤ r → R e 0 = 0)
+    (hz : iteratedFDeriv ℝ 1 (Function.uncurry R) 0 ![(0, 1)] = 0)
+    (htz : iteratedFDeriv ℝ 2 (Function.uncurry R) 0 ![(1, 0), (0, 1)] = 0)
+    (hzz : iteratedFDeriv ℝ 2 (Function.uncurry R) 0 ![(0, 1), (0, 1)] = 0)
+    (htzz : iteratedFDeriv ℝ 3 (Function.uncurry R) 0 ![(1, 0), (0, 1), (0, 1)] = 0)
+    (hzzz : iteratedFDeriv ℝ 3 (Function.uncurry R) 0 ![(0, 1), (0, 1), (0, 1)] = 0) :
+    (∃ C, ∀ e z, |e| ≤ r → |z| ≤ r → |R e z| ≤ C * (|z| * e ^ 2 + |z| ^ 3 * |e| + z ^ 4)) →
+      ∀ e, |e| ≤ r → iteratedFDeriv ℝ 1 (Function.uncurry R) (e, 0) ![(0, 1)] = 0 := by
+  exact (ScalarPitchfork.strongBound_iff_axis R U r
+    ⟨hU, hsmooth, hr, hr1, hbox, haxis, hz, htz, hzz, htzz, hzzz⟩).mp

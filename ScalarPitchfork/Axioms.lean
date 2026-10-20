@@ -1,0 +1,217 @@
+module
+/-
+Copyright (c) 2026 Le Chen. Released under Apache 2.0 license as described in the file LICENSE.
+-/
+
+import ScalarPitchfork.Branch
+import ScalarPitchfork.Cubic
+import ScalarPitchfork.Existence
+import ScalarPitchfork.Global.Alternatives
+import ScalarPitchfork.Global.ComponentClosure
+import ScalarPitchfork.Jet
+import ScalarPitchfork.JetCounterexample
+import ScalarPitchfork.Perturbed
+import ScalarPitchfork.StrongRemainder
+import ScalarPitchfork.Solution
+import ScalarPitchfork.HeadlineSolution
+
+/-!
+# Axiom report
+
+`verify.sh` builds this module; the lower-tier receipt reads the `#print axioms` output.
+Part 1: every declaration of `claims.yaml` (in file order). Part 2: every comparator
+Solution theorem (`comparator.json`, then `comparator.headline.json`). Each must depend only on
+`propext`, `Quot.sound` and `Classical.choice`.
+-/
+
+/-! ## Part 1: claims.yaml -/
+
+#print axioms ScalarPitchfork.DerivBound.b3
+#print axioms ScalarPitchfork.DerivBound.b4
+#print axioms ScalarPitchfork.Global.base_mem_selectedComponent
+#print axioms ScalarPitchfork.Global.global_unbounded_of_monotone
+#print axioms ScalarPitchfork.Global.isClosed_connectedComponentIn_of_isClosed
+#print axioms ScalarPitchfork.Global.isClosed_of_relClosed
+#print axioms ScalarPitchfork.Global.isClosed_sdiff_of_isOpen_preimage
+#print axioms ScalarPitchfork.Global.isCompact_slice
+#print axioms ScalarPitchfork.Global.not_altComplement
+#print axioms ScalarPitchfork.Global.not_altOtherTrivial
+#print axioms ScalarPitchfork.Global.not_isCompact_of_alternatives
+#print axioms ScalarPitchfork.Global.parentComponent_isClosed
+#print axioms ScalarPitchfork.Global.retainedWithBase_subset_parentComponent
+#print axioms ScalarPitchfork.Global.retainedWithBase_subset_selectedComponent
+#print axioms ScalarPitchfork.Global.retainedWithBase_subset_unilateralRemainder
+#print axioms ScalarPitchfork.Global.sSup_eq_top_of_unbounded
+#print axioms ScalarPitchfork.Global.sSup_param_eq_top
+#print axioms ScalarPitchfork.Global.selectedComponent_isClosed
+#print axioms ScalarPitchfork.Global.selectedComponent_subset_solutionClosure
+#print axioms ScalarPitchfork.Global.selectedImage_properties
+#print axioms ScalarPitchfork.Global.strictAntiOn_of_relClopen
+#print axioms ScalarPitchfork.Global.strictMonoOn_of_relClopen
+#print axioms ScalarPitchfork.Global.subset_of_relClopen
+#print axioms ScalarPitchfork.Global.unbounded_of_not_isCompact
+#print axioms ScalarPitchfork.Global.unilateralRemainder_isClosed
+#print axioms ScalarPitchfork.PitchforkJet.exists_bound
+#print axioms ScalarPitchfork.PitchforkJet.hasDerivAt_s
+#print axioms ScalarPitchfork.PitchforkJet.hasDerivAt_tau
+#print axioms ScalarPitchfork.PitchforkJet.mem_U
+#print axioms ScalarPitchfork.PitchforkJet.zero_le_r
+#print axioms ScalarPitchfork.abs_eq_sgn_mul
+#print axioms ScalarPitchfork.abs_sub_le_of_deriv_bound
+#print axioms ScalarPitchfork.abs_sub_sqrt_le_of_cubic_remainder
+#print axioms ScalarPitchfork.absorbedConst_nonneg
+#print axioms ScalarPitchfork.absorbed_mul_radius
+#print axioms ScalarPitchfork.ampConst_nonneg
+#print axioms ScalarPitchfork.ampErr_nonneg
+#print axioms ScalarPitchfork.amp_err_le_sqrt
+#print axioms ScalarPitchfork.amp_sq_eq_abs
+#print axioms ScalarPitchfork.amplitude_sq_pos
+#print axioms ScalarPitchfork.axis_of_linearization
+#print axioms ScalarPitchfork.branchNhd_branchSmall
+#print axioms ScalarPitchfork.branchNhd_mem_nhds
+#print axioms ScalarPitchfork.branchNhd_zero
+#print axioms ScalarPitchfork.branchRadius_le
+#print axioms ScalarPitchfork.branchRadius_pos
+#print axioms ScalarPitchfork.branchRoot_existsUnique
+#print axioms ScalarPitchfork.branchRoot_unique
+#print axioms ScalarPitchfork.branchSmall_eventually
+#print axioms ScalarPitchfork.branch_abs_le
+#print axioms ScalarPitchfork.branch_amplitudes
+#print axioms ScalarPitchfork.branch_continuousAt_side
+#print axioms ScalarPitchfork.branch_continuousOn
+#print axioms ScalarPitchfork.branch_curves_of_strongBound
+#print axioms ScalarPitchfork.branch_eq_of_root
+#print axioms ScalarPitchfork.branch_eq_zero_of_not_side
+#print axioms ScalarPitchfork.branch_eventually_of_strongBound
+#print axioms ScalarPitchfork.branch_root_exists
+#print axioms ScalarPitchfork.branch_side_eventually
+#print axioms ScalarPitchfork.branch_spec
+#print axioms ScalarPitchfork.branch_tendsto_zero
+#print axioms ScalarPitchfork.branch_zero
+#print axioms ScalarPitchfork.cex_d3
+#print axioms ScalarPitchfork.cex_d_eta_s
+#print axioms ScalarPitchfork.cex_d_s
+#print axioms ScalarPitchfork.cex_d_ss
+#print axioms ScalarPitchfork.cex_not_strongBound
+#print axioms ScalarPitchfork.contDiff_cexR
+#print axioms ScalarPitchfork.deriv_bound_absorbed
+#print axioms ScalarPitchfork.deriv_bound_weak_of_strongBound
+#print axioms ScalarPitchfork.deriv_cubicField
+#print axioms ScalarPitchfork.deriv_cubicField_at_branch
+#print axioms ScalarPitchfork.deriv_zero_of_sq_bound
+#print axioms ScalarPitchfork.divided_absorb
+#print axioms ScalarPitchfork.divided_remainder_cubic_bound
+#print axioms ScalarPitchfork.equilibrium_core
+#print axioms ScalarPitchfork.equilibrium_core_of_strongBound
+#print axioms ScalarPitchfork.existsUnique_branchRoot_eventually
+#print axioms ScalarPitchfork.exists_branch_at
+#print axioms ScalarPitchfork.exists_branch_eventually
+#print axioms ScalarPitchfork.exists_branch_eventually_of_jet
+#print axioms ScalarPitchfork.exists_pos_equilibrium
+#print axioms ScalarPitchfork.field_deriv_neg_on_window
+#print axioms ScalarPitchfork.hasDerivAt_F
+#print axioms ScalarPitchfork.hasDerivAt_iteratedFDeriv_line
+#print axioms ScalarPitchfork.isOpen_branchNhd
+#print axioms ScalarPitchfork.iteratedFDeriv_succ_eq_of_line
+#print axioms ScalarPitchfork.jetRs_cex
+#print axioms ScalarPitchfork.jet_not_sufficient_for_strongBound
+#print axioms ScalarPitchfork.magnitude_error_of_mixed_bound
+#print axioms ScalarPitchfork.magnitude_sqrt_error
+#print axioms ScalarPitchfork.mem_box
+#print axioms ScalarPitchfork.mem_window
+#print axioms ScalarPitchfork.nonzero_equilibrium_branch_side
+#print axioms ScalarPitchfork.nonzero_equilibrium_eq_branch
+#print axioms ScalarPitchfork.nonzero_equilibrium_sq
+#print axioms ScalarPitchfork.norm_eTau
+#print axioms ScalarPitchfork.norm_eZ
+#print axioms ScalarPitchfork.parameter_amplitude_bounds
+#print axioms ScalarPitchfork.parameter_le_amp_sq
+#print axioms ScalarPitchfork.perturbed_equilibrium_core
+#print axioms ScalarPitchfork.pitchforkField_hasDerivAt
+#print axioms ScalarPitchfork.pitchforkJet_cex
+#print axioms ScalarPitchfork.pitchforkJet_zero
+#print axioms ScalarPitchfork.pitchfork_branch_curves
+#print axioms ScalarPitchfork.pitchfork_branch_curves_of_jet
+#print axioms ScalarPitchfork.remainderBounds_of_jet
+#print axioms ScalarPitchfork.remainder_equilibrium_derivative_sign
+#print axioms ScalarPitchfork.remainder_equilibrium_side
+#print axioms ScalarPitchfork.remainder_squared_amplitude_error
+#print axioms ScalarPitchfork.root_localize
+#print axioms ScalarPitchfork.s_bound
+#print axioms ScalarPitchfork.s_bound_strong
+#print axioms ScalarPitchfork.scaledField_continuousAt_eta
+#print axioms ScalarPitchfork.scaled_field_hasDerivAt
+#print axioms ScalarPitchfork.scaled_field_strictAntiOn
+#print axioms ScalarPitchfork.small_zero_eq_branch
+#print axioms ScalarPitchfork.ss_bound
+#print axioms ScalarPitchfork.sss_bound
+#print axioms ScalarPitchfork.strongBound_iff_axis
+#print axioms ScalarPitchfork.strongBounds_of_jet
+#print axioms ScalarPitchfork.subcritical_deriv_pos
+#print axioms ScalarPitchfork.supercritical_deriv_neg
+#print axioms ScalarPitchfork.tauz_axis
+#print axioms ScalarPitchfork.tauzz_axis
+#print axioms ScalarPitchfork.uncurry_cexR
+#print axioms ScalarPitchfork.value_bound
+#print axioms ScalarPitchfork.value_bound_absorbed
+#print axioms ScalarPitchfork.value_bound_strong
+#print axioms ScalarPitchfork.value_bound_weak_of_strongBound
+#print axioms ScalarPitchfork.weak_value_lt_on_window
+#print axioms ScalarPitchfork.z_axis
+#print axioms ScalarPitchfork.zz_axis
+#print axioms ScalarPitchfork.zzz_axis
+
+/-! ## Part 2: comparator Solution theorems -/
+
+#print axioms ScalarPitchforkAudit.ScalarPitchfork.pitchfork_branch_curves
+#print axioms ScalarPitchforkAudit.ScalarPitchfork.existsUnique_branchRoot_eventually
+#print axioms ScalarPitchforkAudit.ScalarPitchfork.exists_branch_eventually
+#print axioms ScalarPitchforkAudit.ScalarPitchfork.branch_side_eventually
+#print axioms ScalarPitchforkAudit.ScalarPitchfork.small_zero_eq_branch
+#print axioms ScalarPitchforkAudit.ScalarPitchfork.deriv_cubicField_at_branch
+#print axioms ScalarPitchforkAudit.ScalarPitchfork.abs_sub_sqrt_le_of_cubic_remainder
+#print axioms ScalarPitchforkAudit.ScalarPitchfork.remainderBounds_of_jet
+#print axioms ScalarPitchforkAudit.ScalarPitchfork.strongBound_iff_axis
+#print axioms ScalarPitchforkAudit.ScalarPitchfork.jet_not_sufficient_for_strongBound
+#print axioms ScalarPitchforkAudit.ScalarPitchfork.Global.sSup_param_eq_top
+#print axioms ScalarPitchforkAudit.ScalarPitchfork.Global.selectedComponent_isClosed
+#print axioms ScalarPitchforkAudit.ScalarPitchfork.strongBounds_of_jet
+#print axioms ScalarPitchforkAudit.ScalarPitchfork.branch_eventually_of_strongBound
+#print axioms ScalarPitchforkAudit.ScalarPitchfork.branch_curves_of_strongBound
+#print axioms ScalarPitchforkAudit.ScalarPitchfork.equilibrium_core_of_strongBound
+#print axioms ScalarPitchforkAudit.ScalarPitchfork.axis_of_linearization
+#print axioms ScalarPitchforkAudit.ScalarPitchfork.perturbed_equilibrium_core
+#print axioms ScalarPitchforkAudit.ScalarPitchfork.equilibrium_core
+#print axioms ScalarPitchforkAudit.ScalarPitchfork.pitchfork_branch_curves_of_jet
+#print axioms ScalarPitchforkAudit.ScalarPitchfork.exists_branch_eventually_of_jet
+#print axioms ScalarPitchforkAudit.ScalarPitchfork.deriv_zero_of_sq_bound
+#print axioms ScalarPitchforkAudit.ScalarPitchfork.nonzero_equilibrium_eq_branch
+#print axioms ScalarPitchforkAudit.ScalarPitchfork.exists_pos_equilibrium
+#print axioms ScalarPitchforkAudit.ScalarPitchfork.Global.global_unbounded_of_monotone
+#print axioms ScalarPitchforkAudit.ScalarPitchfork.Global.not_altComplement
+#print axioms ScalarPitchforkAudit.ScalarPitchfork.Global.not_altOtherTrivial
+#print axioms ScalarPitchforkAudit.ScalarPitchfork.Global.not_isCompact_of_alternatives
+#print axioms ScalarPitchforkAudit.ScalarPitchfork.Global.isCompact_slice
+#print axioms ScalarPitchforkAudit.ScalarPitchfork.Global.subset_of_relClopen
+#print axioms ScalarPitchforkAudit.ScalarPitchfork.Global.strictAntiOn_of_relClopen
+#print axioms ScalarPitchforkAudit.ScalarPitchfork.Global.isClosed_connectedComponentIn_of_isClosed
+#print axioms ScalarPitchforkAudit.ScalarPitchfork.Global.isClosed_sdiff_of_isOpen_preimage
+#print axioms ScalarPitchforkAudit.ScalarPitchfork.Global.parentComponent_isClosed
+#print axioms ScalarPitchforkAudit.ScalarPitchfork.Global.unilateralRemainder_isClosed
+#print axioms ScalarPitchforkAudit.ScalarPitchfork.Global.retainedWithBase_subset_parentComponent
+#print axioms ScalarPitchforkAudit.ScalarPitchfork.Global.retainedWithBase_subset_unilateralRemainder
+#print axioms ScalarPitchforkAudit.ScalarPitchfork.Global.retainedWithBase_subset_selectedComponent
+#print axioms ScalarPitchforkAudit.ScalarPitchfork.Global.base_mem_selectedComponent
+#print axioms ScalarPitchforkAudit.ScalarPitchfork.Global.selectedComponent_subset_solutionClosure
+#print axioms ScalarPitchforkHeadline.ScalarPitchfork.pitchfork_branch_curves
+#print axioms ScalarPitchforkHeadline.ScalarPitchfork.existsUnique_branchRoot_eventually
+#print axioms ScalarPitchforkHeadline.ScalarPitchfork.exists_branch_eventually
+#print axioms ScalarPitchforkHeadline.ScalarPitchfork.branch_side_eventually
+#print axioms ScalarPitchforkHeadline.ScalarPitchfork.small_zero_eq_branch
+#print axioms ScalarPitchforkHeadline.ScalarPitchfork.deriv_cubicField_at_branch
+#print axioms ScalarPitchforkHeadline.ScalarPitchfork.abs_sub_sqrt_le_of_cubic_remainder
+#print axioms ScalarPitchforkHeadline.ScalarPitchfork.remainderBounds_of_jet
+#print axioms ScalarPitchforkHeadline.ScalarPitchfork.strongBound_iff_axis
+#print axioms ScalarPitchforkHeadline.ScalarPitchfork.jet_not_sufficient_for_strongBound
+#print axioms ScalarPitchforkHeadline.ScalarPitchfork.Global.sSup_param_eq_top
+#print axioms ScalarPitchforkHeadline.ScalarPitchfork.Global.selectedComponent_isClosed

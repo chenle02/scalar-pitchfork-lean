@@ -1,0 +1,22 @@
+import ScalarPitchfork
+
+/-! Negative control `NegJetSufficesStrong`: mutation of `ScalarPitchfork.remainderBounds_of_jet / jet_not_sufficient_for_strongBound`.
+Positive form of `jet_not_sufficient_for_strongBound`: claims every jet-admissible `R` has
+the STRONG bound `C (z ^ 2 e ^ 2 + |z| ^ 3 |e| + z ^ 4)`. False: `R = tau ^ 2 z` is a
+counterexample (the library proves the negation). The proof passes off the weak bound of
+`remainderBounds_of_jet` as the strong one.
+Must not compile. -/
+
+theorem ScalarPitchforkTest.negJetSufficesStrong (R : ℝ → ℝ → ℝ) (U : Set (ℝ × ℝ)) (r : ℝ)
+    (hU : IsOpen U) (hsmooth : ContDiffOn ℝ 4 (Function.uncurry R) U)
+    (hr : 0 < r) (hr1 : r ≤ 1) (hbox : Metric.closedBall (0 : ℝ × ℝ) r ⊆ U)
+    (haxis : ∀ e, |e| ≤ r → R e 0 = 0)
+    (hz : iteratedFDeriv ℝ 1 (Function.uncurry R) 0 ![(0, 1)] = 0)
+    (htz : iteratedFDeriv ℝ 2 (Function.uncurry R) 0 ![(1, 0), (0, 1)] = 0)
+    (hzz : iteratedFDeriv ℝ 2 (Function.uncurry R) 0 ![(0, 1), (0, 1)] = 0)
+    (htzz : iteratedFDeriv ℝ 3 (Function.uncurry R) 0 ![(1, 0), (0, 1), (0, 1)] = 0)
+    (hzzz : iteratedFDeriv ℝ 3 (Function.uncurry R) 0 ![(0, 1), (0, 1), (0, 1)] = 0) :
+    ∃ C, ∀ e z, |e| ≤ r → |z| ≤ r → |R e z| ≤ C * (z ^ 2 * e ^ 2 + |z| ^ 3 * |e| + z ^ 4) := by
+  obtain ⟨C, -, hval, -, -, -⟩ := ScalarPitchfork.remainderBounds_of_jet R U r
+    ⟨hU, hsmooth, hr, hr1, hbox, haxis, hz, htz, hzz, htzz, hzzz⟩
+  exact ⟨C, hval⟩
