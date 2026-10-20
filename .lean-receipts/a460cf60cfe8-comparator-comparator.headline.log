@@ -1,0 +1,34 @@
+Current branch: HEAD
+Using cache from origin: (some leanprover-community/mathlib4)
+No files to download
+Already decompressed 9031 file(s)
+lean-path-shadow: none (11 entries, roots ScalarPitchfork)
+== lake comparator (toolchain) comparator.headline.json
+Resolving dependencies
+Building ScalarPitchfork.HeadlineChallenge
+⚠ [9047/9047] Replayed ScalarPitchfork.HeadlineChallenge
+warning: ScalarPitchfork/HeadlineChallenge.lean:52:8: declaration uses `sorry`
+warning: ScalarPitchfork/HeadlineChallenge.lean:81:8: declaration uses `sorry`
+warning: ScalarPitchfork/HeadlineChallenge.lean:101:8: declaration uses `sorry`
+warning: ScalarPitchfork/HeadlineChallenge.lean:123:8: declaration uses `sorry`
+warning: ScalarPitchfork/HeadlineChallenge.lean:145:8: declaration uses `sorry`
+warning: ScalarPitchfork/HeadlineChallenge.lean:163:8: declaration uses `sorry`
+warning: ScalarPitchfork/HeadlineChallenge.lean:174:8: declaration uses `sorry`
+warning: ScalarPitchfork/HeadlineChallenge.lean:190:8: declaration uses `sorry`
+warning: ScalarPitchfork/HeadlineChallenge.lean:213:8: declaration uses `sorry`
+warning: ScalarPitchfork/HeadlineChallenge.lean:231:8: declaration uses `sorry`
+warning: ScalarPitchfork/HeadlineChallenge.lean:255:8: declaration uses `sorry`
+warning: ScalarPitchfork/HeadlineChallenge.lean:271:8: declaration uses `sorry`
+Build completed successfully (9047 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, ScalarPitchforkHeadline.ScalarPitchfork.pitchfork_branch_curves, ScalarPitchforkHeadline.ScalarPitchfork.existsUnique_branchRoot_eventually, ScalarPitchforkHeadline.ScalarPitchfork.exists_branch_eventually, ScalarPitchforkHeadline.ScalarPitchfork.branch_side_eventually, ScalarPitchforkHeadline.ScalarPitchfork.small_zero_eq_branch, ScalarPitchforkHeadline.ScalarPitchfork.deriv_cubicField_at_branch, ScalarPitchforkHeadline.ScalarPitchfork.abs_sub_sqrt_le_of_cubic_remainder, ScalarPitchforkHeadline.ScalarPitchfork.remainderBounds_of_jet, ScalarPitchforkHeadline.ScalarPitchfork.strongBound_iff_axis, ScalarPitchforkHeadline.ScalarPitchfork.jet_not_sufficient_for_strongBound, ScalarPitchforkHeadline.ScalarPitchfork.Global.sSup_param_eq_top, ScalarPitchforkHeadline.ScalarPitchfork.Global.selectedComponent_isClosed, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from ScalarPitchfork.HeadlineChallenge
+Building ScalarPitchfork.HeadlineSolution
+Build completed successfully (9057 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, ScalarPitchforkHeadline.ScalarPitchfork.pitchfork_branch_curves, ScalarPitchforkHeadline.ScalarPitchfork.existsUnique_branchRoot_eventually, ScalarPitchforkHeadline.ScalarPitchfork.exists_branch_eventually, ScalarPitchforkHeadline.ScalarPitchfork.branch_side_eventually, ScalarPitchforkHeadline.ScalarPitchfork.small_zero_eq_branch, ScalarPitchforkHeadline.ScalarPitchfork.deriv_cubicField_at_branch, ScalarPitchforkHeadline.ScalarPitchfork.abs_sub_sqrt_le_of_cubic_remainder, ScalarPitchforkHeadline.ScalarPitchfork.remainderBounds_of_jet, ScalarPitchforkHeadline.ScalarPitchfork.strongBound_iff_axis, ScalarPitchforkHeadline.ScalarPitchfork.jet_not_sufficient_for_strongBound, ScalarPitchforkHeadline.ScalarPitchfork.Global.sSup_param_eq_top, ScalarPitchforkHeadline.ScalarPitchfork.Global.selectedComponent_isClosed, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from ScalarPitchfork.HeadlineSolution
+Running con-ron kernel on solution
+con-ron: accepted 28190 declarations (--verified)
+con-ron kernel accepts the solution
+Running nanoda kernel on solution
+nanoda kernel accepts the solution
+Running Lean default kernel on solution
+Lean default kernel accepts the solution
+Your solution is okay!

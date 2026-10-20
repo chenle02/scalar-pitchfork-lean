@@ -1,0 +1,162 @@
+{
+  "build_provenance": {
+    "cache_reused": 2,
+    "compiled": false,
+    "modules_built": 0,
+    "prebuilt": true,
+    "source": null
+  },
+  "commit": "a460cf60cfe88aa90019be59d45a1d0f14ece7e7",
+  "configs": [
+    {
+      "challenge_module": "ScalarPitchfork.HeadlineChallenge",
+      "definition_names": [],
+      "log": ".lean-receipts/a460cf60cfe8-comparator-comparator.headline.log",
+      "log_sha256": "7429000de487b15409eee3c6f89052f73e0a74ede9e19263f6c428c8be06a5dc",
+      "path": "comparator.headline.json",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "result": "pass",
+      "sha256": "e570c32b70f663927debf662ba5fb987a3aa18e2b3f1fc4241cc615ce5b1539c",
+      "solution_module": "ScalarPitchfork.HeadlineSolution",
+      "theorem_names": [
+        "ScalarPitchforkHeadline.ScalarPitchfork.pitchfork_branch_curves",
+        "ScalarPitchforkHeadline.ScalarPitchfork.existsUnique_branchRoot_eventually",
+        "ScalarPitchforkHeadline.ScalarPitchfork.exists_branch_eventually",
+        "ScalarPitchforkHeadline.ScalarPitchfork.branch_side_eventually",
+        "ScalarPitchforkHeadline.ScalarPitchfork.small_zero_eq_branch",
+        "ScalarPitchforkHeadline.ScalarPitchfork.deriv_cubicField_at_branch",
+        "ScalarPitchforkHeadline.ScalarPitchfork.abs_sub_sqrt_le_of_cubic_remainder",
+        "ScalarPitchforkHeadline.ScalarPitchfork.remainderBounds_of_jet",
+        "ScalarPitchforkHeadline.ScalarPitchfork.strongBound_iff_axis",
+        "ScalarPitchforkHeadline.ScalarPitchfork.jet_not_sufficient_for_strongBound",
+        "ScalarPitchforkHeadline.ScalarPitchfork.Global.sSup_param_eq_top",
+        "ScalarPitchforkHeadline.ScalarPitchfork.Global.selectedComponent_isClosed"
+      ]
+    },
+    {
+      "challenge_module": "ScalarPitchfork.Challenge",
+      "definition_names": [],
+      "log": ".lean-receipts/a460cf60cfe8-comparator-comparator.log",
+      "log_sha256": "0f399bb633936e035f6fddceda39b5b39073754307c7a4682d9066692747df78",
+      "path": "comparator.json",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "result": "pass",
+      "sha256": "e69553df0f96c96861bf316be51c7f4f4d8d74c2cf3c49a008c56de0e5c8b697",
+      "solution_module": "ScalarPitchfork.Solution",
+      "theorem_names": [
+        "ScalarPitchforkAudit.ScalarPitchfork.pitchfork_branch_curves",
+        "ScalarPitchforkAudit.ScalarPitchfork.existsUnique_branchRoot_eventually",
+        "ScalarPitchforkAudit.ScalarPitchfork.exists_branch_eventually",
+        "ScalarPitchforkAudit.ScalarPitchfork.branch_side_eventually",
+        "ScalarPitchforkAudit.ScalarPitchfork.small_zero_eq_branch",
+        "ScalarPitchforkAudit.ScalarPitchfork.deriv_cubicField_at_branch",
+        "ScalarPitchforkAudit.ScalarPitchfork.abs_sub_sqrt_le_of_cubic_remainder",
+        "ScalarPitchforkAudit.ScalarPitchfork.remainderBounds_of_jet",
+        "ScalarPitchforkAudit.ScalarPitchfork.strongBound_iff_axis",
+        "ScalarPitchforkAudit.ScalarPitchfork.jet_not_sufficient_for_strongBound",
+        "ScalarPitchforkAudit.ScalarPitchfork.Global.sSup_param_eq_top",
+        "ScalarPitchforkAudit.ScalarPitchfork.Global.selectedComponent_isClosed",
+        "ScalarPitchforkAudit.ScalarPitchfork.strongBounds_of_jet",
+        "ScalarPitchforkAudit.ScalarPitchfork.branch_eventually_of_strongBound",
+        "ScalarPitchforkAudit.ScalarPitchfork.branch_curves_of_strongBound",
+        "ScalarPitchforkAudit.ScalarPitchfork.equilibrium_core_of_strongBound",
+        "ScalarPitchforkAudit.ScalarPitchfork.axis_of_linearization",
+        "ScalarPitchforkAudit.ScalarPitchfork.perturbed_equilibrium_core",
+        "ScalarPitchforkAudit.ScalarPitchfork.equilibrium_core",
+        "ScalarPitchforkAudit.ScalarPitchfork.pitchfork_branch_curves_of_jet",
+        "ScalarPitchforkAudit.ScalarPitchfork.exists_branch_eventually_of_jet",
+        "ScalarPitchforkAudit.ScalarPitchfork.deriv_zero_of_sq_bound",
+        "ScalarPitchforkAudit.ScalarPitchfork.nonzero_equilibrium_eq_branch",
+        "ScalarPitchforkAudit.ScalarPitchfork.exists_pos_equilibrium",
+        "ScalarPitchforkAudit.ScalarPitchfork.Global.global_unbounded_of_monotone",
+        "ScalarPitchforkAudit.ScalarPitchfork.Global.not_altComplement",
+        "ScalarPitchforkAudit.ScalarPitchfork.Global.not_altOtherTrivial",
+        "ScalarPitchforkAudit.ScalarPitchfork.Global.not_isCompact_of_alternatives",
+        "ScalarPitchforkAudit.ScalarPitchfork.Global.isCompact_slice",
+        "ScalarPitchforkAudit.ScalarPitchfork.Global.subset_of_relClopen",
+        "ScalarPitchforkAudit.ScalarPitchfork.Global.strictAntiOn_of_relClopen",
+        "ScalarPitchforkAudit.ScalarPitchfork.Global.isClosed_connectedComponentIn_of_isClosed",
+        "ScalarPitchforkAudit.ScalarPitchfork.Global.isClosed_sdiff_of_isOpen_preimage",
+        "ScalarPitchforkAudit.ScalarPitchfork.Global.parentComponent_isClosed",
+        "ScalarPitchforkAudit.ScalarPitchfork.Global.unilateralRemainder_isClosed",
+        "ScalarPitchforkAudit.ScalarPitchfork.Global.retainedWithBase_subset_parentComponent",
+        "ScalarPitchforkAudit.ScalarPitchfork.Global.retainedWithBase_subset_unilateralRemainder",
+        "ScalarPitchforkAudit.ScalarPitchfork.Global.retainedWithBase_subset_selectedComponent",
+        "ScalarPitchforkAudit.ScalarPitchfork.Global.base_mem_selectedComponent",
+        "ScalarPitchforkAudit.ScalarPitchfork.Global.selectedComponent_subset_solutionClosure"
+      ]
+    }
+  ],
+  "generated_at": "2026-10-20T11:42:29+00:00",
+  "host": "lab-workstation",
+  "host_label": "lab-workstation",
+  "host_policy": "allowed by COMPARATOR_RECEIPT_ALLOW_HOST=1",
+  "job_id": "local-lab-workstation-668888-20261020T114229Z",
+  "judges": 1,
+  "lean_threads": null,
+  "lean_toolchain": "leanprover/lean4:v4.35.0",
+  "mechanism": "toolchain",
+  "olean_manifest": {
+    "captured": "build",
+    "files": 45,
+    "lake_manifest_sha256": "549a1878ff66633e9f39cf3c8bd30b8e2ec40c90d82d02d7fdd38ee82ce5b81a",
+    "lean_toolchain": "leanprover/lean4:v4.35.0",
+    "schema": "olean-manifest/1",
+    "sha256": "050d436129659863518d9795494ec977625926a8e02f9fd8bbd50ed1b0ed6d8f"
+  },
+  "result": "pass",
+  "schema": "comparator-receipt/2",
+  "stack_limit": {
+    "hard_kb": "unlimited",
+    "soft_kb": 8192,
+    "source": "inherited"
+  },
+  "stages": [
+    {
+      "exit": 0,
+      "stage": "checkout",
+      "status": "prepared",
+      "wall_s": 29.461
+    },
+    {
+      "exit": 0,
+      "stage": "cache-get",
+      "status": "prepared",
+      "wall_s": 5.414
+    },
+    {
+      "exit": 0,
+      "stage": "build",
+      "status": "prepared",
+      "wall_s": 7.963
+    },
+    {
+      "exit": 0,
+      "stage": "comparator",
+      "status": "ok",
+      "wall_s": 206.5
+    }
+  ],
+  "toolchain_resolution": {
+    "lake": "<elan>/bin/lake",
+    "source": "elan",
+    "version": "Lake version 5.0.0-src+eb6cafb (Lean version 4.35.0)"
+  },
+  "tools": {
+    "con-ron_sha256": "60f4ca9fb9436c323789fa49aae33af6dcd1b9b54b43a66b461779ce79fd8eec",
+    "lake_sha256": "8ba83c98f76562d03b8dbc33f1057151ba6cbb121679dde76b2260ccc90495e1",
+    "lean_toolchain": "leanprover/lean4:v4.35.0",
+    "leanchecker_sha256": "12c38901cdbfab178f1bf6145dd30012e9a3b2c11ca695292a5884fa3cbaddb6",
+    "leanexport_sha256": "f6a6483d518a11b323c28b9bac176d2220df0e9fc3230833815db9586669c074",
+    "nanoda_bin_sha256": "cbf13950fc4a48f635a0beceeb5ed32dd82568b870cfd081b6391c1f2cf02ba5"
+  },
+  "unit_size": null
+}

@@ -1,0 +1,62 @@
+Current branch: HEAD
+Using cache from origin: (some leanprover-community/mathlib4)
+No files to download
+Already decompressed 9031 file(s)
+lean-path-shadow: none (11 entries, roots ScalarPitchfork)
+== lake comparator (toolchain) comparator.json
+Resolving dependencies
+Building ScalarPitchfork.Challenge
+⚠ [9047/9047] Replayed ScalarPitchfork.Challenge
+warning: ScalarPitchfork/Challenge.lean:53:8: declaration uses `sorry`
+warning: ScalarPitchfork/Challenge.lean:82:8: declaration uses `sorry`
+warning: ScalarPitchfork/Challenge.lean:102:8: declaration uses `sorry`
+warning: ScalarPitchfork/Challenge.lean:124:8: declaration uses `sorry`
+warning: ScalarPitchfork/Challenge.lean:146:8: declaration uses `sorry`
+warning: ScalarPitchfork/Challenge.lean:164:8: declaration uses `sorry`
+warning: ScalarPitchfork/Challenge.lean:175:8: declaration uses `sorry`
+warning: ScalarPitchfork/Challenge.lean:191:8: declaration uses `sorry`
+warning: ScalarPitchfork/Challenge.lean:214:8: declaration uses `sorry`
+warning: ScalarPitchfork/Challenge.lean:232:8: declaration uses `sorry`
+warning: ScalarPitchfork/Challenge.lean:256:8: declaration uses `sorry`
+warning: ScalarPitchfork/Challenge.lean:272:8: declaration uses `sorry`
+warning: ScalarPitchfork/Challenge.lean:297:8: declaration uses `sorry`
+warning: ScalarPitchfork/Challenge.lean:320:8: declaration uses `sorry`
+warning: ScalarPitchfork/Challenge.lean:346:8: declaration uses `sorry`
+warning: ScalarPitchfork/Challenge.lean:371:8: declaration uses `sorry`
+warning: ScalarPitchfork/Challenge.lean:392:8: declaration uses `sorry`
+warning: ScalarPitchfork/Challenge.lean:422:8: declaration uses `sorry`
+warning: ScalarPitchfork/Challenge.lean:442:8: declaration uses `sorry`
+warning: ScalarPitchfork/Challenge.lean:462:8: declaration uses `sorry`
+warning: ScalarPitchfork/Challenge.lean:491:8: declaration uses `sorry`
+warning: ScalarPitchfork/Challenge.lean:513:8: declaration uses `sorry`
+warning: ScalarPitchfork/Challenge.lean:522:8: declaration uses `sorry`
+warning: ScalarPitchfork/Challenge.lean:533:8: declaration uses `sorry`
+warning: ScalarPitchfork/Challenge.lean:561:8: declaration uses `sorry`
+warning: ScalarPitchfork/Challenge.lean:585:8: declaration uses `sorry`
+warning: ScalarPitchfork/Challenge.lean:602:8: declaration uses `sorry`
+warning: ScalarPitchfork/Challenge.lean:614:8: declaration uses `sorry`
+warning: ScalarPitchfork/Challenge.lean:626:8: declaration uses `sorry`
+warning: ScalarPitchfork/Challenge.lean:636:8: declaration uses `sorry`
+warning: ScalarPitchfork/Challenge.lean:648:8: declaration uses `sorry`
+warning: ScalarPitchfork/Challenge.lean:662:8: declaration uses `sorry`
+warning: ScalarPitchfork/Challenge.lean:670:8: declaration uses `sorry`
+warning: ScalarPitchfork/Challenge.lean:680:8: declaration uses `sorry`
+warning: ScalarPitchfork/Challenge.lean:690:8: declaration uses `sorry`
+warning: ScalarPitchfork/Challenge.lean:702:8: declaration uses `sorry`
+warning: ScalarPitchfork/Challenge.lean:714:8: declaration uses `sorry`
+warning: ScalarPitchfork/Challenge.lean:727:8: declaration uses `sorry`
+warning: ScalarPitchfork/Challenge.lean:742:8: declaration uses `sorry`
+warning: ScalarPitchfork/Challenge.lean:756:8: declaration uses `sorry`
+Build completed successfully (9047 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, ScalarPitchforkAudit.ScalarPitchfork.pitchfork_branch_curves, ScalarPitchforkAudit.ScalarPitchfork.existsUnique_branchRoot_eventually, ScalarPitchforkAudit.ScalarPitchfork.exists_branch_eventually, ScalarPitchforkAudit.ScalarPitchfork.branch_side_eventually, ScalarPitchforkAudit.ScalarPitchfork.small_zero_eq_branch, ScalarPitchforkAudit.ScalarPitchfork.deriv_cubicField_at_branch, ScalarPitchforkAudit.ScalarPitchfork.abs_sub_sqrt_le_of_cubic_remainder, ScalarPitchforkAudit.ScalarPitchfork.remainderBounds_of_jet, ScalarPitchforkAudit.ScalarPitchfork.strongBound_iff_axis, ScalarPitchforkAudit.ScalarPitchfork.jet_not_sufficient_for_strongBound, ScalarPitchforkAudit.ScalarPitchfork.Global.sSup_param_eq_top, ScalarPitchforkAudit.ScalarPitchfork.Global.selectedComponent_isClosed, ScalarPitchforkAudit.ScalarPitchfork.strongBounds_of_jet, ScalarPitchforkAudit.ScalarPitchfork.branch_eventually_of_strongBound, ScalarPitchforkAudit.ScalarPitchfork.branch_curves_of_strongBound, ScalarPitchforkAudit.ScalarPitchfork.equilibrium_core_of_strongBound, ScalarPitchforkAudit.ScalarPitchfork.axis_of_linearization, ScalarPitchforkAudit.ScalarPitchfork.perturbed_equilibrium_core, ScalarPitchforkAudit.ScalarPitchfork.equilibrium_core, ScalarPitchforkAudit.ScalarPitchfork.pitchfork_branch_curves_of_jet, ScalarPitchforkAudit.ScalarPitchfork.exists_branch_eventually_of_jet, ScalarPitchforkAudit.ScalarPitchfork.deriv_zero_of_sq_bound, ScalarPitchforkAudit.ScalarPitchfork.nonzero_equilibrium_eq_branch, ScalarPitchforkAudit.ScalarPitchfork.exists_pos_equilibrium, ScalarPitchforkAudit.ScalarPitchfork.Global.global_unbounded_of_monotone, ScalarPitchforkAudit.ScalarPitchfork.Global.not_altComplement, ScalarPitchforkAudit.ScalarPitchfork.Global.not_altOtherTrivial, ScalarPitchforkAudit.ScalarPitchfork.Global.not_isCompact_of_alternatives, ScalarPitchforkAudit.ScalarPitchfork.Global.isCompact_slice, ScalarPitchforkAudit.ScalarPitchfork.Global.subset_of_relClopen, ScalarPitchforkAudit.ScalarPitchfork.Global.strictAntiOn_of_relClopen, ScalarPitchforkAudit.ScalarPitchfork.Global.isClosed_connectedComponentIn_of_isClosed, ScalarPitchforkAudit.ScalarPitchfork.Global.isClosed_sdiff_of_isOpen_preimage, ScalarPitchforkAudit.ScalarPitchfork.Global.parentComponent_isClosed, ScalarPitchforkAudit.ScalarPitchfork.Global.unilateralRemainder_isClosed, ScalarPitchforkAudit.ScalarPitchfork.Global.retainedWithBase_subset_parentComponent, ScalarPitchforkAudit.ScalarPitchfork.Global.retainedWithBase_subset_unilateralRemainder, ScalarPitchforkAudit.ScalarPitchfork.Global.retainedWithBase_subset_selectedComponent, ScalarPitchforkAudit.ScalarPitchfork.Global.base_mem_selectedComponent, ScalarPitchforkAudit.ScalarPitchfork.Global.selectedComponent_subset_solutionClosure, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from ScalarPitchfork.Challenge
+Building ScalarPitchfork.Solution
+Build completed successfully (9057 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, ScalarPitchforkAudit.ScalarPitchfork.pitchfork_branch_curves, ScalarPitchforkAudit.ScalarPitchfork.existsUnique_branchRoot_eventually, ScalarPitchforkAudit.ScalarPitchfork.exists_branch_eventually, ScalarPitchforkAudit.ScalarPitchfork.branch_side_eventually, ScalarPitchforkAudit.ScalarPitchfork.small_zero_eq_branch, ScalarPitchforkAudit.ScalarPitchfork.deriv_cubicField_at_branch, ScalarPitchforkAudit.ScalarPitchfork.abs_sub_sqrt_le_of_cubic_remainder, ScalarPitchforkAudit.ScalarPitchfork.remainderBounds_of_jet, ScalarPitchforkAudit.ScalarPitchfork.strongBound_iff_axis, ScalarPitchforkAudit.ScalarPitchfork.jet_not_sufficient_for_strongBound, ScalarPitchforkAudit.ScalarPitchfork.Global.sSup_param_eq_top, ScalarPitchforkAudit.ScalarPitchfork.Global.selectedComponent_isClosed, ScalarPitchforkAudit.ScalarPitchfork.strongBounds_of_jet, ScalarPitchforkAudit.ScalarPitchfork.branch_eventually_of_strongBound, ScalarPitchforkAudit.ScalarPitchfork.branch_curves_of_strongBound, ScalarPitchforkAudit.ScalarPitchfork.equilibrium_core_of_strongBound, ScalarPitchforkAudit.ScalarPitchfork.axis_of_linearization, ScalarPitchforkAudit.ScalarPitchfork.perturbed_equilibrium_core, ScalarPitchforkAudit.ScalarPitchfork.equilibrium_core, ScalarPitchforkAudit.ScalarPitchfork.pitchfork_branch_curves_of_jet, ScalarPitchforkAudit.ScalarPitchfork.exists_branch_eventually_of_jet, ScalarPitchforkAudit.ScalarPitchfork.deriv_zero_of_sq_bound, ScalarPitchforkAudit.ScalarPitchfork.nonzero_equilibrium_eq_branch, ScalarPitchforkAudit.ScalarPitchfork.exists_pos_equilibrium, ScalarPitchforkAudit.ScalarPitchfork.Global.global_unbounded_of_monotone, ScalarPitchforkAudit.ScalarPitchfork.Global.not_altComplement, ScalarPitchforkAudit.ScalarPitchfork.Global.not_altOtherTrivial, ScalarPitchforkAudit.ScalarPitchfork.Global.not_isCompact_of_alternatives, ScalarPitchforkAudit.ScalarPitchfork.Global.isCompact_slice, ScalarPitchforkAudit.ScalarPitchfork.Global.subset_of_relClopen, ScalarPitchforkAudit.ScalarPitchfork.Global.strictAntiOn_of_relClopen, ScalarPitchforkAudit.ScalarPitchfork.Global.isClosed_connectedComponentIn_of_isClosed, ScalarPitchforkAudit.ScalarPitchfork.Global.isClosed_sdiff_of_isOpen_preimage, ScalarPitchforkAudit.ScalarPitchfork.Global.parentComponent_isClosed, ScalarPitchforkAudit.ScalarPitchfork.Global.unilateralRemainder_isClosed, ScalarPitchforkAudit.ScalarPitchfork.Global.retainedWithBase_subset_parentComponent, ScalarPitchforkAudit.ScalarPitchfork.Global.retainedWithBase_subset_unilateralRemainder, ScalarPitchforkAudit.ScalarPitchfork.Global.retainedWithBase_subset_selectedComponent, ScalarPitchforkAudit.ScalarPitchfork.Global.base_mem_selectedComponent, ScalarPitchforkAudit.ScalarPitchfork.Global.selectedComponent_subset_solutionClosure, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from ScalarPitchfork.Solution
+Running con-ron kernel on solution
+con-ron: accepted 38625 declarations (--verified)
+con-ron kernel accepts the solution
+Running nanoda kernel on solution
+nanoda kernel accepts the solution
+Running Lean default kernel on solution
+Lean default kernel accepts the solution
+Your solution is okay!
