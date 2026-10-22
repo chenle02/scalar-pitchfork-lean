@@ -39,3 +39,11 @@ Required context:
 - [Contributing](CONTRIBUTING.md)
 
 Build: lake exe cache get && lake build. Keep lean-toolchain and lake-manifest.json unchanged; never run lake update in a verification run.
+
+## Paper III and statement guide
+
+- [Statement guide and sign-off](docs/what-is-proved.md)
+- [Paper III source](https://github.com/chenle02/chemotaxis-paper-iii)
+- [Paper III Lean companion](https://github.com/chenle02/chemotaxis-paper-iii-lean)
+
+New companion proofs do not automatically extend this standalone API or certify the whole paper.
