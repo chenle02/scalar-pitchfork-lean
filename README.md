@@ -10,7 +10,7 @@ The scalar pitchfork $`f(\tau,z)=\alpha\tau z-\beta z^3+R(\tau,z)`$ with a remai
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23498687.svg)](https://doi.org/10.5281/zenodo.23498687)
 [![License](https://img.shields.io/badge/license-Apache--2.0-153e63)](LICENSE)
 
-[What is proved](#what-is-proved) · [Verification page](docs/verification.md) · [Build](#build-and-verify) · [Cite](CITATION.cff)
+[What is proved](docs/what-is-proved.md) · [Verification page](docs/verification.md) · [Build](#build-and-verify) · [Cite](CITATION.cff)
 
 </div>
 
@@ -115,6 +115,13 @@ mathematics; nothing in the library depends on the paper.
 L. Chen, I. Ruau and W. Shen, *Chemotaxis models with signal-dependent sensitivity and a logistic-type
 source, III: Bifurcation and spike-like solutions*, preprint, 2026.
 [arXiv:2610.20976](https://arxiv.org/abs/2610.20976).
+
+
+The [Paper III source repository](https://github.com/chenle02/chemotaxis-paper-iii) and its
+[Lean companion](https://github.com/chenle02/chemotaxis-paper-iii-lean) record the paper-specific
+statements, hypotheses and verification boundaries. This standalone library exposes only the API
+listed here. Later proofs in the companion do not automatically extend this library or certify the
+whole paper. See the [result-by-result guide](docs/what-is-proved.md) for the existing library evidence.
 
 ```bibtex
 @article{chen.ruau.ea:26:bifurcation,
