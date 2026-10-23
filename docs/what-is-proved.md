@@ -1529,11 +1529,11 @@ The folded blocks are trusted Challenge statements checked against separate Solu
 The [generated verification page](verification.md) and [coverage ledger](coverage.md) retain the
 full receipt table and exact declaration mappings. This documentation update changes no Lean source,
 claims, toolchain or dependency pins and runs no new proof gate. It does not expand the comparator's
-configured scope. See [formalization metadata](../formalization.yaml) for recorded review status.
+configured scope. See [formalization metadata](https://github.com/chenle02/scalar-pitchfork-lean/blob/main/formalization.yaml) for recorded review status.
 
 ## References and reuse
 
-- [Paper and bibliographic references](../README.md#paper-and-references), including the BibTeX entry.
-- [Software citation](../CITATION.cff) and [license](../LICENSE).
+- [Paper and bibliographic references](https://github.com/chenle02/scalar-pitchfork-lean/blob/main/README.md#paper-and-references), including the BibTeX entry.
+- [Software citation](https://github.com/chenle02/scalar-pitchfork-lean/blob/main/CITATION.cff) and [license](https://github.com/chenle02/scalar-pitchfork-lean/blob/main/LICENSE).
 - [Paper III source](https://github.com/chenle02/chemotaxis-paper-iii).
 - [Paper III Lean companion](https://github.com/chenle02/chemotaxis-paper-iii-lean).

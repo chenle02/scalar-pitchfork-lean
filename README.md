@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="docs/assets/banner.svg" width="560" alt="The trivial branch splitting at the critical parameter into two branches of nontrivial zeros">
+
 # Scalar Pitchfork
 
 The scalar pitchfork $`f(\tau,z)=\alpha\tau z-\beta z^3+R(\tau,z)`$ with a remainder bounded by explicit weights or by jets at the origin: two continuous branches $`z\approx\pm\sqrt{\alpha\tau/\beta}`$ with an $`O(|\tau|)`$ amplitude error and the stability sign, the classification of small zeros, and the topological skeleton of global branches. Formalized in Lean 4 with Mathlib.
@@ -9,8 +11,9 @@ The scalar pitchfork $`f(\tau,z)=\alpha\tau z-\beta z^3+R(\tau,z)`$ with a remai
 [![Version](https://img.shields.io/badge/version-0.1.0-153e63)](CITATION.cff)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23498687.svg)](https://doi.org/10.5281/zenodo.23498687)
 [![License](https://img.shields.io/badge/license-Apache--2.0-153e63)](LICENSE)
+[![Docs](https://img.shields.io/badge/docs-GitHub%20Pages-153e63)](https://chenle02.github.io/scalar-pitchfork-lean/)
 
-[What is proved](docs/what-is-proved.md) · [Verification page](docs/verification.md) · [Build](#build-and-verify) · [Cite](CITATION.cff)
+[Documentation site](https://chenle02.github.io/scalar-pitchfork-lean/) · [What is proved](docs/what-is-proved.md) · [Verification page](docs/verification.md) · [Build](#build-and-verify) · [Cite](CITATION.cff)
 
 </div>
 
@@ -87,17 +90,7 @@ Each Lean statement is the authority; read its hypotheses before you use it. The
 [verification page](docs/verification.md) shows each Lean statement beside its description; the same page is
 rendered in the verification section at the end of this README.
 
-| Module | Contents |
-|---|---|
-| `ScalarPitchfork.Cubic` | The exact cubic $`\alpha\tau A-\beta A^3`$: nonzero zeros $`\pm\sqrt{\alpha\tau/\beta}`$ on the side $`\tau\beta>0`$, derivative $`-2\alpha\tau`$ there |
-| `ScalarPitchfork.Perturbed` | At a given nonzero zero of a perturbed cubic: side, derivative sign, square-root amplitude error |
-| `ScalarPitchfork.Existence` | The field `pitchforkField`; both signed branches exist under the remainder bounds (intermediate value theorem), side and stability of every small zero |
-| `ScalarPitchfork.Branch` | Uniqueness in a fixed window, classification of small zeros, continuity of the branch functions; packaged in `pitchfork_branch_curves` |
-| `ScalarPitchfork.StrongRemainder` | The stronger remainder bound implies the weak one; the branch theorems transfer |
-| `ScalarPitchfork.Jet` | `PitchforkJet`: $`C^4`$, the axis condition and five vanishing jets give the remainder bounds; the stronger bound holds iff $`\partial_zR(\tau,0)=0`$; branch theorems from jets |
-| `ScalarPitchfork.JetCounterexample` | $`R=\tau^2z`$: the jets do not give the stronger bound; the axis condition from an exact linearization |
-| `ScalarPitchfork.Global.Alternatives` | The three global alternatives as hypotheses: elimination, closedness, unbounded parameter, connectedness propagation, exclusion for strictly monotone profiles |
-| `ScalarPitchfork.Global.ComponentClosure` | Parent component, one-sided remainder and selected component of a solution set; closedness |
+The module map is on the [modules page](docs/modules.md).
 
 > [!IMPORTANT]
 > **Not proved here.**
@@ -153,31 +146,7 @@ J. Differential Equations 246 (2009), 2788–2812,
 [doi:10.1016/j.jde.2008.09.009](https://doi.org/10.1016/j.jde.2008.09.009). None of these theorems is
 formalized here.
 
-**Related work.** These projects formalize nearby results. No code from them is used here.
-
-- [jaumededios/Schiffer](https://github.com/jaumededios/Schiffer) (J. de Dios Pont and G. Cao-Labora), the
-  closest prior art: a quantitative, contraction-certified rank-one Lyapunov–Schmidt reduction and an
-  explicit-radius scalar branch with $`C^3`$ bounds under jet bounds, built for a planar counterexample to
-  Schiffer's conjecture. It reaches the branch by factoring an odd reduced equation by the amplitude; this
-  library works directly with the scalar normal form, a remainder that need not be odd, the square-root
-  amplitude, the stability sign and the jet counterexample. The repository has no license.
-- The crnt-lean project ([github.com/marpaia/crnt-lean](https://github.com/marpaia/crnt-lean)): Hopf
-  crossing conditions, the planar Poincaré normal form with its first Lyapunov coefficient and the limit
-  cycle of the truncated cubic radial normal form, and persistence of the amplitude at a nondegenerate root
-  by Mathlib's implicit function theorem; the averaged radial field of the full system is taken as data.
-- [Arthur742Ramos/boundary-bumping-lean](https://github.com/Arthur742Ramos/boundary-bumping-lean): boundary
-  bumping in compact connected Hausdorff spaces, including the clopen separation step that a Whyburn-type
-  argument needs.
-- [LeanCert](https://github.com/alerad/leancert) (interval arithmetic, certified roots) and
-  [leanprover/hex](https://github.com/leanprover/hex) (verified computational algebra, root isolation) give
-  certified roots of specific functions. They are not used here.
-- In Isabelle/HOL, the [Ordinary Differential Equations](https://isa-afp.org/entries/Ordinary_Differential_Equations.html)
-  entry of the Archive of Formal Proofs (F. Immler and J. Hölzl) formalizes flows and their dependence on
-  data; it does not treat bifurcation.
-
-As of October 2026 we found no machine-checked Crandall–Rabinowitz theorem, Rabinowitz global alternative,
-Whyburn lemma or Leray–Schauder degree in Mathlib, the Reservoir package index, the Palomar index or the other
-proof assistants we searched. This is a bounded search, not a claim that none exists.
+**Related work**, and the libraries and tools this one builds on, are listed on the [acknowledgments page](docs/acknowledgments.md).
 
 ## Build and verify
 
@@ -209,29 +178,7 @@ results, configuration [`comparator.headline.json`](comparator.headline.json)) a
 [`scripts/check-negative-controls.sh`](scripts/check-negative-controls.sh) checks that deliberately wrong
 variants of the statements are rejected.
 
-**Built on.**
-
-- [Mathlib](https://github.com/leanprover-community/mathlib4): The mathlib Community, *The Lean Mathematical
-  Library*, CPP 2020, [doi:10.1145/3372885.3373824](https://doi.org/10.1145/3372885.3373824). The library
-  uses Mathlib's intermediate value theorem, mean value inequality, compactness and `connectedComponentIn`
-  API. Mathlib's implicit function theorem (including `implicitFunctionOfBivariate`) needs
-  $`\partial_zf(0,0)\ne0`$, which fails at a pitchfork point, so the branches here are built from the
-  intermediate value theorem and strict monotonicity instead; the jet-to-remainder bounds use the mean value
-  inequality along segments rather than Mathlib's Taylor remainder theorems, and the global part uses the
-  `connectedComponentIn` API rather than `connectedComponent_eq_iInter_isClopen`. Through Mathlib:
-  [Batteries](https://github.com/leanprover-community/batteries),
-  [Aesop](https://github.com/leanprover-community/aesop),
-  [Qq](https://github.com/leanprover-community/quote4),
-  [Plausible](https://github.com/leanprover-community/plausible),
-  [ProofWidgets4](https://github.com/leanprover-community/ProofWidgets4),
-  [LeanSearchClient](https://github.com/leanprover-community/LeanSearchClient),
-  [import-graph](https://github.com/leanprover-community/import-graph) and
-  [lean4-cli](https://github.com/leanprover/lean4-cli).
-- [Lean 4](https://github.com/leanprover/lean4), including `leanchecker` (replay of the compiled proofs) and
-  the `con-ron` kernel checker shipped in the toolchain.
-- [comparator](https://github.com/leanprover/comparator) with
-  [lean4export](https://github.com/leanprover/lean4export) and the
-  [nanoda](https://github.com/robsimmons/nanoda_lib) kernel, for the statement comparison.
+**Built on** Mathlib, Lean 4 and comparator; the full list with citations is on the [acknowledgments page](docs/acknowledgments.md#built-on).
 
 ## Trust and axioms
 
@@ -258,6 +205,13 @@ review. Mathlib retains its own notices (see [NOTICE](NOTICE)).
 
 The scalar reduction formalized here follows the analysis in the paper cited above by L. Chen, I. Ruau
 and W. Shen; I thank both coauthors.
+
+## Full verification record
+
+The section below is generated by lean-pkg from `coverage.yaml`, `claims.yaml` and the committed receipts. It is easier to browse on the [documentation site](https://chenle02.github.io/scalar-pitchfork-lean/verification.html).
+
+<details>
+<summary><strong>Show the generated verification page</strong> (every result with its Lean statement, hypotheses and checks)</summary>
 
 <!-- lean-pkg:page:begin -->
 <!-- Generated by `lean-pkg page scalar-pitchfork-lean` from coverage.yaml, claims.yaml, the claims ledger and the receipts committed under .lean-receipts/. Do not edit between the markers: change the data and run `lean-pkg page scalar-pitchfork-lean --write`. -->
@@ -1154,3 +1108,5 @@ Developed and verified with [lean-pkg](https://github.com/lean-pkg/lean-pkg) ([d
 This work was completed in part with resources provided by the [Auburn University Easley Cluster](https://hpc.auburn.edu/hpc/docs/hpcdocs/build/html/easley/intro.html).
 
 <!-- lean-pkg:page:end -->
+
+</details>
