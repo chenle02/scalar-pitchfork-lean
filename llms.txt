@@ -3,6 +3,7 @@
 Scalar pitchfork bifurcation with a jet-bounded remainder and the topology of global branches, in Lean 4 with Mathlib.
 Lean v4.35.0, Mathlib v4.35.0. Namespace ScalarPitchfork. Apache-2.0. Author Le Chen.
 Repository: https://github.com/chenle02/scalar-pitchfork-lean
+Documentation site: https://chenle02.github.io/scalar-pitchfork-lean/
 
 The Lean declaration decides every hypothesis. Prose is not checked by Lean.
 A receipt under .lean-receipts/ covers only the commit it names.

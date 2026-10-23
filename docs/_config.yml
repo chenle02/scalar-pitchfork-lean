@@ -1,0 +1,12 @@
+title: "Scalar Pitchfork"
+description: "Scalar pitchfork bifurcation with a jet-bounded remainder and the topology of global branches, formalized in Lean 4 with Mathlib."
+url: https://chenle02.github.io
+baseurl: /scalar-pitchfork-lean
+markdown: kramdown
+theme: null
+plugins: []
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
