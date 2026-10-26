@@ -1,7 +1,7 @@
 ---
 title: "Scalar Pitchfork"
 permalink: /
-description: "Scalar pitchfork bifurcation with a jet-bounded remainder and the topology of global branches, formalized in Lean 4 with Mathlib."
+description: "Scalar pitchfork bifurcation with a jet-bounded remainder and the topological skeleton of global branches, formalized in Lean 4 with Mathlib."
 ---
 
 <section class="hero">
@@ -10,7 +10,7 @@ description: "Scalar pitchfork bifurcation with a jet-bounded remainder and the 
 <img class="banner" src="{{ '/assets/banner.svg' | relative_url }}" alt="The trivial branch splitting at the critical parameter into two branches of nontrivial zeros">
 </section>
 
-The scalar pitchfork $`f(\tau,z)=\alpha\tau z-\beta z^3+R(\tau,z)`$ with a remainder bounded by explicit weights or by jets at the origin: two continuous branches $`z\approx\pm\sqrt{\alpha\tau/\beta}`$ with an $`O(|\tau|)`$ amplitude error and the stability sign, the classification of small zeros, and the topological skeleton of global branches. Formalized in Lean 4 with Mathlib.
+The scalar pitchfork $`f(\tau,z)=\alpha\tau z-\beta z^3+R(\tau,z)`$ with a remainder bounded by explicit weights or by jets at the origin: for small $`\tau`$ with $`\tau\beta>0`$, exactly one small zero of each sign, $`|z|=\sqrt{\alpha\tau/\beta}+O(|\tau|)`$, with the stability sign, lying on two branches continuous in $`\tau`$ when $`R`$ is continuous in $`\tau`$ (automatic under the jet hypotheses); no small nonzero zero when $`\tau\beta\le0`$; and the topological skeleton of global branches, with the global alternatives as hypotheses. Formalized in Lean 4 with Mathlib.
 
 <p class="actions"><a class="button" href="{{ '/what-is-proved.html' | relative_url }}">What is proved</a> <a class="button secondary" href="{{ '/verification.html' | relative_url }}">All Lean statements</a> <a class="button secondary" href="{{ '/getting-started.html' | relative_url }}">Get started</a></p>
 

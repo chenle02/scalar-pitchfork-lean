@@ -1,32 +1,38 @@
 # What is proved
 
-This guide presents the existing `scalar-pitchfork-lean` results with their exact compared Lean statements.
-The proofs are classical mathematics. Their application to a particular differential equation requires
-checking that equation's hypotheses separately.
+<!-- Hand-written. Lean statements copied verbatim from ScalarPitchfork/HeadlineChallenge.lean and ScalarPitchfork/Challenge.lean at commit a460cf60cfe88aa90019be59d45a1d0f14ece7e7 (the commit the build and comparator receipts bind). Re-copy them when the receipts move. -->
+
+This guide presents the `scalar-pitchfork-lean` results with their exact compared Lean statements: the 12
+headline results (compared in `comparator.headline.json`) and 5 further groups with 28 more declarations
+(the full set of 40, which includes the 12 headline ones, is compared in `comparator.json`). Each card gives
+the statement in mathematical notation, the Lean statement with a link to its source line, and a sign-off
+copied from the receipts. The typeset statement is the authors' transcription; Lean checks only the Lean
+statement. The proofs are classical mathematics. Their application to a particular differential equation
+requires checking that equation's hypotheses separately.
 
 ## Notation and scope
 
 The scalar field is `alpha*tau*z - beta*z^3 + R(tau,z)`. Branch results require the stated parameter signs, regularity and quantitative remainder bounds. Global component results take compactness, relative openness or global alternatives as explicit hypotheses where shown; they do not establish degree theory.
 
-| Result | Evidence |
-|---|---|
-| The two pitchfork branches | Compared statement; existing release receipts |
-| One signed zero at a fixed radius | Compared statement; existing release receipts |
-| Existence of both branches with explicit amplitude constant and stability sign | Compared statement; existing release receipts |
-| Side and stability of every small nontrivial zero | Compared statement; existing release receipts |
-| At most one small zero of each sign | Compared statement; existing release receipts |
-| Exchange of stability on the exact cubic | Compared statement; existing release receipts |
-| Square-root amplitude error | Compared statement; existing release receipts |
-| Remainder bounds from jets at the origin | Compared statement; existing release receipts |
-| The stronger remainder bound holds iff the axis condition holds | Compared statement; existing release receipts |
-| The jets at the origin do not give the stronger bound | Compared statement; existing release receipts |
-| A non-compact component has unbounded parameter | Compared statement; existing release receipts |
-| The one-sided component is closed | Compared statement; existing release receipts |
-| Pitchfork branches under the stronger remainder bound | Compared statement; existing release receipts |
-| Pitchfork branches directly from jets at the origin | Compared statement; existing release receipts |
-| Estimates at a single nontrivial equilibrium | Compared statement; existing release receipts |
-| Global alternatives under monotone profiles | Compared statement; existing release receipts |
-| Closedness and containment of one-sided components | Compared statement; existing release receipts |
+| # | Result | Compared in | Status |
+|---|---|---|---|
+| 1 | [The two pitchfork branches](#the-two-pitchfork-branches) | `comparator.headline.json` and `comparator.json` | proved |
+| 2 | [One signed zero at a fixed radius](#one-signed-zero-at-a-fixed-radius) | `comparator.headline.json` and `comparator.json` | proved |
+| 3 | [Existence of both branches with explicit amplitude constant and stability sign](#existence-of-both-branches-with-explicit-amplitude-constant-and-stability-sign) | `comparator.headline.json` and `comparator.json` | proved |
+| 4 | [Side and stability of every small nontrivial zero](#side-and-stability-of-every-small-nontrivial-zero) | `comparator.headline.json` and `comparator.json` | proved |
+| 5 | [At most one small zero of each sign](#at-most-one-small-zero-of-each-sign) | `comparator.headline.json` and `comparator.json` | proved |
+| 6 | [Exchange of stability on the exact cubic](#exchange-of-stability-on-the-exact-cubic) | `comparator.headline.json` and `comparator.json` | proved |
+| 7 | [Square-root amplitude error](#square-root-amplitude-error) | `comparator.headline.json` and `comparator.json` | proved |
+| 8 | [Remainder bounds from jets at the origin](#remainder-bounds-from-jets-at-the-origin) | `comparator.headline.json` and `comparator.json` | proved |
+| 9 | [The stronger remainder bound holds iff the axis condition holds](#the-stronger-remainder-bound-holds-iff-the-axis-condition-holds) | `comparator.headline.json` and `comparator.json` | proved |
+| 10 | [The jets at the origin do not give the stronger bound](#the-jets-at-the-origin-do-not-give-the-stronger-bound) | `comparator.headline.json` and `comparator.json` | proved |
+| 11 | [A non-compact component has unbounded parameter](#a-non-compact-component-has-unbounded-parameter) | `comparator.headline.json` and `comparator.json` | proved |
+| 12 | [The one-sided component is closed](#the-one-sided-component-is-closed) | `comparator.headline.json` and `comparator.json` | proved |
+| 13 | [Pitchfork branches under the stronger remainder bound](#pitchfork-branches-under-the-stronger-remainder-bound) | `comparator.json` | proved |
+| 14 | [Pitchfork branches directly from jets at the origin](#pitchfork-branches-directly-from-jets-at-the-origin) | `comparator.json` | proved |
+| 15 | [Estimates at a single nontrivial equilibrium](#estimates-at-a-single-nontrivial-equilibrium) | `comparator.json` | proved |
+| 16 | [Global alternatives under monotone profiles](#global-alternatives-under-monotone-profiles) | `comparator.json` | proved |
+| 17 | [Closedness and containment of one-sided components](#closedness-and-containment-of-one-sided-components) | `comparator.json` | proved |
 
 ## Results
 
@@ -49,7 +55,7 @@ and that $`\tau\mapsto R(\tau,z)`$ is continuous at every $`|\tau|<r`$, $`|z|\le
 
 **Lean.** `ScalarPitchforkHeadline.ScalarPitchfork.pitchfork_branch_curves` in [ScalarPitchfork/HeadlineChallenge.lean](https://github.com/chenle02/scalar-pitchfork-lean/blob/a460cf60cfe88aa90019be59d45a1d0f14ece7e7/ScalarPitchfork/HeadlineChallenge.lean#L52): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
-<details>
+<details markdown="1">
 <summary>Exact Lean statement (expand and copy)</summary>
 
 ```lean
@@ -88,18 +94,19 @@ Lean statement and source link above; this is not a claim to formalize a numbere
 **Compared with the reference.** The statement above retains this library's own hypotheses.
 No equivalence to a complete paper theorem, or discharge of application-specific premises, is claimed.
 
-<details>
-<summary>Sign-off and trust boundary</summary>
+<details markdown="1">
+<summary>Sign-off</summary>
 
-| Check | Recorded status |
+| Field | Value |
 |---|---|
-| Build and statement comparison | Passed for the linked declarations at the evidence commit |
-| Unfinished proofs in the verified proofs | Recorded `sorry_count: 0`; Challenge placeholders are specifications |
-| Permitted axioms | `propext`, `Classical.choice`, `Quot.sound` |
-| Definitions judged independently | No additional definition review claimed by this guide |
-| Evidence commit | `a460cf60cfe88aa90019be59d45a1d0f14ece7e7` |
-| Human mathematical review | Not recorded (`formalization.yaml`: unchecked) |
-| Prose sign-off | Documentation audit, 2026-10-22; not a new kernel or scientific-review verdict |
+| Status | proved |
+| Sorry count | 0 (build receipt at `a460cf60cfe8`, listed in the verification page's receipt table); the `sorry` in the Challenge files is intentional (they hold the statements) |
+| Axioms | `Classical.choice`, `Quot.sound`, `propext` (build receipt `axioms` at commit `a460cf60cfe8`); permitted: `propext`, `Quot.sound`, `Classical.choice` |
+| Statement comparison | comparator receipt `.lean-receipts/a460cf60cfe8-comparator.json` at `a460cf60cfe8`: result `pass` for `comparator.headline.json` (12 theorems) and `comparator.json` (40 theorems); the Challenge statement shown is the one compared |
+| Definitions judged by a person | none (`definition_names` is empty in both comparator configurations) |
+| Evidence commit | `a460cf60cfe88aa90019be59d45a1d0f14ece7e7` (receipts in `.lean-receipts/`) |
+| Human review | unchecked: no independent human review asserted (`formalization.yaml` `review.status`) |
+| Signed off | lean-pkg 0.7.49 `gate` (build receipt) + `comparator`, receipts dated 2026-10-20 (mechanical checks only) |
 
 </details>
 
@@ -119,7 +126,7 @@ Let $`\alpha>0`$, $`\beta\ne0`$, $`C\ge0`$, $`0<r\le1`$, $`f(\tau,z)=\alpha\tau 
 
 **Lean.** `ScalarPitchforkHeadline.ScalarPitchfork.existsUnique_branchRoot_eventually` in [ScalarPitchfork/HeadlineChallenge.lean](https://github.com/chenle02/scalar-pitchfork-lean/blob/a460cf60cfe88aa90019be59d45a1d0f14ece7e7/ScalarPitchfork/HeadlineChallenge.lean#L81): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
-<details>
+<details markdown="1">
 <summary>Exact Lean statement (expand and copy)</summary>
 
 ```lean
@@ -147,18 +154,19 @@ Lean statement and source link above; this is not a claim to formalize a numbere
 **Compared with the reference.** The statement above retains this library's own hypotheses.
 No equivalence to a complete paper theorem, or discharge of application-specific premises, is claimed.
 
-<details>
-<summary>Sign-off and trust boundary</summary>
+<details markdown="1">
+<summary>Sign-off</summary>
 
-| Check | Recorded status |
+| Field | Value |
 |---|---|
-| Build and statement comparison | Passed for the linked declarations at the evidence commit |
-| Unfinished proofs in the verified proofs | Recorded `sorry_count: 0`; Challenge placeholders are specifications |
-| Permitted axioms | `propext`, `Classical.choice`, `Quot.sound` |
-| Definitions judged independently | No additional definition review claimed by this guide |
-| Evidence commit | `a460cf60cfe88aa90019be59d45a1d0f14ece7e7` |
-| Human mathematical review | Not recorded (`formalization.yaml`: unchecked) |
-| Prose sign-off | Documentation audit, 2026-10-22; not a new kernel or scientific-review verdict |
+| Status | proved |
+| Sorry count | 0 (build receipt at `a460cf60cfe8`, listed in the verification page's receipt table); the `sorry` in the Challenge files is intentional (they hold the statements) |
+| Axioms | `Classical.choice`, `Quot.sound`, `propext` (build receipt `axioms` at commit `a460cf60cfe8`); permitted: `propext`, `Quot.sound`, `Classical.choice` |
+| Statement comparison | comparator receipt `.lean-receipts/a460cf60cfe8-comparator.json` at `a460cf60cfe8`: result `pass` for `comparator.headline.json` (12 theorems) and `comparator.json` (40 theorems); the Challenge statement shown is the one compared |
+| Definitions judged by a person | none (`definition_names` is empty in both comparator configurations) |
+| Evidence commit | `a460cf60cfe88aa90019be59d45a1d0f14ece7e7` (receipts in `.lean-receipts/`) |
+| Human review | unchecked: no independent human review asserted (`formalization.yaml` `review.status`) |
+| Signed off | lean-pkg 0.7.49 `gate` (build receipt) + `comparator`, receipts dated 2026-10-20 (mechanical checks only) |
 
 </details>
 
@@ -168,7 +176,7 @@ No equivalence to a complete paper theorem, or discharge of application-specific
 
 **Statement.**
 
-Under the hypotheses of the previous row, for all $`\tau`$ in a neighbourhood of $`0`$ with $`\tau\beta>0`$ and each $`\sigma\in\{1,-1\}`$ there is $`z`$ with $`\sigma z>0`$, $`f(\tau,z)=0`$, $`\partial_zf(\tau,z)\,\beta<0`$ and
+Under the hypotheses of the previous result, for all $`\tau`$ in a neighbourhood of $`0`$ with $`\tau\beta>0`$ and each $`\sigma\in\{1,-1\}`$ there is $`z`$ with $`\sigma z>0`$, $`f(\tau,z)=0`$, $`\partial_zf(\tau,z)\,\beta<0`$ and
 
 
 ```math
@@ -178,7 +186,7 @@ Under the hypotheses of the previous row, for all $`\tau`$ in a neighbourhood of
 
 **Lean.** `ScalarPitchforkHeadline.ScalarPitchfork.exists_branch_eventually` in [ScalarPitchfork/HeadlineChallenge.lean](https://github.com/chenle02/scalar-pitchfork-lean/blob/a460cf60cfe88aa90019be59d45a1d0f14ece7e7/ScalarPitchfork/HeadlineChallenge.lean#L101): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
-<details>
+<details markdown="1">
 <summary>Exact Lean statement (expand and copy)</summary>
 
 ```lean
@@ -211,18 +219,19 @@ Lean statement and source link above; this is not a claim to formalize a numbere
 **Compared with the reference.** The statement above retains this library's own hypotheses.
 No equivalence to a complete paper theorem, or discharge of application-specific premises, is claimed.
 
-<details>
-<summary>Sign-off and trust boundary</summary>
+<details markdown="1">
+<summary>Sign-off</summary>
 
-| Check | Recorded status |
+| Field | Value |
 |---|---|
-| Build and statement comparison | Passed for the linked declarations at the evidence commit |
-| Unfinished proofs in the verified proofs | Recorded `sorry_count: 0`; Challenge placeholders are specifications |
-| Permitted axioms | `propext`, `Classical.choice`, `Quot.sound` |
-| Definitions judged independently | No additional definition review claimed by this guide |
-| Evidence commit | `a460cf60cfe88aa90019be59d45a1d0f14ece7e7` |
-| Human mathematical review | Not recorded (`formalization.yaml`: unchecked) |
-| Prose sign-off | Documentation audit, 2026-10-22; not a new kernel or scientific-review verdict |
+| Status | proved |
+| Sorry count | 0 (build receipt at `a460cf60cfe8`, listed in the verification page's receipt table); the `sorry` in the Challenge files is intentional (they hold the statements) |
+| Axioms | `Classical.choice`, `Quot.sound`, `propext` (build receipt `axioms` at commit `a460cf60cfe8`); permitted: `propext`, `Quot.sound`, `Classical.choice` |
+| Statement comparison | comparator receipt `.lean-receipts/a460cf60cfe8-comparator.json` at `a460cf60cfe8`: result `pass` for `comparator.headline.json` (12 theorems) and `comparator.json` (40 theorems); the Challenge statement shown is the one compared |
+| Definitions judged by a person | none (`definition_names` is empty in both comparator configurations) |
+| Evidence commit | `a460cf60cfe88aa90019be59d45a1d0f14ece7e7` (receipts in `.lean-receipts/`) |
+| Human review | unchecked: no independent human review asserted (`formalization.yaml` `review.status`) |
+| Signed off | lean-pkg 0.7.49 `gate` (build receipt) + `comparator`, receipts dated 2026-10-20 (mechanical checks only) |
 
 </details>
 
@@ -232,7 +241,7 @@ No equivalence to a complete paper theorem, or discharge of application-specific
 
 **Statement.**
 
-Under the hypotheses of the second row, for all $`(\tau,z)`$ in a neighbourhood of $`(0,0)`$,
+Under the hypotheses of the second result, for all $`(\tau,z)`$ in a neighbourhood of $`(0,0)`$,
 
 
 ```math
@@ -242,7 +251,7 @@ z\ne0,\ f(\tau,z)=0\ \Longrightarrow\ \tau\beta>0\ \text{ and }\ \partial_zf(\ta
 
 **Lean.** `ScalarPitchforkHeadline.ScalarPitchfork.branch_side_eventually` in [ScalarPitchfork/HeadlineChallenge.lean](https://github.com/chenle02/scalar-pitchfork-lean/blob/a460cf60cfe88aa90019be59d45a1d0f14ece7e7/ScalarPitchfork/HeadlineChallenge.lean#L123): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
-<details>
+<details markdown="1">
 <summary>Exact Lean statement (expand and copy)</summary>
 
 ```lean
@@ -272,18 +281,19 @@ Lean statement and source link above; this is not a claim to formalize a numbere
 **Compared with the reference.** The statement above retains this library's own hypotheses.
 No equivalence to a complete paper theorem, or discharge of application-specific premises, is claimed.
 
-<details>
-<summary>Sign-off and trust boundary</summary>
+<details markdown="1">
+<summary>Sign-off</summary>
 
-| Check | Recorded status |
+| Field | Value |
 |---|---|
-| Build and statement comparison | Passed for the linked declarations at the evidence commit |
-| Unfinished proofs in the verified proofs | Recorded `sorry_count: 0`; Challenge placeholders are specifications |
-| Permitted axioms | `propext`, `Classical.choice`, `Quot.sound` |
-| Definitions judged independently | No additional definition review claimed by this guide |
-| Evidence commit | `a460cf60cfe88aa90019be59d45a1d0f14ece7e7` |
-| Human mathematical review | Not recorded (`formalization.yaml`: unchecked) |
-| Prose sign-off | Documentation audit, 2026-10-22; not a new kernel or scientific-review verdict |
+| Status | proved |
+| Sorry count | 0 (build receipt at `a460cf60cfe8`, listed in the verification page's receipt table); the `sorry` in the Challenge files is intentional (they hold the statements) |
+| Axioms | `Classical.choice`, `Quot.sound`, `propext` (build receipt `axioms` at commit `a460cf60cfe8`); permitted: `propext`, `Quot.sound`, `Classical.choice` |
+| Statement comparison | comparator receipt `.lean-receipts/a460cf60cfe8-comparator.json` at `a460cf60cfe8`: result `pass` for `comparator.headline.json` (12 theorems) and `comparator.json` (40 theorems); the Challenge statement shown is the one compared |
+| Definitions judged by a person | none (`definition_names` is empty in both comparator configurations) |
+| Evidence commit | `a460cf60cfe88aa90019be59d45a1d0f14ece7e7` (receipts in `.lean-receipts/`) |
+| Human review | unchecked: no independent human review asserted (`formalization.yaml` `review.status`) |
+| Signed off | lean-pkg 0.7.49 `gate` (build receipt) + `comparator`, receipts dated 2026-10-20 (mechanical checks only) |
 
 </details>
 
@@ -293,7 +303,7 @@ No equivalence to a complete paper theorem, or discharge of application-specific
 
 **Statement.**
 
-Under the hypotheses of the second row there is $`\rho>0`$ such that for all $`\tau`$ in a neighbourhood of $`0`$ and all $`z_1,z_2\in\mathbb R`$,
+Under the hypotheses of the second result there is $`\rho>0`$ such that for all $`\tau`$ in a neighbourhood of $`0`$ and all $`z_1,z_2\in\mathbb R`$,
 
 
 ```math
@@ -303,7 +313,7 @@ z_1z_2>0,\ |z_1|\le\rho,\ |z_2|\le\rho,\ f(\tau,z_1)=f(\tau,z_2)=0\ \Longrightar
 
 **Lean.** `ScalarPitchforkHeadline.ScalarPitchfork.small_zero_eq_branch` in [ScalarPitchfork/HeadlineChallenge.lean](https://github.com/chenle02/scalar-pitchfork-lean/blob/a460cf60cfe88aa90019be59d45a1d0f14ece7e7/ScalarPitchfork/HeadlineChallenge.lean#L145): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
-<details>
+<details markdown="1">
 <summary>Exact Lean statement (expand and copy)</summary>
 
 ```lean
@@ -332,18 +342,19 @@ Lean statement and source link above; this is not a claim to formalize a numbere
 **Compared with the reference.** The statement above retains this library's own hypotheses.
 No equivalence to a complete paper theorem, or discharge of application-specific premises, is claimed.
 
-<details>
-<summary>Sign-off and trust boundary</summary>
+<details markdown="1">
+<summary>Sign-off</summary>
 
-| Check | Recorded status |
+| Field | Value |
 |---|---|
-| Build and statement comparison | Passed for the linked declarations at the evidence commit |
-| Unfinished proofs in the verified proofs | Recorded `sorry_count: 0`; Challenge placeholders are specifications |
-| Permitted axioms | `propext`, `Classical.choice`, `Quot.sound` |
-| Definitions judged independently | No additional definition review claimed by this guide |
-| Evidence commit | `a460cf60cfe88aa90019be59d45a1d0f14ece7e7` |
-| Human mathematical review | Not recorded (`formalization.yaml`: unchecked) |
-| Prose sign-off | Documentation audit, 2026-10-22; not a new kernel or scientific-review verdict |
+| Status | proved |
+| Sorry count | 0 (build receipt at `a460cf60cfe8`, listed in the verification page's receipt table); the `sorry` in the Challenge files is intentional (they hold the statements) |
+| Axioms | `Classical.choice`, `Quot.sound`, `propext` (build receipt `axioms` at commit `a460cf60cfe8`); permitted: `propext`, `Quot.sound`, `Classical.choice` |
+| Statement comparison | comparator receipt `.lean-receipts/a460cf60cfe8-comparator.json` at `a460cf60cfe8`: result `pass` for `comparator.headline.json` (12 theorems) and `comparator.json` (40 theorems); the Challenge statement shown is the one compared |
+| Definitions judged by a person | none (`definition_names` is empty in both comparator configurations) |
+| Evidence commit | `a460cf60cfe88aa90019be59d45a1d0f14ece7e7` (receipts in `.lean-receipts/`) |
+| Human review | unchecked: no independent human review asserted (`formalization.yaml` `review.status`) |
+| Signed off | lean-pkg 0.7.49 `gate` (build receipt) + `comparator`, receipts dated 2026-10-20 (mechanical checks only) |
 
 </details>
 
@@ -363,7 +374,7 @@ Let $`\alpha,\beta,\tau,A\in\mathbb R`$ with $`\beta\ne0`$, $`A\ne0`$ and $`\alp
 
 **Lean.** `ScalarPitchforkHeadline.ScalarPitchfork.deriv_cubicField_at_branch` in [ScalarPitchfork/HeadlineChallenge.lean](https://github.com/chenle02/scalar-pitchfork-lean/blob/a460cf60cfe88aa90019be59d45a1d0f14ece7e7/ScalarPitchfork/HeadlineChallenge.lean#L163): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
-<details>
+<details markdown="1">
 <summary>Exact Lean statement (expand and copy)</summary>
 
 ```lean
@@ -385,18 +396,19 @@ Lean statement and source link above; this is not a claim to formalize a numbere
 **Compared with the reference.** The statement above retains this library's own hypotheses.
 No equivalence to a complete paper theorem, or discharge of application-specific premises, is claimed.
 
-<details>
-<summary>Sign-off and trust boundary</summary>
+<details markdown="1">
+<summary>Sign-off</summary>
 
-| Check | Recorded status |
+| Field | Value |
 |---|---|
-| Build and statement comparison | Passed for the linked declarations at the evidence commit |
-| Unfinished proofs in the verified proofs | Recorded `sorry_count: 0`; Challenge placeholders are specifications |
-| Permitted axioms | `propext`, `Classical.choice`, `Quot.sound` |
-| Definitions judged independently | No additional definition review claimed by this guide |
-| Evidence commit | `a460cf60cfe88aa90019be59d45a1d0f14ece7e7` |
-| Human mathematical review | Not recorded (`formalization.yaml`: unchecked) |
-| Prose sign-off | Documentation audit, 2026-10-22; not a new kernel or scientific-review verdict |
+| Status | proved |
+| Sorry count | 0 (build receipt at `a460cf60cfe8`, listed in the verification page's receipt table); the `sorry` in the Challenge files is intentional (they hold the statements) |
+| Axioms | `Classical.choice`, `Quot.sound`, `propext` (build receipt `axioms` at commit `a460cf60cfe8`); permitted: `propext`, `Quot.sound`, `Classical.choice` |
+| Statement comparison | comparator receipt `.lean-receipts/a460cf60cfe8-comparator.json` at `a460cf60cfe8`: result `pass` for `comparator.headline.json` (12 theorems) and `comparator.json` (40 theorems); the Challenge statement shown is the one compared |
+| Definitions judged by a person | none (`definition_names` is empty in both comparator configurations) |
+| Evidence commit | `a460cf60cfe88aa90019be59d45a1d0f14ece7e7` (receipts in `.lean-receipts/`) |
+| Human review | unchecked: no independent human review asserted (`formalization.yaml` `review.status`) |
+| Signed off | lean-pkg 0.7.49 `gate` (build receipt) + `comparator`, receipts dated 2026-10-20 (mechanical checks only) |
 
 </details>
 
@@ -416,7 +428,7 @@ Let $`\alpha,\beta,\tau,z,e,C\in\mathbb R`$ with $`\beta\ne0`$, $`z\ne0`$, $`\al
 
 **Lean.** `ScalarPitchforkHeadline.ScalarPitchfork.abs_sub_sqrt_le_of_cubic_remainder` in [ScalarPitchfork/HeadlineChallenge.lean](https://github.com/chenle02/scalar-pitchfork-lean/blob/a460cf60cfe88aa90019be59d45a1d0f14ece7e7/ScalarPitchfork/HeadlineChallenge.lean#L174): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
-<details>
+<details markdown="1">
 <summary>Exact Lean statement (expand and copy)</summary>
 
 ```lean
@@ -439,18 +451,19 @@ Lean statement and source link above; this is not a claim to formalize a numbere
 **Compared with the reference.** The statement above retains this library's own hypotheses.
 No equivalence to a complete paper theorem, or discharge of application-specific premises, is claimed.
 
-<details>
-<summary>Sign-off and trust boundary</summary>
+<details markdown="1">
+<summary>Sign-off</summary>
 
-| Check | Recorded status |
+| Field | Value |
 |---|---|
-| Build and statement comparison | Passed for the linked declarations at the evidence commit |
-| Unfinished proofs in the verified proofs | Recorded `sorry_count: 0`; Challenge placeholders are specifications |
-| Permitted axioms | `propext`, `Classical.choice`, `Quot.sound` |
-| Definitions judged independently | No additional definition review claimed by this guide |
-| Evidence commit | `a460cf60cfe88aa90019be59d45a1d0f14ece7e7` |
-| Human mathematical review | Not recorded (`formalization.yaml`: unchecked) |
-| Prose sign-off | Documentation audit, 2026-10-22; not a new kernel or scientific-review verdict |
+| Status | proved |
+| Sorry count | 0 (build receipt at `a460cf60cfe8`, listed in the verification page's receipt table); the `sorry` in the Challenge files is intentional (they hold the statements) |
+| Axioms | `Classical.choice`, `Quot.sound`, `propext` (build receipt `axioms` at commit `a460cf60cfe8`); permitted: `propext`, `Quot.sound`, `Classical.choice` |
+| Statement comparison | comparator receipt `.lean-receipts/a460cf60cfe8-comparator.json` at `a460cf60cfe8`: result `pass` for `comparator.headline.json` (12 theorems) and `comparator.json` (40 theorems); the Challenge statement shown is the one compared |
+| Definitions judged by a person | none (`definition_names` is empty in both comparator configurations) |
+| Evidence commit | `a460cf60cfe88aa90019be59d45a1d0f14ece7e7` (receipts in `.lean-receipts/`) |
+| Human review | unchecked: no independent human review asserted (`formalization.yaml` `review.status`) |
+| Signed off | lean-pkg 0.7.49 `gate` (build receipt) + `comparator`, receipts dated 2026-10-20 (mechanical checks only) |
 
 </details>
 
@@ -473,7 +486,7 @@ Then there is $`C\ge0`$ such that for $`|\tau|,|z|\le r`$: $`|R(\tau,z)|\le C(|z
 
 **Lean.** `ScalarPitchforkHeadline.ScalarPitchfork.remainderBounds_of_jet` in [ScalarPitchfork/HeadlineChallenge.lean](https://github.com/chenle02/scalar-pitchfork-lean/blob/a460cf60cfe88aa90019be59d45a1d0f14ece7e7/ScalarPitchfork/HeadlineChallenge.lean#L190): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
-<details>
+<details markdown="1">
 <summary>Exact Lean statement (expand and copy)</summary>
 
 ```lean
@@ -508,18 +521,19 @@ Lean statement and source link above; this is not a claim to formalize a numbere
 **Compared with the reference.** The statement above retains this library's own hypotheses.
 No equivalence to a complete paper theorem, or discharge of application-specific premises, is claimed.
 
-<details>
-<summary>Sign-off and trust boundary</summary>
+<details markdown="1">
+<summary>Sign-off</summary>
 
-| Check | Recorded status |
+| Field | Value |
 |---|---|
-| Build and statement comparison | Passed for the linked declarations at the evidence commit |
-| Unfinished proofs in the verified proofs | Recorded `sorry_count: 0`; Challenge placeholders are specifications |
-| Permitted axioms | `propext`, `Classical.choice`, `Quot.sound` |
-| Definitions judged independently | No additional definition review claimed by this guide |
-| Evidence commit | `a460cf60cfe88aa90019be59d45a1d0f14ece7e7` |
-| Human mathematical review | Not recorded (`formalization.yaml`: unchecked) |
-| Prose sign-off | Documentation audit, 2026-10-22; not a new kernel or scientific-review verdict |
+| Status | proved |
+| Sorry count | 0 (build receipt at `a460cf60cfe8`, listed in the verification page's receipt table); the `sorry` in the Challenge files is intentional (they hold the statements) |
+| Axioms | `Classical.choice`, `Quot.sound`, `propext` (build receipt `axioms` at commit `a460cf60cfe8`); permitted: `propext`, `Quot.sound`, `Classical.choice` |
+| Statement comparison | comparator receipt `.lean-receipts/a460cf60cfe8-comparator.json` at `a460cf60cfe8`: result `pass` for `comparator.headline.json` (12 theorems) and `comparator.json` (40 theorems); the Challenge statement shown is the one compared |
+| Definitions judged by a person | none (`definition_names` is empty in both comparator configurations) |
+| Evidence commit | `a460cf60cfe88aa90019be59d45a1d0f14ece7e7` (receipts in `.lean-receipts/`) |
+| Human review | unchecked: no independent human review asserted (`formalization.yaml` `review.status`) |
+| Signed off | lean-pkg 0.7.49 `gate` (build receipt) + `comparator`, receipts dated 2026-10-20 (mechanical checks only) |
 
 </details>
 
@@ -529,7 +543,7 @@ No equivalence to a complete paper theorem, or discharge of application-specific
 
 **Statement.**
 
-Under the hypotheses of the previous row,
+Under the hypotheses of the previous result,
 
 
 ```math
@@ -539,7 +553,7 @@ Under the hypotheses of the previous row,
 
 **Lean.** `ScalarPitchforkHeadline.ScalarPitchfork.strongBound_iff_axis` in [ScalarPitchfork/HeadlineChallenge.lean](https://github.com/chenle02/scalar-pitchfork-lean/blob/a460cf60cfe88aa90019be59d45a1d0f14ece7e7/ScalarPitchfork/HeadlineChallenge.lean#L213): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
-<details>
+<details markdown="1">
 <summary>Exact Lean statement (expand and copy)</summary>
 
 ```lean
@@ -568,18 +582,19 @@ Lean statement and source link above; this is not a claim to formalize a numbere
 **Compared with the reference.** The statement above retains this library's own hypotheses.
 No equivalence to a complete paper theorem, or discharge of application-specific premises, is claimed.
 
-<details>
-<summary>Sign-off and trust boundary</summary>
+<details markdown="1">
+<summary>Sign-off</summary>
 
-| Check | Recorded status |
+| Field | Value |
 |---|---|
-| Build and statement comparison | Passed for the linked declarations at the evidence commit |
-| Unfinished proofs in the verified proofs | Recorded `sorry_count: 0`; Challenge placeholders are specifications |
-| Permitted axioms | `propext`, `Classical.choice`, `Quot.sound` |
-| Definitions judged independently | No additional definition review claimed by this guide |
-| Evidence commit | `a460cf60cfe88aa90019be59d45a1d0f14ece7e7` |
-| Human mathematical review | Not recorded (`formalization.yaml`: unchecked) |
-| Prose sign-off | Documentation audit, 2026-10-22; not a new kernel or scientific-review verdict |
+| Status | proved |
+| Sorry count | 0 (build receipt at `a460cf60cfe8`, listed in the verification page's receipt table); the `sorry` in the Challenge files is intentional (they hold the statements) |
+| Axioms | `Classical.choice`, `Quot.sound`, `propext` (build receipt `axioms` at commit `a460cf60cfe8`); permitted: `propext`, `Quot.sound`, `Classical.choice` |
+| Statement comparison | comparator receipt `.lean-receipts/a460cf60cfe8-comparator.json` at `a460cf60cfe8`: result `pass` for `comparator.headline.json` (12 theorems) and `comparator.json` (40 theorems); the Challenge statement shown is the one compared |
+| Definitions judged by a person | none (`definition_names` is empty in both comparator configurations) |
+| Evidence commit | `a460cf60cfe88aa90019be59d45a1d0f14ece7e7` (receipts in `.lean-receipts/`) |
+| Human review | unchecked: no independent human review asserted (`formalization.yaml` `review.status`) |
+| Signed off | lean-pkg 0.7.49 `gate` (build receipt) + `comparator`, receipts dated 2026-10-20 (mechanical checks only) |
 
 </details>
 
@@ -589,7 +604,7 @@ No equivalence to a complete paper theorem, or discharge of application-specific
 
 **Statement.**
 
-It is not true that every $`R`$, $`U`$, $`r`$ satisfying the hypotheses of the row "Remainder bounds from jets at the origin" admit a constant $`C`$ with
+It is not true that every $`R`$, $`U`$, $`r`$ satisfying the hypotheses of the result "Remainder bounds from jets at the origin" admit a constant $`C`$ with
 
 
 ```math
@@ -599,7 +614,7 @@ It is not true that every $`R`$, $`U`$, $`r`$ satisfying the hypotheses of the r
 
 **Lean.** `ScalarPitchforkHeadline.ScalarPitchfork.jet_not_sufficient_for_strongBound` in [ScalarPitchfork/HeadlineChallenge.lean](https://github.com/chenle02/scalar-pitchfork-lean/blob/a460cf60cfe88aa90019be59d45a1d0f14ece7e7/ScalarPitchfork/HeadlineChallenge.lean#L231): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
-<details>
+<details markdown="1">
 <summary>Exact Lean statement (expand and copy)</summary>
 
 ```lean
@@ -628,18 +643,19 @@ Lean statement and source link above; this is not a claim to formalize a numbere
 **Compared with the reference.** The statement above retains this library's own hypotheses.
 No equivalence to a complete paper theorem, or discharge of application-specific premises, is claimed.
 
-<details>
-<summary>Sign-off and trust boundary</summary>
+<details markdown="1">
+<summary>Sign-off</summary>
 
-| Check | Recorded status |
+| Field | Value |
 |---|---|
-| Build and statement comparison | Passed for the linked declarations at the evidence commit |
-| Unfinished proofs in the verified proofs | Recorded `sorry_count: 0`; Challenge placeholders are specifications |
-| Permitted axioms | `propext`, `Classical.choice`, `Quot.sound` |
-| Definitions judged independently | No additional definition review claimed by this guide |
-| Evidence commit | `a460cf60cfe88aa90019be59d45a1d0f14ece7e7` |
-| Human mathematical review | Not recorded (`formalization.yaml`: unchecked) |
-| Prose sign-off | Documentation audit, 2026-10-22; not a new kernel or scientific-review verdict |
+| Status | proved |
+| Sorry count | 0 (build receipt at `a460cf60cfe8`, listed in the verification page's receipt table); the `sorry` in the Challenge files is intentional (they hold the statements) |
+| Axioms | `Classical.choice`, `Quot.sound`, `propext` (build receipt `axioms` at commit `a460cf60cfe8`); permitted: `propext`, `Quot.sound`, `Classical.choice` |
+| Statement comparison | comparator receipt `.lean-receipts/a460cf60cfe8-comparator.json` at `a460cf60cfe8`: result `pass` for `comparator.headline.json` (12 theorems) and `comparator.json` (40 theorems); the Challenge statement shown is the one compared |
+| Definitions judged by a person | none (`definition_names` is empty in both comparator configurations) |
+| Evidence commit | `a460cf60cfe88aa90019be59d45a1d0f14ece7e7` (receipts in `.lean-receipts/`) |
+| Human review | unchecked: no independent human review asserted (`formalization.yaml` `review.status`) |
+| Signed off | lean-pkg 0.7.49 `gate` (build receipt) + `comparator`, receipts dated 2026-10-20 (mechanical checks only) |
 
 </details>
 
@@ -659,7 +675,7 @@ Let $`E`$ be a topological space and $`C,S,V\subseteq\mathbb R\times E`$ with $`
 
 **Lean.** `ScalarPitchforkHeadline.ScalarPitchfork.Global.sSup_param_eq_top` in [ScalarPitchfork/HeadlineChallenge.lean](https://github.com/chenle02/scalar-pitchfork-lean/blob/a460cf60cfe88aa90019be59d45a1d0f14ece7e7/ScalarPitchfork/HeadlineChallenge.lean#L255): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
-<details>
+<details markdown="1">
 <summary>Exact Lean statement (expand and copy)</summary>
 
 ```lean
@@ -684,18 +700,19 @@ Lean statement and source link above; this is not a claim to formalize a numbere
 **Compared with the reference.** The statement above retains this library's own hypotheses.
 No equivalence to a complete paper theorem, or discharge of application-specific premises, is claimed.
 
-<details>
-<summary>Sign-off and trust boundary</summary>
+<details markdown="1">
+<summary>Sign-off</summary>
 
-| Check | Recorded status |
+| Field | Value |
 |---|---|
-| Build and statement comparison | Passed for the linked declarations at the evidence commit |
-| Unfinished proofs in the verified proofs | Recorded `sorry_count: 0`; Challenge placeholders are specifications |
-| Permitted axioms | `propext`, `Classical.choice`, `Quot.sound` |
-| Definitions judged independently | No additional definition review claimed by this guide |
-| Evidence commit | `a460cf60cfe88aa90019be59d45a1d0f14ece7e7` |
-| Human mathematical review | Not recorded (`formalization.yaml`: unchecked) |
-| Prose sign-off | Documentation audit, 2026-10-22; not a new kernel or scientific-review verdict |
+| Status | proved |
+| Sorry count | 0 (build receipt at `a460cf60cfe8`, listed in the verification page's receipt table); the `sorry` in the Challenge files is intentional (they hold the statements) |
+| Axioms | `Classical.choice`, `Quot.sound`, `propext` (build receipt `axioms` at commit `a460cf60cfe8`); permitted: `propext`, `Quot.sound`, `Classical.choice` |
+| Statement comparison | comparator receipt `.lean-receipts/a460cf60cfe8-comparator.json` at `a460cf60cfe8`: result `pass` for `comparator.headline.json` (12 theorems) and `comparator.json` (40 theorems); the Challenge statement shown is the one compared |
+| Definitions judged by a person | none (`definition_names` is empty in both comparator configurations) |
+| Evidence commit | `a460cf60cfe88aa90019be59d45a1d0f14ece7e7` (receipts in `.lean-receipts/`) |
+| Human review | unchecked: no independent human review asserted (`formalization.yaml` `review.status`) |
+| Signed off | lean-pkg 0.7.49 `gate` (build receipt) + `comparator`, receipts dated 2026-10-20 (mechanical checks only) |
 
 </details>
 
@@ -710,7 +727,7 @@ Let $`X`$ be a topological space, $`S\subseteq X`$ closed, $`b\in S`$, and $`K`$
 
 **Lean.** `ScalarPitchforkHeadline.ScalarPitchfork.Global.selectedComponent_isClosed` in [ScalarPitchfork/HeadlineChallenge.lean](https://github.com/chenle02/scalar-pitchfork-lean/blob/a460cf60cfe88aa90019be59d45a1d0f14ece7e7/ScalarPitchfork/HeadlineChallenge.lean#L271): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
-<details>
+<details markdown="1">
 <summary>Exact Lean statement (expand and copy)</summary>
 
 ```lean
@@ -737,18 +754,19 @@ Lean statement and source link above; this is not a claim to formalize a numbere
 **Compared with the reference.** The statement above retains this library's own hypotheses.
 No equivalence to a complete paper theorem, or discharge of application-specific premises, is claimed.
 
-<details>
-<summary>Sign-off and trust boundary</summary>
+<details markdown="1">
+<summary>Sign-off</summary>
 
-| Check | Recorded status |
+| Field | Value |
 |---|---|
-| Build and statement comparison | Passed for the linked declarations at the evidence commit |
-| Unfinished proofs in the verified proofs | Recorded `sorry_count: 0`; Challenge placeholders are specifications |
-| Permitted axioms | `propext`, `Classical.choice`, `Quot.sound` |
-| Definitions judged independently | No additional definition review claimed by this guide |
-| Evidence commit | `a460cf60cfe88aa90019be59d45a1d0f14ece7e7` |
-| Human mathematical review | Not recorded (`formalization.yaml`: unchecked) |
-| Prose sign-off | Documentation audit, 2026-10-22; not a new kernel or scientific-review verdict |
+| Status | proved |
+| Sorry count | 0 (build receipt at `a460cf60cfe8`, listed in the verification page's receipt table); the `sorry` in the Challenge files is intentional (they hold the statements) |
+| Axioms | `Classical.choice`, `Quot.sound`, `propext` (build receipt `axioms` at commit `a460cf60cfe8`); permitted: `propext`, `Quot.sound`, `Classical.choice` |
+| Statement comparison | comparator receipt `.lean-receipts/a460cf60cfe8-comparator.json` at `a460cf60cfe8`: result `pass` for `comparator.headline.json` (12 theorems) and `comparator.json` (40 theorems); the Challenge statement shown is the one compared |
+| Definitions judged by a person | none (`definition_names` is empty in both comparator configurations) |
+| Evidence commit | `a460cf60cfe88aa90019be59d45a1d0f14ece7e7` (receipts in `.lean-receipts/`) |
+| Human review | unchecked: no independent human review asserted (`formalization.yaml` `review.status`) |
+| Signed off | lean-pkg 0.7.49 `gate` (build receipt) + `comparator`, receipts dated 2026-10-20 (mechanical checks only) |
 
 </details>
 
@@ -758,7 +776,7 @@ No equivalence to a complete paper theorem, or discharge of application-specific
 
 **Statement.**
 
-Under the hypotheses of the row "Remainder bounds from jets at the origin" together with the axis condition $`\partial_zR(\tau,0)=0`$ for $`|\tau|\le r`$ (where $`\partial_zR(\tau,z)=DR(\tau,z)(0,1)`$), there is $`C\ge0`$ with, for $`|\tau|,|z|\le r`$,
+Under the hypotheses of the result "Remainder bounds from jets at the origin" together with the axis condition $`\partial_zR(\tau,0)=0`$ for $`|\tau|\le r`$ (where $`\partial_zR(\tau,z)=DR(\tau,z)(0,1)`$), there is $`C\ge0`$ with, for $`|\tau|,|z|\le r`$,
 
 
 ```math
@@ -767,13 +785,13 @@ Under the hypotheses of the row "Remainder bounds from jets at the origin" toget
 
 
 The axis condition holds for $`R(\tau,z)=f(\tau,z)-\alpha\tau z+\beta z^3`$ when $`R`$ satisfies those jet hypotheses and $`\partial_zf(\tau,0)=\alpha\tau`$ for $`|\tau|\le r`$; and if $`\varphi'(0)=d`$ and $`|\varphi(z)|\le Kz^2`$ for $`|z|\le\delta`$ with $`\delta>0`$, then $`d=0`$.
-Let $`\alpha>0`$, $`\beta\ne0`$, $`C\ge0`$, $`0<r\le1`$, $`f(\tau,z)=\alpha\tau z-\beta z^3+R(\tau,z)`$, and assume for $`|\tau|,|z|\le r`$ the two stronger bounds above with $`\partial_zR=R_z`$. Then the conclusion of the row "Existence of both branches with explicit amplitude constant and stability sign" holds with the same constant $`K`$. If moreover $`\tau\mapsto R(\tau,z)`$ is continuous at every $`|\tau|<r`$, $`|z|\le r`$, there are $`\rho>0`$, an open neighbourhood $`N`$ of $`0`$ and, for $`\sigma\in\{1,-1\}`$, functions $`b_\sigma`$ continuous on $`N`$ with $`b_\sigma(\tau)\to0`$ as $`\tau\to0`$, such that for $`\tau\in N`$ with $`\tau\beta>0`$, $`f(\tau,\cdot)`$ has exactly one zero $`z`$ with $`\sigma z>0`$, $`|z|\le\rho`$, and $`b_\sigma(\tau)`$ is that zero.
+Let $`\alpha>0`$, $`\beta\ne0`$, $`C\ge0`$, $`0<r\le1`$, $`f(\tau,z)=\alpha\tau z-\beta z^3+R(\tau,z)`$, and assume for $`|\tau|,|z|\le r`$ the two stronger bounds above with $`\partial_zR=R_z`$. Then the conclusion of the result "Existence of both branches with explicit amplitude constant and stability sign" holds with the same constant $`K`$. If moreover $`\tau\mapsto R(\tau,z)`$ is continuous at every $`|\tau|<r`$, $`|z|\le r`$, there are $`\rho>0`$, an open neighbourhood $`N`$ of $`0`$ and, for $`\sigma\in\{1,-1\}`$, functions $`b_\sigma`$ continuous on $`N`$ with $`b_\sigma(\tau)\to0`$ as $`\tau\to0`$, such that for $`\tau\in N`$ with $`\tau\beta>0`$, $`f(\tau,\cdot)`$ has exactly one zero $`z`$ with $`\sigma z>0`$, $`|z|\le\rho`$, and $`b_\sigma(\tau)`$ is that zero.
 At a single point: if $`z\ne0`$, $`|z|,|\tau|\le1`$, $`2C|\tau|\le\alpha`$, $`\alpha\tau z-\beta z^3+R=0`$, $`d=\alpha\tau-3\beta z^2+R_s`$, $`|R|\le C(z^2\tau^2+|z|^3|\tau|+z^4)`$, $`|R_s|\le C(|z|\tau^2+z^2|\tau|+|z|^3)`$ and $`A(|\tau|+|z|)\le|\beta|/2`$ with $`A=C\big(\frac{2(|\beta|+2C)}{\alpha}+1\big)`$, then $`\tau\beta>0`$, $`d\beta<0`$ and $`\big||z|-\sqrt{\alpha\tau/\beta}\big|\le K|\tau|`$.
 
 
 **Lean.** `ScalarPitchforkAudit.ScalarPitchfork.strongBounds_of_jet` in [ScalarPitchfork/Challenge.lean](https://github.com/chenle02/scalar-pitchfork-lean/blob/a460cf60cfe88aa90019be59d45a1d0f14ece7e7/ScalarPitchfork/Challenge.lean#L297): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
-<details>
+<details markdown="1">
 <summary>Exact Lean statement (expand and copy)</summary>
 
 ```lean
@@ -798,7 +816,7 @@ theorem strongBounds_of_jet (R : ℝ → ℝ → ℝ) (U : Set (ℝ × ℝ)) (r 
 
 **Lean.** `ScalarPitchforkAudit.ScalarPitchfork.branch_eventually_of_strongBound` in [ScalarPitchfork/Challenge.lean](https://github.com/chenle02/scalar-pitchfork-lean/blob/a460cf60cfe88aa90019be59d45a1d0f14ece7e7/ScalarPitchfork/Challenge.lean#L320): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
-<details>
+<details markdown="1">
 <summary>Exact Lean statement (expand and copy)</summary>
 
 ```lean
@@ -823,7 +841,7 @@ theorem branch_eventually_of_strongBound (alpha beta C r : ℝ) (R Rs : ℝ → 
 
 **Lean.** `ScalarPitchforkAudit.ScalarPitchfork.branch_curves_of_strongBound` in [ScalarPitchfork/Challenge.lean](https://github.com/chenle02/scalar-pitchfork-lean/blob/a460cf60cfe88aa90019be59d45a1d0f14ece7e7/ScalarPitchfork/Challenge.lean#L346): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
-<details>
+<details markdown="1">
 <summary>Exact Lean statement (expand and copy)</summary>
 
 ```lean
@@ -849,7 +867,7 @@ theorem branch_curves_of_strongBound (alpha beta C r : ℝ) (R Rs : ℝ → ℝ 
 
 **Lean.** `ScalarPitchforkAudit.ScalarPitchfork.equilibrium_core_of_strongBound` in [ScalarPitchfork/Challenge.lean](https://github.com/chenle02/scalar-pitchfork-lean/blob/a460cf60cfe88aa90019be59d45a1d0f14ece7e7/ScalarPitchfork/Challenge.lean#L371): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
-<details>
+<details markdown="1">
 <summary>Exact Lean statement (expand and copy)</summary>
 
 ```lean
@@ -871,7 +889,7 @@ theorem equilibrium_core_of_strongBound (alpha beta tau z R Rs ds C : ℝ)
 
 **Lean.** `ScalarPitchforkAudit.ScalarPitchfork.deriv_zero_of_sq_bound` in [ScalarPitchfork/Challenge.lean](https://github.com/chenle02/scalar-pitchfork-lean/blob/a460cf60cfe88aa90019be59d45a1d0f14ece7e7/ScalarPitchfork/Challenge.lean#L513): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
-<details>
+<details markdown="1">
 <summary>Exact Lean statement (expand and copy)</summary>
 
 ```lean
@@ -883,7 +901,7 @@ theorem deriv_zero_of_sq_bound (φ : ℝ → ℝ) (d K δ : ℝ) (hδ : 0 < δ)
 
 **Lean.** `ScalarPitchforkAudit.ScalarPitchfork.axis_of_linearization` in [ScalarPitchfork/Challenge.lean](https://github.com/chenle02/scalar-pitchfork-lean/blob/a460cf60cfe88aa90019be59d45a1d0f14ece7e7/ScalarPitchfork/Challenge.lean#L392): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
-<details>
+<details markdown="1">
 <summary>Exact Lean statement (expand and copy)</summary>
 
 ```lean
@@ -924,18 +942,19 @@ Lean statement and source link above; this is not a claim to formalize a numbere
 **Compared with the reference.** The statement above retains this library's own hypotheses.
 No equivalence to a complete paper theorem, or discharge of application-specific premises, is claimed.
 
-<details>
-<summary>Sign-off and trust boundary</summary>
+<details markdown="1">
+<summary>Sign-off</summary>
 
-| Check | Recorded status |
+| Field | Value |
 |---|---|
-| Build and statement comparison | Passed for the linked declarations at the evidence commit |
-| Unfinished proofs in the verified proofs | Recorded `sorry_count: 0`; Challenge placeholders are specifications |
-| Permitted axioms | `propext`, `Classical.choice`, `Quot.sound` |
-| Definitions judged independently | No additional definition review claimed by this guide |
-| Evidence commit | `a460cf60cfe88aa90019be59d45a1d0f14ece7e7` |
-| Human mathematical review | Not recorded (`formalization.yaml`: unchecked) |
-| Prose sign-off | Documentation audit, 2026-10-22; not a new kernel or scientific-review verdict |
+| Status | proved |
+| Sorry count | 0 (build receipt at `a460cf60cfe8`, listed in the verification page's receipt table); the `sorry` in the Challenge files is intentional (they hold the statements) |
+| Axioms | `Classical.choice`, `Quot.sound`, `propext` (build receipt `axioms` at commit `a460cf60cfe8`); permitted: `propext`, `Quot.sound`, `Classical.choice` |
+| Statement comparison | comparator receipt `.lean-receipts/a460cf60cfe8-comparator.json` at `a460cf60cfe8`: result `pass` for `comparator.json` (40 theorems); the Challenge statement shown is the one compared |
+| Definitions judged by a person | none (`definition_names` is empty in both comparator configurations) |
+| Evidence commit | `a460cf60cfe88aa90019be59d45a1d0f14ece7e7` (receipts in `.lean-receipts/`) |
+| Human review | unchecked: no independent human review asserted (`formalization.yaml` `review.status`) |
+| Signed off | lean-pkg 0.7.49 `gate` (build receipt) + `comparator`, receipts dated 2026-10-20 (mechanical checks only) |
 
 </details>
 
@@ -945,12 +964,12 @@ No equivalence to a complete paper theorem, or discharge of application-specific
 
 **Statement.**
 
-Let $`\alpha>0`$, $`\beta\ne0`$, and let $`R`$, $`U`$, $`r`$ satisfy the hypotheses of the row "Remainder bounds from jets at the origin" ($`C^4`$ on an open $`U\supseteq\{|\tau|,|z|\le r\}`$, $`0<r\le1`$, $`R(\tau,0)=0`$ for $`|\tau|\le r`$, and the five listed derivatives vanish at $`(0,0)`$); no remainder constant is assumed. Put $`f(\tau,z)=\alpha\tau z-\beta z^3+R(\tau,z)`$. Then the full conclusion of the row "The two pitchfork branches" holds for $`f`$ (with some $`\rho>0`$, open neighbourhood $`N`$ of $`0`$, $`K`$ and $`b_{\pm1}`$), and in addition $`b_\sigma(\tau)\to0`$ as $`\tau\to0`$. Moreover there is $`C\ge0`$ such that the conclusion of the row "Existence of both branches with explicit amplitude constant and stability sign" holds for $`f`$ with the explicit constant $`K`$ computed from this $`C`$.
+Let $`\alpha>0`$, $`\beta\ne0`$, and let $`R`$, $`U`$, $`r`$ satisfy the hypotheses of the result "Remainder bounds from jets at the origin" ($`C^4`$ on an open $`U\supseteq\{|\tau|,|z|\le r\}`$, $`0<r\le1`$, $`R(\tau,0)=0`$ for $`|\tau|\le r`$, and the five listed derivatives vanish at $`(0,0)`$); no remainder constant is assumed. Put $`f(\tau,z)=\alpha\tau z-\beta z^3+R(\tau,z)`$. Then the full conclusion of the result "The two pitchfork branches" holds for $`f`$ (with some $`\rho>0`$, open neighbourhood $`N`$ of $`0`$, $`K`$ and $`b_{\pm1}`$), and in addition $`b_\sigma(\tau)\to0`$ as $`\tau\to0`$. Moreover there is $`C\ge0`$ such that the conclusion of the result "Existence of both branches with explicit amplitude constant and stability sign" holds for $`f`$ with the explicit constant $`K`$ computed from this $`C`$.
 
 
 **Lean.** `ScalarPitchforkAudit.ScalarPitchfork.pitchfork_branch_curves_of_jet` in [ScalarPitchfork/Challenge.lean](https://github.com/chenle02/scalar-pitchfork-lean/blob/a460cf60cfe88aa90019be59d45a1d0f14ece7e7/ScalarPitchfork/Challenge.lean#L462): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
-<details>
+<details markdown="1">
 <summary>Exact Lean statement (expand and copy)</summary>
 
 ```lean
@@ -982,7 +1001,7 @@ theorem pitchfork_branch_curves_of_jet (alpha beta : ℝ) (R : ℝ → ℝ → �
 
 **Lean.** `ScalarPitchforkAudit.ScalarPitchfork.exists_branch_eventually_of_jet` in [ScalarPitchfork/Challenge.lean](https://github.com/chenle02/scalar-pitchfork-lean/blob/a460cf60cfe88aa90019be59d45a1d0f14ece7e7/ScalarPitchfork/Challenge.lean#L491): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
-<details>
+<details markdown="1">
 <summary>Exact Lean statement (expand and copy)</summary>
 
 ```lean
@@ -1017,18 +1036,19 @@ Lean statement and source link above; this is not a claim to formalize a numbere
 **Compared with the reference.** The statement above retains this library's own hypotheses.
 No equivalence to a complete paper theorem, or discharge of application-specific premises, is claimed.
 
-<details>
-<summary>Sign-off and trust boundary</summary>
+<details markdown="1">
+<summary>Sign-off</summary>
 
-| Check | Recorded status |
+| Field | Value |
 |---|---|
-| Build and statement comparison | Passed for the linked declarations at the evidence commit |
-| Unfinished proofs in the verified proofs | Recorded `sorry_count: 0`; Challenge placeholders are specifications |
-| Permitted axioms | `propext`, `Classical.choice`, `Quot.sound` |
-| Definitions judged independently | No additional definition review claimed by this guide |
-| Evidence commit | `a460cf60cfe88aa90019be59d45a1d0f14ece7e7` |
-| Human mathematical review | Not recorded (`formalization.yaml`: unchecked) |
-| Prose sign-off | Documentation audit, 2026-10-22; not a new kernel or scientific-review verdict |
+| Status | proved |
+| Sorry count | 0 (build receipt at `a460cf60cfe8`, listed in the verification page's receipt table); the `sorry` in the Challenge files is intentional (they hold the statements) |
+| Axioms | `Classical.choice`, `Quot.sound`, `propext` (build receipt `axioms` at commit `a460cf60cfe8`); permitted: `propext`, `Quot.sound`, `Classical.choice` |
+| Statement comparison | comparator receipt `.lean-receipts/a460cf60cfe8-comparator.json` at `a460cf60cfe8`: result `pass` for `comparator.json` (40 theorems); the Challenge statement shown is the one compared |
+| Definitions judged by a person | none (`definition_names` is empty in both comparator configurations) |
+| Evidence commit | `a460cf60cfe88aa90019be59d45a1d0f14ece7e7` (receipts in `.lean-receipts/`) |
+| Human review | unchecked: no independent human review asserted (`formalization.yaml` `review.status`) |
+| Signed off | lean-pkg 0.7.49 `gate` (build receipt) + `comparator`, receipts dated 2026-10-20 (mechanical checks only) |
 
 </details>
 
@@ -1052,7 +1072,7 @@ If $`\alpha>0`$, $`\beta\ne0`$, $`A\ne0`$ and $`\alpha\tau A-\beta A^3=0`$, then
 
 **Lean.** `ScalarPitchforkAudit.ScalarPitchfork.perturbed_equilibrium_core` in [ScalarPitchfork/Challenge.lean](https://github.com/chenle02/scalar-pitchfork-lean/blob/a460cf60cfe88aa90019be59d45a1d0f14ece7e7/ScalarPitchfork/Challenge.lean#L422): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
-<details>
+<details markdown="1">
 <summary>Exact Lean statement (expand and copy)</summary>
 
 ```lean
@@ -1073,7 +1093,7 @@ theorem perturbed_equilibrium_core (alpha beta tau z R Rs ds C : ℝ)
 
 **Lean.** `ScalarPitchforkAudit.ScalarPitchfork.equilibrium_core` in [ScalarPitchfork/Challenge.lean](https://github.com/chenle02/scalar-pitchfork-lean/blob/a460cf60cfe88aa90019be59d45a1d0f14ece7e7/ScalarPitchfork/Challenge.lean#L442): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
-<details>
+<details markdown="1">
 <summary>Exact Lean statement (expand and copy)</summary>
 
 ```lean
@@ -1095,7 +1115,7 @@ theorem equilibrium_core (alpha beta tau z R Rs ds C : ℝ)
 
 **Lean.** `ScalarPitchforkAudit.ScalarPitchfork.exists_pos_equilibrium` in [ScalarPitchfork/Challenge.lean](https://github.com/chenle02/scalar-pitchfork-lean/blob/a460cf60cfe88aa90019be59d45a1d0f14ece7e7/ScalarPitchfork/Challenge.lean#L533): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
-<details>
+<details markdown="1">
 <summary>Exact Lean statement (expand and copy)</summary>
 
 ```lean
@@ -1115,7 +1135,7 @@ theorem exists_pos_equilibrium (alpha beta tau C : ℝ) (R : ℝ → ℝ)
 
 **Lean.** `ScalarPitchforkAudit.ScalarPitchfork.nonzero_equilibrium_eq_branch` in [ScalarPitchfork/Challenge.lean](https://github.com/chenle02/scalar-pitchfork-lean/blob/a460cf60cfe88aa90019be59d45a1d0f14ece7e7/ScalarPitchfork/Challenge.lean#L522): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
-<details>
+<details markdown="1">
 <summary>Exact Lean statement (expand and copy)</summary>
 
 ```lean
@@ -1137,18 +1157,19 @@ Lean statement and source link above; this is not a claim to formalize a numbere
 **Compared with the reference.** The statement above retains this library's own hypotheses.
 No equivalence to a complete paper theorem, or discharge of application-specific premises, is claimed.
 
-<details>
-<summary>Sign-off and trust boundary</summary>
+<details markdown="1">
+<summary>Sign-off</summary>
 
-| Check | Recorded status |
+| Field | Value |
 |---|---|
-| Build and statement comparison | Passed for the linked declarations at the evidence commit |
-| Unfinished proofs in the verified proofs | Recorded `sorry_count: 0`; Challenge placeholders are specifications |
-| Permitted axioms | `propext`, `Classical.choice`, `Quot.sound` |
-| Definitions judged independently | No additional definition review claimed by this guide |
-| Evidence commit | `a460cf60cfe88aa90019be59d45a1d0f14ece7e7` |
-| Human mathematical review | Not recorded (`formalization.yaml`: unchecked) |
-| Prose sign-off | Documentation audit, 2026-10-22; not a new kernel or scientific-review verdict |
+| Status | proved |
+| Sorry count | 0 (build receipt at `a460cf60cfe8`, listed in the verification page's receipt table); the `sorry` in the Challenge files is intentional (they hold the statements) |
+| Axioms | `Classical.choice`, `Quot.sound`, `propext` (build receipt `axioms` at commit `a460cf60cfe8`); permitted: `propext`, `Quot.sound`, `Classical.choice` |
+| Statement comparison | comparator receipt `.lean-receipts/a460cf60cfe8-comparator.json` at `a460cf60cfe8`: result `pass` for `comparator.json` (40 theorems); the Challenge statement shown is the one compared |
+| Definitions judged by a person | none (`definition_names` is empty in both comparator configurations) |
+| Evidence commit | `a460cf60cfe88aa90019be59d45a1d0f14ece7e7` (receipts in `.lean-receipts/`) |
+| Human review | unchecked: no independent human review asserted (`formalization.yaml` `review.status`) |
+| Signed off | lean-pkg 0.7.49 `gate` (build receipt) + `comparator`, receipts dated 2026-10-20 (mechanical checks only) |
 
 </details>
 
@@ -1158,7 +1179,7 @@ No equivalence to a complete paper theorem, or discharge of application-specific
 
 **Statement.**
 
-Let $`E`$ be a topological additive group, $`P:E\to(\mathbb R\to\mathbb R)`$ an additive map (the profile), $`L>0`$, $`(\lambda^*,u^*)\in\mathbb R\times E`$, $`W\subseteq E`$ and $`C,S,V\subseteq\mathbb R\times E`$. Assume the global alternatives: $`C`$ is not compact, or $`(\lambda,u^*)\in C`$ for some $`\lambda\ne\lambda^*`$, or $`(\lambda,u^*+w)\in C`$ for some $`w\in W\setminus\{0\}`$. Assume $`P(u^*)`$ is constant, every $`P(e)`$ is continuous on $`[0,L]`$, every $`(\lambda,u)\in C\setminus\{(\lambda^*,u^*)\}`$ has $`P(u)`$ strictly monotone on $`[0,L]`$, and the weight $`\varphi`$ satisfies
+Let $`E`$ be a topological space with an additive commutative group structure (no continuity of the group operations is assumed), $`P:E\to(\mathbb R\to\mathbb R)`$ an additive map (the profile), $`L>0`$, $`(\lambda^*,u^*)\in\mathbb R\times E`$, $`W\subseteq E`$ and $`C,S,V\subseteq\mathbb R\times E`$. Assume the global alternatives: $`C`$ is not compact, or $`(\lambda,u^*)\in C`$ for some $`\lambda\ne\lambda^*`$, or $`(\lambda,u^*+w)\in C`$ for some $`w\in W\setminus\{0\}`$. Assume $`P(u^*)`$ is constant, every $`P(e)`$ is continuous on $`[0,L]`$, every $`(\lambda,u)\in C\setminus\{(\lambda^*,u^*)\}`$ has $`P(u)`$ strictly monotone on $`[0,L]`$, and the weight $`\varphi`$ satisfies
 
 
 ```math
@@ -1166,13 +1187,13 @@ Let $`E`$ be a topological additive group, $`P:E\to(\mathbb R\to\mathbb R)`$ an 
 ```
 
 
-Then the second and third alternatives fail; if in addition $`C`$ satisfies the hypotheses of the row "A non-compact component has unbounded parameter" except non-compactness ($`C\subseteq V`$ relatively closed in $`V`$, $`C\subseteq\overline S\subseteq V`$, $`\overline{S\cap\{\lambda\le X\}}`$ compact for all $`X`$), then $`C`$ is not compact, has parameters $`\lambda>M`$ for every $`M`$, and $`\sup\{\lambda:(\lambda,u)\in C\}=+\infty`$.
+Then the second and third alternatives fail; if in addition $`C`$ satisfies the hypotheses of the result "A non-compact component has unbounded parameter" except non-compactness ($`C\subseteq V`$ relatively closed in $`V`$, $`C\subseteq\overline S\subseteq V`$, $`\overline{S\cap\{\lambda\le X\}}`$ compact for all $`X`$), then $`C`$ is not compact, has parameters $`\lambda>M`$ for every $`M`$, and $`\sup\{\lambda:(\lambda,u)\in C\}=+\infty`$.
 Supporting facts: the alternatives with the last two excluded give non-compactness; if $`C`$ is closed, $`C\subseteq\overline S`$ and all $`\overline{S\cap\{\lambda\le X\}}`$ are compact, every slice $`C\cap\{\lambda\le X\}`$ is compact; if $`C`$ is preconnected, $`p^*\in C\cap M`$ and $`C\cap M`$ is clopen in $`C`$, then $`C\subseteq M`$; in particular, if $`\{p\in C: p=p^*\text{ or }P(p_2)\text{ is strictly decreasing on }[0,L]\}`$ is clopen in a preconnected $`C\ni p^*`$, every $`p\in C\setminus\{p^*\}`$ has strictly decreasing profile.
 
 
 **Lean.** `ScalarPitchforkAudit.ScalarPitchfork.Global.global_unbounded_of_monotone` in [ScalarPitchfork/Challenge.lean](https://github.com/chenle02/scalar-pitchfork-lean/blob/a460cf60cfe88aa90019be59d45a1d0f14ece7e7/ScalarPitchfork/Challenge.lean#L561): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
-<details>
+<details markdown="1">
 <summary>Exact Lean statement (expand and copy)</summary>
 
 ```lean
@@ -1201,7 +1222,7 @@ theorem global_unbounded_of_monotone {E : Type*} [TopologicalSpace E] [AddCommGr
 
 **Lean.** `ScalarPitchforkAudit.ScalarPitchfork.Global.not_altComplement` in [ScalarPitchfork/Challenge.lean](https://github.com/chenle02/scalar-pitchfork-lean/blob/a460cf60cfe88aa90019be59d45a1d0f14ece7e7/ScalarPitchfork/Challenge.lean#L585): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
-<details>
+<details markdown="1">
 <summary>Exact Lean statement (expand and copy)</summary>
 
 ```lean
@@ -1221,7 +1242,7 @@ theorem not_altComplement {E : Type*} [TopologicalSpace E] [AddCommGroup E]
 
 **Lean.** `ScalarPitchforkAudit.ScalarPitchfork.Global.not_altOtherTrivial` in [ScalarPitchfork/Challenge.lean](https://github.com/chenle02/scalar-pitchfork-lean/blob/a460cf60cfe88aa90019be59d45a1d0f14ece7e7/ScalarPitchfork/Challenge.lean#L602): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
-<details>
+<details markdown="1">
 <summary>Exact Lean statement (expand and copy)</summary>
 
 ```lean
@@ -1237,7 +1258,7 @@ theorem not_altOtherTrivial {E : Type*} [TopologicalSpace E] [AddCommGroup E]
 
 **Lean.** `ScalarPitchforkAudit.ScalarPitchfork.Global.not_isCompact_of_alternatives` in [ScalarPitchfork/Challenge.lean](https://github.com/chenle02/scalar-pitchfork-lean/blob/a460cf60cfe88aa90019be59d45a1d0f14ece7e7/ScalarPitchfork/Challenge.lean#L614): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
-<details>
+<details markdown="1">
 <summary>Exact Lean statement (expand and copy)</summary>
 
 ```lean
@@ -1254,7 +1275,7 @@ theorem not_isCompact_of_alternatives {E : Type*} [TopologicalSpace E] [Add E] [
 
 **Lean.** `ScalarPitchforkAudit.ScalarPitchfork.Global.isCompact_slice` in [ScalarPitchfork/Challenge.lean](https://github.com/chenle02/scalar-pitchfork-lean/blob/a460cf60cfe88aa90019be59d45a1d0f14ece7e7/ScalarPitchfork/Challenge.lean#L626): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
-<details>
+<details markdown="1">
 <summary>Exact Lean statement (expand and copy)</summary>
 
 ```lean
@@ -1269,7 +1290,7 @@ theorem isCompact_slice {E : Type*} [TopologicalSpace E] {C S : Set (ℝ × E)}
 
 **Lean.** `ScalarPitchforkAudit.ScalarPitchfork.Global.subset_of_relClopen` in [ScalarPitchfork/Challenge.lean](https://github.com/chenle02/scalar-pitchfork-lean/blob/a460cf60cfe88aa90019be59d45a1d0f14ece7e7/ScalarPitchfork/Challenge.lean#L636): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
-<details>
+<details markdown="1">
 <summary>Exact Lean statement (expand and copy)</summary>
 
 ```lean
@@ -1283,7 +1304,7 @@ theorem subset_of_relClopen {E : Type*} [TopologicalSpace E] {C M : Set (ℝ × 
 
 **Lean.** `ScalarPitchforkAudit.ScalarPitchfork.Global.strictAntiOn_of_relClopen` in [ScalarPitchfork/Challenge.lean](https://github.com/chenle02/scalar-pitchfork-lean/blob/a460cf60cfe88aa90019be59d45a1d0f14ece7e7/ScalarPitchfork/Challenge.lean#L648): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
-<details>
+<details markdown="1">
 <summary>Exact Lean statement (expand and copy)</summary>
 
 ```lean
@@ -1307,18 +1328,19 @@ Lean statement and source link above; this is not a claim to formalize a numbere
 **Compared with the reference.** The statement above retains this library's own hypotheses.
 No equivalence to a complete paper theorem, or discharge of application-specific premises, is claimed.
 
-<details>
-<summary>Sign-off and trust boundary</summary>
+<details markdown="1">
+<summary>Sign-off</summary>
 
-| Check | Recorded status |
+| Field | Value |
 |---|---|
-| Build and statement comparison | Passed for the linked declarations at the evidence commit |
-| Unfinished proofs in the verified proofs | Recorded `sorry_count: 0`; Challenge placeholders are specifications |
-| Permitted axioms | `propext`, `Classical.choice`, `Quot.sound` |
-| Definitions judged independently | No additional definition review claimed by this guide |
-| Evidence commit | `a460cf60cfe88aa90019be59d45a1d0f14ece7e7` |
-| Human mathematical review | Not recorded (`formalization.yaml`: unchecked) |
-| Prose sign-off | Documentation audit, 2026-10-22; not a new kernel or scientific-review verdict |
+| Status | proved |
+| Sorry count | 0 (build receipt at `a460cf60cfe8`, listed in the verification page's receipt table); the `sorry` in the Challenge files is intentional (they hold the statements) |
+| Axioms | `Classical.choice`, `Quot.sound`, `propext` (build receipt `axioms` at commit `a460cf60cfe8`); permitted: `propext`, `Quot.sound`, `Classical.choice` |
+| Statement comparison | comparator receipt `.lean-receipts/a460cf60cfe8-comparator.json` at `a460cf60cfe8`: result `pass` for `comparator.json` (40 theorems); the Challenge statement shown is the one compared |
+| Definitions judged by a person | none (`definition_names` is empty in both comparator configurations) |
+| Evidence commit | `a460cf60cfe88aa90019be59d45a1d0f14ece7e7` (receipts in `.lean-receipts/`) |
+| Human review | unchecked: no independent human review asserted (`formalization.yaml` `review.status`) |
+| Signed off | lean-pkg 0.7.49 `gate` (build receipt) + `comparator`, receipts dated 2026-10-20 (mechanical checks only) |
 
 </details>
 
@@ -1339,7 +1361,7 @@ For any $`A,A'\subseteq X`$ and $`s\in X`$, the component $`K_s`$ of $`s`$ in $`
 
 **Lean.** `ScalarPitchforkAudit.ScalarPitchfork.Global.isClosed_connectedComponentIn_of_isClosed` in [ScalarPitchfork/Challenge.lean](https://github.com/chenle02/scalar-pitchfork-lean/blob/a460cf60cfe88aa90019be59d45a1d0f14ece7e7/ScalarPitchfork/Challenge.lean#L662): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
-<details>
+<details markdown="1">
 <summary>Exact Lean statement (expand and copy)</summary>
 
 ```lean
@@ -1352,7 +1374,7 @@ theorem isClosed_connectedComponentIn_of_isClosed {X : Type*} [TopologicalSpace 
 
 **Lean.** `ScalarPitchforkAudit.ScalarPitchfork.Global.isClosed_sdiff_of_isOpen_preimage` in [ScalarPitchfork/Challenge.lean](https://github.com/chenle02/scalar-pitchfork-lean/blob/a460cf60cfe88aa90019be59d45a1d0f14ece7e7/ScalarPitchfork/Challenge.lean#L670): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
-<details>
+<details markdown="1">
 <summary>Exact Lean statement (expand and copy)</summary>
 
 ```lean
@@ -1366,7 +1388,7 @@ theorem isClosed_sdiff_of_isOpen_preimage {X : Type*} [TopologicalSpace X]
 
 **Lean.** `ScalarPitchforkAudit.ScalarPitchfork.Global.parentComponent_isClosed` in [ScalarPitchfork/Challenge.lean](https://github.com/chenle02/scalar-pitchfork-lean/blob/a460cf60cfe88aa90019be59d45a1d0f14ece7e7/ScalarPitchfork/Challenge.lean#L680): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
-<details>
+<details markdown="1">
 <summary>Exact Lean statement (expand and copy)</summary>
 
 ```lean
@@ -1380,7 +1402,7 @@ theorem parentComponent_isClosed {X : Type*} [TopologicalSpace X]
 
 **Lean.** `ScalarPitchforkAudit.ScalarPitchfork.Global.unilateralRemainder_isClosed` in [ScalarPitchfork/Challenge.lean](https://github.com/chenle02/scalar-pitchfork-lean/blob/a460cf60cfe88aa90019be59d45a1d0f14ece7e7/ScalarPitchfork/Challenge.lean#L690): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
-<details>
+<details markdown="1">
 <summary>Exact Lean statement (expand and copy)</summary>
 
 ```lean
@@ -1396,7 +1418,7 @@ theorem unilateralRemainder_isClosed {X : Type*} [TopologicalSpace X]
 
 **Lean.** `ScalarPitchforkAudit.ScalarPitchfork.Global.retainedWithBase_subset_parentComponent` in [ScalarPitchfork/Challenge.lean](https://github.com/chenle02/scalar-pitchfork-lean/blob/a460cf60cfe88aa90019be59d45a1d0f14ece7e7/ScalarPitchfork/Challenge.lean#L702): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
-<details>
+<details markdown="1">
 <summary>Exact Lean statement (expand and copy)</summary>
 
 ```lean
@@ -1411,7 +1433,7 @@ theorem retainedWithBase_subset_parentComponent {X : Type*} [TopologicalSpace X]
 
 **Lean.** `ScalarPitchforkAudit.ScalarPitchfork.Global.retainedWithBase_subset_unilateralRemainder` in [ScalarPitchfork/Challenge.lean](https://github.com/chenle02/scalar-pitchfork-lean/blob/a460cf60cfe88aa90019be59d45a1d0f14ece7e7/ScalarPitchfork/Challenge.lean#L714): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
-<details>
+<details markdown="1">
 <summary>Exact Lean statement (expand and copy)</summary>
 
 ```lean
@@ -1427,7 +1449,7 @@ theorem retainedWithBase_subset_unilateralRemainder {X : Type*} [TopologicalSpac
 
 **Lean.** `ScalarPitchforkAudit.ScalarPitchfork.Global.retainedWithBase_subset_selectedComponent` in [ScalarPitchfork/Challenge.lean](https://github.com/chenle02/scalar-pitchfork-lean/blob/a460cf60cfe88aa90019be59d45a1d0f14ece7e7/ScalarPitchfork/Challenge.lean#L727): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
-<details>
+<details markdown="1">
 <summary>Exact Lean statement (expand and copy)</summary>
 
 ```lean
@@ -1446,7 +1468,7 @@ theorem retainedWithBase_subset_selectedComponent {X : Type*} [TopologicalSpace 
 
 **Lean.** `ScalarPitchforkAudit.ScalarPitchfork.Global.base_mem_selectedComponent` in [ScalarPitchfork/Challenge.lean](https://github.com/chenle02/scalar-pitchfork-lean/blob/a460cf60cfe88aa90019be59d45a1d0f14ece7e7/ScalarPitchfork/Challenge.lean#L742): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
-<details>
+<details markdown="1">
 <summary>Exact Lean statement (expand and copy)</summary>
 
 ```lean
@@ -1464,7 +1486,7 @@ theorem base_mem_selectedComponent {X : Type*} [TopologicalSpace X]
 
 **Lean.** `ScalarPitchforkAudit.ScalarPitchfork.Global.selectedComponent_subset_solutionClosure` in [ScalarPitchfork/Challenge.lean](https://github.com/chenle02/scalar-pitchfork-lean/blob/a460cf60cfe88aa90019be59d45a1d0f14ece7e7/ScalarPitchfork/Challenge.lean#L756): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
-<details>
+<details markdown="1">
 <summary>Exact Lean statement (expand and copy)</summary>
 
 ```lean
@@ -1489,18 +1511,19 @@ Lean statement and source link above; this is not a claim to formalize a numbere
 **Compared with the reference.** The statement above retains this library's own hypotheses.
 No equivalence to a complete paper theorem, or discharge of application-specific premises, is claimed.
 
-<details>
-<summary>Sign-off and trust boundary</summary>
+<details markdown="1">
+<summary>Sign-off</summary>
 
-| Check | Recorded status |
+| Field | Value |
 |---|---|
-| Build and statement comparison | Passed for the linked declarations at the evidence commit |
-| Unfinished proofs in the verified proofs | Recorded `sorry_count: 0`; Challenge placeholders are specifications |
-| Permitted axioms | `propext`, `Classical.choice`, `Quot.sound` |
-| Definitions judged independently | No additional definition review claimed by this guide |
-| Evidence commit | `a460cf60cfe88aa90019be59d45a1d0f14ece7e7` |
-| Human mathematical review | Not recorded (`formalization.yaml`: unchecked) |
-| Prose sign-off | Documentation audit, 2026-10-22; not a new kernel or scientific-review verdict |
+| Status | proved |
+| Sorry count | 0 (build receipt at `a460cf60cfe8`, listed in the verification page's receipt table); the `sorry` in the Challenge files is intentional (they hold the statements) |
+| Axioms | `Classical.choice`, `Quot.sound`, `propext` (build receipt `axioms` at commit `a460cf60cfe8`); permitted: `propext`, `Quot.sound`, `Classical.choice` |
+| Statement comparison | comparator receipt `.lean-receipts/a460cf60cfe8-comparator.json` at `a460cf60cfe8`: result `pass` for `comparator.json` (40 theorems); the Challenge statement shown is the one compared |
+| Definitions judged by a person | none (`definition_names` is empty in both comparator configurations) |
+| Evidence commit | `a460cf60cfe88aa90019be59d45a1d0f14ece7e7` (receipts in `.lean-receipts/`) |
+| Human review | unchecked: no independent human review asserted (`formalization.yaml` `review.status`) |
+| Signed off | lean-pkg 0.7.49 `gate` (build receipt) + `comparator`, receipts dated 2026-10-20 (mechanical checks only) |
 
 </details>
 
@@ -1515,7 +1538,7 @@ No equivalence to a complete paper theorem, or discharge of application-specific
 The newer paper companion has its own source and evidence. Its additions are not automatically
 part of this standalone library, and neither library establishes whole-paper verification.
 
-<details>
+<details markdown="1">
 <summary>Lean implementation notes</summary>
 
 The Lean statement, including every binder and hypothesis, controls the result. Definitions may be
@@ -1526,12 +1549,36 @@ The folded blocks are trusted Challenge statements checked against separate Solu
 
 ## How this was checked
 
-The [generated verification page](verification.md) and [coverage ledger](coverage.md) retain the
-full receipt table and exact declaration mappings. This documentation update changes no Lean source,
-claims, toolchain or dependency pins and runs no new proof gate. It does not expand the comparator's
-configured scope. See [formalization metadata](https://github.com/chenle02/scalar-pitchfork-lean/blob/main/formalization.yaml) for recorded review status.
+At commit `a460cf60cfe8`, lean-pkg's gate built the library and both Solution modules (`sorry` count 0;
+axioms `Classical.choice`, `Quot.sound`, `propext`), and comparator checked each Challenge statement above
+against its Solution proof, with independent kernels replaying the proofs. The
+[generated verification page](verification.md) and [coverage ledger](coverage.md) hold the full receipt
+table and the declaration mappings; the receipts are in
+[`.lean-receipts/`](https://github.com/chenle02/scalar-pitchfork-lean/tree/main/.lean-receipts), and the
+verification page's Reproduce section gives the commands. See
+[formalization metadata](https://github.com/chenle02/scalar-pitchfork-lean/blob/main/formalization.yaml) for
+the recorded review status.
 
-## References and reuse
+## References
+
+1. L. Chen, I. Ruau and W. Shen, *Chemotaxis models with signal-dependent sensitivity and a logistic-type
+   source, III: Bifurcation and spike-like solutions*, preprint (2026).
+   [arXiv:2610.20976](https://arxiv.org/abs/2610.20976) (citekey `chen.ruau.ea:26:bifurcation`).
+   The motivating application; no numbered theorem of the paper is claimed here.
+2. M. G. Crandall and P. H. Rabinowitz, *Bifurcation from simple eigenvalues*, J. Funct. Anal. **8** (1971),
+   321–340. [doi:10.1016/0022-1236(71)90015-2](https://doi.org/10.1016/0022-1236(71)90015-2) ·
+   [MR288640](https://mathscinet.ams.org/mathscinet-getitem?mr=288640)
+   (citekey `crandall.rabinowitz:71:bifurcation`). Not formalized here.
+3. P. H. Rabinowitz, *Some global results for nonlinear eigenvalue problems*, J. Funct. Anal. **7** (1971),
+   487–513. [doi:10.1016/0022-1236(71)90030-9](https://doi.org/10.1016/0022-1236(71)90030-9).
+   Not formalized here.
+4. J. Shi and X. Wang, *On global bifurcation for quasilinear elliptic systems on bounded domains*,
+   J. Differential Equations **246** (2009), 2788–2812.
+   [doi:10.1016/j.jde.2008.09.009](https://doi.org/10.1016/j.jde.2008.09.009) ·
+   [MR2503022](https://mathscinet.ams.org/mathscinet-getitem?mr=2503022)
+   (citekey `shi.wang:09:on`). Not formalized here.
+
+## Reuse
 
 - [Paper and bibliographic references](https://github.com/chenle02/scalar-pitchfork-lean/blob/main/README.md#paper-and-references), including the BibTeX entry.
 - [Software citation](https://github.com/chenle02/scalar-pitchfork-lean/blob/main/CITATION.cff) and [license](https://github.com/chenle02/scalar-pitchfork-lean/blob/main/LICENSE).
