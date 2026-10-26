@@ -4,11 +4,11 @@
 
 # Scalar Pitchfork
 
-The scalar pitchfork $`f(\tau,z)=\alpha\tau z-\beta z^3+R(\tau,z)`$ with a remainder bounded by explicit weights or by jets at the origin: two continuous branches $`z\approx\pm\sqrt{\alpha\tau/\beta}`$ with an $`O(|\tau|)`$ amplitude error and the stability sign, the classification of small zeros, and the topological skeleton of global branches. Formalized in Lean 4 with Mathlib.
+The scalar pitchfork $`f(\tau,z)=\alpha\tau z-\beta z^3+R(\tau,z)`$ with a remainder bounded by explicit weights or by jets at the origin: for small $`\tau`$ with $`\tau\beta>0`$, exactly one small zero of each sign, $`|z|=\sqrt{\alpha\tau/\beta}+O(|\tau|)`$, with the stability sign, lying on two branches continuous in $`\tau`$ when $`R`$ is continuous in $`\tau`$ (automatic under the jet hypotheses); no small nonzero zero when $`\tau\beta\le0`$; and the topological skeleton of global branches, with the global alternatives as hypotheses. Formalized in Lean 4 with Mathlib.
 
 [![Lean](https://img.shields.io/badge/Lean-v4.35.0-153e63)](lean-toolchain)
-[![Mathlib](https://img.shields.io/badge/Mathlib-v4.35.0-153e63)](https://github.com/leanprover-community/mathlib4/tree/56a005855ea17e0b0958f73ec801ae140b0a1679)
-[![Version](https://img.shields.io/badge/version-0.1.0-153e63)](CITATION.cff)
+[![Mathlib](https://img.shields.io/badge/Mathlib-56a0058-153e63)](https://github.com/leanprover-community/mathlib4/tree/56a005855ea17e0b0958f73ec801ae140b0a1679)
+[![Release](https://img.shields.io/badge/release-v0.1.0-153e63)](https://github.com/chenle02/scalar-pitchfork-lean/releases/tag/v0.1.0)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23498687.svg)](https://doi.org/10.5281/zenodo.23498687)
 [![License](https://img.shields.io/badge/license-Apache--2.0-153e63)](LICENSE)
 [![Docs](https://img.shields.io/badge/docs-GitHub%20Pages-153e63)](https://chenle02.github.io/scalar-pitchfork-lean/)
@@ -19,8 +19,8 @@ The scalar pitchfork $`f(\tau,z)=\alpha\tau z-\beta z^3+R(\tau,z)`$ with a remai
 
 ## What is proved
 
-Throughout, $`f(\tau,z)=\alpha\tau z-\beta z^3+R(\tau,z)`$ with parameter $`\tau`$ and amplitude $`z`$, and
-$`\alpha>0`$, $`\beta\ne0`$, $`C\ge0`$, $`0<r\le1`$. Items 1-5 assume the **remainder bounds** on the box
+Here $`f(\tau,z)=\alpha\tau z-\beta z^3+R(\tau,z)`$ with parameter $`\tau`$ and amplitude $`z`$. Items 1–5
+assume $`\alpha>0`$, $`\beta\ne0`$, $`C\ge0`$, $`0<r\le1`$ and the **remainder bounds** on the box
 $`|\tau|,|z|\le r`$:
 
 ```math
@@ -29,10 +29,11 @@ $`|\tau|,|z|\le r`$:
 |R_z(\tau,z)|\le C\big(\tau^2+z^2|\tau|+|z|^3\big).
 ```
 
-"For small $`\tau`$" means for all $`\tau`$ in some neighbourhood of $`0`$. The results are classical
+"For small $`\tau`$" means for all $`\tau`$ in some neighbourhood of $`0`$. Items 6–12 state their own
+hypotheses. The results are classical
 bifurcation theory in quantitative form; no new mathematics is claimed.
 
-1. **The two pitchfork branches.** Assume the remainder bounds and that $`\tau\mapsto R(\tau,z)`$ is
+1. **[The two pitchfork branches](docs/what-is-proved.md#the-two-pitchfork-branches).** Assume the remainder bounds and that $`\tau\mapsto R(\tau,z)`$ is
    continuous at every $`|\tau|<r`$, $`|z|\le r`$. There are $`\rho>0`$, an open neighbourhood $`N`$ of $`0`$,
    a constant $`K`$ and, for $`\sigma=\pm1`$, functions $`b_\sigma`$ continuous on $`N`$ with $`b_\sigma(0)=0`$
    and $`b_\sigma(\tau)=0`$ for $`\tau\in N`$ with $`\tau\beta\le0`$, such that for $`\tau\in N`$ with $`\tau\beta>0`$: $`z=b_\sigma(\tau)`$
@@ -40,55 +41,57 @@ bifurcation theory in quantitative form; no new mathematics is claimed.
    $`\bigl||z|-\sqrt{\alpha\tau/\beta}\bigr|\le K|\tau|`$, and $`\beta\,\partial_zf(\tau,z)<0`$. Every zero $`z\ne0`$
    with $`|z|\le\rho`$ and $`\tau\in N`$ has $`\tau\beta>0`$ and equals $`b_1(\tau)`$ or $`b_{-1}(\tau)`$.
    `ScalarPitchfork.pitchfork_branch_curves`
-2. **One signed zero at a fixed radius.** Under the remainder bounds there is $`\rho>0`$ such that for small
+2. **[One signed zero at a fixed radius](docs/what-is-proved.md#one-signed-zero-at-a-fixed-radius).** Under the remainder bounds there is $`\rho>0`$ such that for small
    $`\tau`$ with $`\tau\beta>0`$ and each $`\sigma=\pm1`$, $`f(\tau,\cdot)`$ has exactly one zero $`z`$ with
    $`\sigma z>0`$ and $`|z|\le\rho`$.
    `ScalarPitchfork.existsUnique_branchRoot_eventually`
-3. **Existence with explicit amplitude constant.** Under the remainder bounds, for small $`\tau`$ with
+3. **[Existence with explicit amplitude constant](docs/what-is-proved.md#existence-of-both-branches-with-explicit-amplitude-constant-and-stability-sign).** Under the remainder bounds, for small $`\tau`$ with
    $`\tau\beta>0`$ and each $`\sigma=\pm1`$ there is a zero $`z`$ of $`f(\tau,\cdot)`$ with $`\sigma z>0`$,
    $`\bigl||z|-\sqrt{\alpha\tau/\beta}\bigr|\le K|\tau|`$ and $`\beta\,\partial_zf(\tau,z)<0`$, where
    $`K=2\alpha A\bigl(3|\beta|/(2\alpha)+1\bigr)/\beta^2`$ and $`A=C\bigl(2(|\beta|+2C)/\alpha+1\bigr)`$.
    `ScalarPitchfork.exists_branch_eventually`
-4. **Side and stability of every small zero.** Under the remainder bounds, every zero $`(\tau,z)`$ of $`f`$
+4. **[Side and stability of every small zero](docs/what-is-proved.md#side-and-stability-of-every-small-nontrivial-zero).** Under the remainder bounds, every zero $`(\tau,z)`$ of $`f`$
    near $`(0,0)`$ with $`z\ne0`$ has $`\tau\beta>0`$ and $`\beta\,\partial_zf(\tau,z)<0`$.
    `ScalarPitchfork.branch_side_eventually`
-5. **At most one small zero of each sign.** Under the remainder bounds there is $`\rho>0`$ such that for
+5. **[At most one small zero of each sign](docs/what-is-proved.md#at-most-one-small-zero-of-each-sign).** Under the remainder bounds there is $`\rho>0`$ such that for
    small $`\tau`$, two zeros $`z_1,z_2`$ of $`f(\tau,\cdot)`$ with $`z_1z_2>0`$ and $`|z_1|,|z_2|\le\rho`$ are
    equal.
    `ScalarPitchfork.small_zero_eq_branch`
-6. **Exchange of stability on the exact cubic.** If $`\beta\ne0`$, $`A\ne0`$ and $`\alpha\tau A-\beta A^3=0`$,
+6. **[Exchange of stability on the exact cubic](docs/what-is-proved.md#exchange-of-stability-on-the-exact-cubic).** If $`\beta\ne0`$, $`A\ne0`$ and $`\alpha\tau A-\beta A^3=0`$,
    then $`\frac{d}{dA}(\alpha\tau A-\beta A^3)=-2\alpha\tau`$ at $`A`$.
    `ScalarPitchfork.deriv_cubicField_at_branch`
-7. **Square-root amplitude error.** If $`\beta\ne0`$, $`z\ne0`$, $`\alpha\tau-\beta z^2+e=0`$,
+7. **[Square-root amplitude error](docs/what-is-proved.md#square-root-amplitude-error).** If $`\beta\ne0`$, $`z\ne0`$, $`\alpha\tau-\beta z^2+e=0`$,
    $`\alpha\tau/\beta\ge0`$ and $`|e|\le C|z|^3`$, then $`\bigl||z|-\sqrt{\alpha\tau/\beta}\bigr|\le Cz^2/|\beta|`$.
    `ScalarPitchfork.abs_sub_sqrt_le_of_cubic_remainder`
-8. **Remainder bounds from jets.** Let $`R`$ be $`C^4`$ on an open set containing the box $`|\tau|,|z|\le r`$,
+8. **[Remainder bounds from jets](docs/what-is-proved.md#remainder-bounds-from-jets-at-the-origin).** Let $`R`$ be $`C^4`$ on an open set containing the box $`|\tau|,|z|\le r`$,
    with $`0<r\le1`$, let $`R(\tau,0)=0`$ for $`|\tau|\le r`$, and let
    $`\partial_zR=\partial_\tau\partial_zR=\partial_z^2R=\partial_\tau\partial_z^2R=\partial_z^3R=0`$ at the
    origin. Then the remainder bounds hold for some $`C\ge0`$, with $`R_z=\partial_zR`$, and
    $`\tau\mapsto R(\tau,z)`$ is continuous at every $`|\tau|<r`$, $`|z|\le r`$.
    `ScalarPitchfork.remainderBounds_of_jet`
-9. **Stronger bound iff the axis condition.** Under the hypotheses of item 8,
+9. **[Stronger bound iff the axis condition](docs/what-is-proved.md#the-stronger-remainder-bound-holds-iff-the-axis-condition-holds).** Under the hypotheses of item 8,
    $`|R(\tau,z)|\le C(z^2\tau^2+|z|^3|\tau|+z^4)`$ on the box for some $`C`$ if and only if
    $`\partial_zR(\tau,0)=0`$ for every $`|\tau|\le r`$.
    `ScalarPitchfork.strongBound_iff_axis`
-10. **Jets do not give the stronger bound.** Not every $`R`$ satisfying the hypotheses of item 8 satisfies
+10. **[Jets do not give the stronger bound](docs/what-is-proved.md#the-jets-at-the-origin-do-not-give-the-stronger-bound).** Not every $`R`$ satisfying the hypotheses of item 8 satisfies
     the stronger bound of item 9; the library's counterexample is $`R(\tau,z)=\tau^2z`$.
     `ScalarPitchfork.jet_not_sufficient_for_strongBound`
-11. **A non-compact component has unbounded parameter.** Let $`E`$ be a topological space and
+11. **[A non-compact component has unbounded parameter](docs/what-is-proved.md#a-non-compact-component-has-unbounded-parameter).** Let $`E`$ be a topological space and
     $`C\subseteq V\subseteq\mathbb R\times E`$ with $`C`$ relatively closed in $`V`$ and
     $`C\subseteq\overline S\subseteq V`$, where $`\overline{S\cap\{\lambda\le X\}}`$ is compact for every
     $`X\in\mathbb R`$. If $`C`$ is not compact, then $`C`$ contains points with arbitrarily large $`\lambda`$,
     and $`\sup\{\lambda:(\lambda,u)\in C\}=+\infty`$ in the extended reals.
     `ScalarPitchfork.Global.sSup_param_eq_top`
-12. **The one-sided component is closed.** Let $`S`$ be a closed subset of a topological space, $`b\in S`$,
+12. **[The one-sided component is closed](docs/what-is-proved.md#the-one-sided-component-is-closed).** Let $`S`$ be a closed subset of a topological space, $`b\in S`$,
     $`K`$ the connected component of $`b`$ in $`S`$, and $`A`$ a set whose trace on $`K`$ is relatively open in
     $`K`$. For $`s\in K\setminus A`$, the connected component of $`s`$ in $`K\setminus A`$ is closed.
     `ScalarPitchfork.Global.selectedComponent_isClosed`
 
 Each Lean statement is the authority; read its hypotheses before you use it. The
+[statement guide](docs/what-is-proved.md) gives these twelve headline results and five further groups (40
+compared declarations in all), each with its exact Lean statement, source line and sign-off. The
 [verification page](docs/verification.md) shows each Lean statement beside its description; the same page is
-rendered in the verification section at the end of this README.
+rendered in the [verification section](#verification-at-a-glance) at the end of this README.
 
 The module map is on the [modules page](docs/modules.md).
 
@@ -170,7 +173,7 @@ rev = "v0.1.0"
 ```
 
 then `lake update scalar-pitchfork-lean`, `lake exe cache get`, and `import ScalarPitchfork` (or one module
-from the table above). The trusted comparator statements are in
+from the [modules page](docs/modules.md)). The trusted comparator statements are in
 [`ScalarPitchfork/HeadlineChallenge.lean`](ScalarPitchfork/HeadlineChallenge.lean) (the twelve headline
 results, configuration [`comparator.headline.json`](comparator.headline.json)) and
 [`ScalarPitchfork/Challenge.lean`](ScalarPitchfork/Challenge.lean) (the full set, configuration
@@ -182,11 +185,14 @@ variants of the statements are rejected.
 
 ## Trust and axioms
 
-The library modules contain no `sorry`, `axiom`, `opaque` or `native_decide`. The permitted axioms are
-`propext`, `Classical.choice` and `Quot.sound`. The comparator checks that each headline proof proves exactly
-its Mathlib-only restatement in `HeadlineChallenge.lean` (and `Challenge.lean` for the full set), and
-independent kernels replay it. No tool checks that the prose in this README describes the Lean statements.
-The recorded results and receipts are in the verification section at the end of this README.
+The library modules contain no `sorry`, `axiom`, `opaque` or `native_decide`; the build receipt at commit
+`a460cf60cfe8` records `sorry` count 0 and the axioms `propext`, `Classical.choice` and `Quot.sound`, which are
+the only permitted ones. The comparator checks that each proof proves exactly its Mathlib-only restatement:
+the 12 headline statements in `HeadlineChallenge.lean` (`comparator.headline.json`) and the 40 statements of
+the full set, which include those 12, in `Challenge.lean` (`comparator.json`); both pass, and independent
+kernels replay the proofs. The `sorry` in the two Challenge files is intentional: they hold the statements,
+not the proofs. No tool checks that the prose in this README describes the Lean statements. The recorded
+results and receipts are in [What the checks establish](#what-the-checks-establish) at the end of this README.
 
 ## Built with lean-pkg
 
@@ -220,7 +226,7 @@ The section below is generated by lean-pkg from `coverage.yaml`, `claims.yaml` a
 
 **How to read this page.** Lean has checked every step of the proofs listed here. Each result is exactly its Lean statement: read the statements below to see what is proved. The titles, the words and the notes are the authors' description, which Lean does not check.
 
-The scalar pitchfork f(tau, z) = alpha tau z - beta z^3 + R(tau, z) with a jet-bounded remainder: two continuous branches with square-root amplitude, O(\|tau\|) amplitude error and the stability sign, classification of small zeros, remainder bounds from jets and their limits, and the topology of global branches.
+The scalar pitchfork f(tau, z) = alpha tau z - beta z^3 + R(tau, z) with a remainder bounded by weights or by jets: for small tau with tau beta &gt; 0, one small zero of each sign, square-root amplitude with O(\|tau\|) error and stability sign, on branches continuous when R is continuous in tau; remainder bounds from jets; the topological skeleton of global branches, alternatives assumed.
 
 - Main results: 17; verified: 17 of 17.
 
@@ -845,7 +851,7 @@ theorem nonzero_equilibrium_eq_branch (alpha beta tau A : ℝ)
 **In words.**
 
 ```latex
-Let $E$ be a topological additive group, $P:E\to(\mathbb R\to\mathbb R)$ an additive map (the profile), $L>0$, $(\lambda^*,u^*)\in\mathbb R\times E$, $W\subseteq E$ and $C,S,V\subseteq\mathbb R\times E$. Assume the global alternatives: $C$ is not compact, or $(\lambda,u^*)\in C$ for some $\lambda\ne\lambda^*$, or $(\lambda,u^*+w)\in C$ for some $w\in W\setminus\{0\}$. Assume $P(u^*)$ is constant, every $P(e)$ is continuous on $[0,L]$, every $(\lambda,u)\in C\setminus\{(\lambda^*,u^*)\}$ has $P(u)$ strictly monotone on $[0,L]$, and the weight $\varphi$ satisfies
+Let $E$ be a topological space with an additive commutative group structure (no continuity of the group operations is assumed), $P:E\to(\mathbb R\to\mathbb R)$ an additive map (the profile), $L>0$, $(\lambda^*,u^*)\in\mathbb R\times E$, $W\subseteq E$ and $C,S,V\subseteq\mathbb R\times E$. Assume the global alternatives: $C$ is not compact, or $(\lambda,u^*)\in C$ for some $\lambda\ne\lambda^*$, or $(\lambda,u^*+w)\in C$ for some $w\in W\setminus\{0\}$. Assume $P(u^*)$ is constant, every $P(e)$ is continuous on $[0,L]$, every $(\lambda,u)\in C\setminus\{(\lambda^*,u^*)\}$ has $P(u)$ strictly monotone on $[0,L]$, and the weight $\varphi$ satisfies
 \[\int_0^Lg\,\varphi\,dx>0\ \text{ for every continuous strictly decreasing }g\text{ on }[0,L],\qquad \int_0^LP(w)\,\varphi\,dx=0\ \ (w\in W).\]
 Then the second and third alternatives fail; if in addition $C$ satisfies the hypotheses of the row "A non-compact component has unbounded parameter" except non-compactness ($C\subseteq V$ relatively closed in $V$, $C\subseteq\overline S\subseteq V$, $\overline{S\cap\{\lambda\le X\}}$ compact for all $X$), then $C$ is not compact, has parameters $\lambda>M$ for every $M$, and $\sup\{\lambda:(\lambda,u)\in C\}=+\infty$.
 Supporting facts: the alternatives with the last two excluded give non-compactness; if $C$ is closed, $C\subseteq\overline S$ and all $\overline{S\cap\{\lambda\le X\}}$ are compact, every slice $C\cap\{\lambda\le X\}$ is compact; if $C$ is preconnected, $p^*\in C\cap M$ and $C\cap M$ is clopen in $C$, then $C\subseteq M$; in particular, if $\{p\in C: p=p^*\text{ or }P(p_2)\text{ is strictly decreasing on }[0,L]\}$ is clopen in a preconnected $C\ni p^*$, every $p\in C\setminus\{p^*\}$ has strictly decreasing profile.

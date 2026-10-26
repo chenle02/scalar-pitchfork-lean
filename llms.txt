@@ -1,34 +1,37 @@
 # ScalarPitchfork (scalar-pitchfork-lean) — version 0.1.0
 
-Scalar pitchfork bifurcation with a jet-bounded remainder and the topology of global branches, in Lean 4 with Mathlib.
-Lean v4.35.0, Mathlib v4.35.0. Namespace ScalarPitchfork. Apache-2.0. Author Le Chen.
+Scalar pitchfork bifurcation with a weight- or jet-bounded remainder, and the topological skeleton of global branches (global alternatives taken as hypotheses), in Lean 4 with Mathlib.
+Lean v4.35.0, Mathlib v4.35.0 (commit 56a005855ea17e0b0958f73ec801ae140b0a1679). Namespace ScalarPitchfork. Apache-2.0. Author Le Chen.
 Repository: https://github.com/chenle02/scalar-pitchfork-lean
 Documentation site: https://chenle02.github.io/scalar-pitchfork-lean/
 
 The Lean declaration decides every hypothesis. Prose is not checked by Lean.
 A receipt under .lean-receipts/ covers only the commit it names.
 
-Setting: f(τ, z) = α τ z - β z³ + R(τ, z), α > 0, β ≠ 0, C ≥ 0, 0 < r ≤ 1. Remainder bounds on |τ|, |z| ≤ r:
+Setting: f(τ, z) = α τ z - β z³ + R(τ, z). The first five declarations assume α > 0, β ≠ 0, C ≥ 0, 0 < r ≤ 1 and the remainder bounds on |τ|, |z| ≤ r:
 |R| ≤ C(|z|τ² + |z|³|τ| + z⁴), ∂_z R = R_z exists, |R_z| ≤ C(τ² + z²|τ| + |z|³).
+"Small τ" means all τ in some neighbourhood of 0. The other declarations state their own hypotheses.
 
-Headline declarations:
-- ScalarPitchfork.pitchfork_branch_curves: two branches b_±, continuous near τ = 0, unique signed small zeros for τβ > 0, amplitude √(ατ/β) + O(|τ|), β ∂_z f < 0, and no other small nonzero zeros (needs R continuous in τ).
-- ScalarPitchfork.existsUnique_branchRoot_eventually: exactly one zero of each sign with |z| ≤ ρ, for small τ with τβ > 0.
-- ScalarPitchfork.exists_branch_eventually: existence of both signed zeros with an explicit amplitude constant and β ∂_z f < 0.
-- ScalarPitchfork.branch_side_eventually: every small zero with z ≠ 0 has τβ > 0 and β ∂_z f < 0.
-- ScalarPitchfork.small_zero_eq_branch: two small zeros of the same sign are equal, for small τ.
-- ScalarPitchfork.deriv_cubicField_at_branch: d/dA(ατA - βA³) = -2ατ at a nonzero zero (β ≠ 0).
-- ScalarPitchfork.abs_sub_sqrt_le_of_cubic_remainder: ||z| - √(ατ/β)| ≤ C z²/|β| when ατ - βz² + e = 0 and |e| ≤ C|z|³.
-- ScalarPitchfork.remainderBounds_of_jet: C⁴, R(τ, 0) = 0 and five vanishing jets at the origin give the remainder bounds.
-- ScalarPitchfork.strongBound_iff_axis: the stronger bound C(z²τ² + |z|³|τ| + z⁴) holds iff ∂_z R(τ, 0) = 0 on the box.
-- ScalarPitchfork.jet_not_sufficient_for_strongBound: the jets alone do not give the stronger bound (R = τ² z).
-- ScalarPitchfork.Global.sSup_param_eq_top: a non-compact, relatively closed C ⊆ closure S ⊆ V with precompact bounded-parameter slices has sup of parameters = ⊤.
-- ScalarPitchfork.Global.selectedComponent_isClosed: the component of the one-sided remainder of a closed solution set is closed.
+Headline declarations (12, compared in comparator.headline.json):
+- ScalarPitchfork.pitchfork_branch_curves: if also R(·, z) is continuous at every |τ| < r, |z| ≤ r: there are ρ > 0, an open neighbourhood N of 0, K and branches b_±1 continuous on N with b(0) = 0 and b(τ) = 0 when τβ ≤ 0; for τ ∈ N with τβ > 0, b_σ(τ) is the unique zero with σz > 0 and |z| ≤ ρ, ||b_σ(τ)| - √(ατ/β)| ≤ K|τ| and β ∂_z f < 0; every zero z ≠ 0 with |z| ≤ ρ, τ ∈ N has τβ > 0 and equals b_1(τ) or b_-1(τ).
+- ScalarPitchfork.existsUnique_branchRoot_eventually: there is ρ > 0 such that for small τ with τβ > 0 there is exactly one zero of each sign with |z| ≤ ρ.
+- ScalarPitchfork.exists_branch_eventually: for small τ with τβ > 0, a zero of each sign with ||z| - √(ατ/β)| ≤ K|τ| (explicit K from α, β, C) and β ∂_z f < 0.
+- ScalarPitchfork.branch_side_eventually: every zero (τ, z) near (0, 0) with z ≠ 0 has τβ > 0 and β ∂_z f < 0.
+- ScalarPitchfork.small_zero_eq_branch: there is ρ > 0 such that for small τ, two zeros of the same sign with |z| ≤ ρ are equal.
+- ScalarPitchfork.deriv_cubicField_at_branch: d/dA(ατA - βA³) = -2ατ at A when β ≠ 0, A ≠ 0 and ατA - βA³ = 0.
+- ScalarPitchfork.abs_sub_sqrt_le_of_cubic_remainder: ||z| - √(ατ/β)| ≤ C z²/|β| when β ≠ 0, z ≠ 0, ατ - βz² + e = 0, ατ/β ≥ 0 and |e| ≤ C|z|³.
+- ScalarPitchfork.remainderBounds_of_jet: if 0 < r ≤ 1, R is C⁴ on an open set containing the box |τ|, |z| ≤ r, R(τ, 0) = 0 for |τ| ≤ r and five jets vanish at the origin, then the remainder bounds hold for some C ≥ 0 with R_z = ∂_z R, and R(·, z) is continuous at every |τ| < r, |z| ≤ r.
+- ScalarPitchfork.strongBound_iff_axis: under the hypotheses of remainderBounds_of_jet, the stronger bound |R| ≤ C(z²τ² + |z|³|τ| + z⁴) on the box holds for some C iff ∂_z R(τ, 0) = 0 for all |τ| ≤ r.
+- ScalarPitchfork.jet_not_sufficient_for_strongBound: the hypotheses of remainderBounds_of_jet do not imply the stronger bound (counterexample R = τ² z).
+- ScalarPitchfork.Global.sSup_param_eq_top: if C ⊆ V is relatively closed in V, C ⊆ closure S ⊆ V, closure(S ∩ {λ ≤ X}) is compact for every X, and C is not compact, then C has points with λ > M for every M and sup of λ over C = ⊤ in EReal.
+- ScalarPitchfork.Global.selectedComponent_isClosed: for S closed, b ∈ S, K the component of b in S, A with A ∩ K relatively open in K and s ∈ K \ A, the component of s in K \ A is closed.
+
+All 40 compared statements (comparator.json; includes the 12) with their Lean source lines: docs/what-is-proved.md. Both comparator configurations pass at commit a460cf60cfe88aa90019be59d45a1d0f14ece7e7.
 
 Not proved:
 - No Crandall–Rabinowitz theorem, no center-manifold reduction; the scalar normal form is the starting point.
 - No Lyapunov–Schmidt reduction.
-- No degree theory (no Leray–Schauder degree, no Rabinowitz global alternative); the global alternatives are hypotheses.
+- No degree theory (no Leray–Schauder degree, no Rabinowitz global alternative). The global part is the topological skeleton only; the global alternatives are hypotheses.
 - No certified-root tools; no PDE.
 
 Required context:

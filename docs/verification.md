@@ -6,7 +6,7 @@
 
 **How to read this page.** Lean has checked every step of the proofs listed here. Each result is exactly its Lean statement: read the statements below to see what is proved. The titles, the words and the notes are the authors' description, which Lean does not check.
 
-The scalar pitchfork f(tau, z) = alpha tau z - beta z^3 + R(tau, z) with a jet-bounded remainder: two continuous branches with square-root amplitude, O(\|tau\|) amplitude error and the stability sign, classification of small zeros, remainder bounds from jets and their limits, and the topology of global branches.
+The scalar pitchfork f(tau, z) = alpha tau z - beta z^3 + R(tau, z) with a remainder bounded by weights or by jets: for small tau with tau beta &gt; 0, one small zero of each sign, square-root amplitude with O(\|tau\|) error and stability sign, on branches continuous when R is continuous in tau; remainder bounds from jets; the topological skeleton of global branches, alternatives assumed.
 
 - Main results: 17; verified: 17 of 17.
 
@@ -631,7 +631,7 @@ theorem nonzero_equilibrium_eq_branch (alpha beta tau A : ℝ)
 **In words.**
 
 ```latex
-Let $E$ be a topological additive group, $P:E\to(\mathbb R\to\mathbb R)$ an additive map (the profile), $L>0$, $(\lambda^*,u^*)\in\mathbb R\times E$, $W\subseteq E$ and $C,S,V\subseteq\mathbb R\times E$. Assume the global alternatives: $C$ is not compact, or $(\lambda,u^*)\in C$ for some $\lambda\ne\lambda^*$, or $(\lambda,u^*+w)\in C$ for some $w\in W\setminus\{0\}$. Assume $P(u^*)$ is constant, every $P(e)$ is continuous on $[0,L]$, every $(\lambda,u)\in C\setminus\{(\lambda^*,u^*)\}$ has $P(u)$ strictly monotone on $[0,L]$, and the weight $\varphi$ satisfies
+Let $E$ be a topological space with an additive commutative group structure (no continuity of the group operations is assumed), $P:E\to(\mathbb R\to\mathbb R)$ an additive map (the profile), $L>0$, $(\lambda^*,u^*)\in\mathbb R\times E$, $W\subseteq E$ and $C,S,V\subseteq\mathbb R\times E$. Assume the global alternatives: $C$ is not compact, or $(\lambda,u^*)\in C$ for some $\lambda\ne\lambda^*$, or $(\lambda,u^*+w)\in C$ for some $w\in W\setminus\{0\}$. Assume $P(u^*)$ is constant, every $P(e)$ is continuous on $[0,L]$, every $(\lambda,u)\in C\setminus\{(\lambda^*,u^*)\}$ has $P(u)$ strictly monotone on $[0,L]$, and the weight $\varphi$ satisfies
 \[\int_0^Lg\,\varphi\,dx>0\ \text{ for every continuous strictly decreasing }g\text{ on }[0,L],\qquad \int_0^LP(w)\,\varphi\,dx=0\ \ (w\in W).\]
 Then the second and third alternatives fail; if in addition $C$ satisfies the hypotheses of the row "A non-compact component has unbounded parameter" except non-compactness ($C\subseteq V$ relatively closed in $V$, $C\subseteq\overline S\subseteq V$, $\overline{S\cap\{\lambda\le X\}}$ compact for all $X$), then $C$ is not compact, has parameters $\lambda>M$ for every $M$, and $\sup\{\lambda:(\lambda,u)\in C\}=+\infty$.
 Supporting facts: the alternatives with the last two excluded give non-compactness; if $C$ is closed, $C\subseteq\overline S$ and all $\overline{S\cap\{\lambda\le X\}}$ are compact, every slice $C\cap\{\lambda\le X\}$ is compact; if $C$ is preconnected, $p^*\in C\cap M$ and $C\cap M$ is clopen in $C$, then $C\subseteq M$; in particular, if $\{p\in C: p=p^*\text{ or }P(p_2)\text{ is strictly decreasing on }[0,L]\}$ is clopen in a preconnected $C\ni p^*$, every $p\in C\setminus\{p^*\}$ has strictly decreasing profile.
